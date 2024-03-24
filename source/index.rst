@@ -1,4 +1,4 @@
-Welcome to WSDR’s documetation!
+Welcome to WSDR’s documentation!
 ===============================
 
 .. note::
