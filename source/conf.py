@@ -3,7 +3,7 @@
 # -- Project information
 
 project = 'WSDR'
-copyright = '2024, Wavelet Lab'
+copyright = 'CC BY-SA 4.0, 2024, Wavelet Lab'
 author = 'Wavelet Lab'
 
 # -- General configuration
