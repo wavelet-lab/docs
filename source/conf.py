@@ -3,8 +3,8 @@
 # -- Project information
 
 project = 'WSDR'
-copyright = '2024, Wavelet lab'
-author = 'Wavelet lab'
+copyright = '2024, Wavelet Lab'
+author = 'Wavelet Lab'
 
 # -- General configuration
 
