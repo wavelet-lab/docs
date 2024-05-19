@@ -23,13 +23,14 @@ Welcome to WSDR’s documentation!
    /hardware/devboard
    /hardware/usbadapter
    /hardware/minipcieadapter
-   /hardware/m2converter
+   /hardware/m2adapter
+   /hardware/heatsink
 
 .. toctree::
    :maxdepth: 2
    :hidden:
-   :caption: Host library
+   :caption: Software
 
-   /library/installation
-   /library/driver
-   /library/usage
+   /software/install
+   /software/compile
+   /software/usage
