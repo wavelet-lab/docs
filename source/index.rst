@@ -24,7 +24,6 @@ Welcome to WSDR’s documentation!
    /hardware/usbadapter
    /hardware/minipcieadapter
    /hardware/m2adapter
-   /hardware/heatsink
 
 .. toctree::
    :maxdepth: 2
@@ -34,3 +33,10 @@ Welcome to WSDR’s documentation!
    /software/install
    /software/compile
    /software/usage
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :caption: Instructions
+
+   /instructions/heatsink
