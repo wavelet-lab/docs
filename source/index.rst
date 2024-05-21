@@ -37,6 +37,7 @@ Welcome to WSDR’s documentation!
 .. toctree::
    :maxdepth: 2
    :hidden:
-   :caption: Instructions
+   :caption: Guides
 
-   /instructions/heatsink
+   /guides/heatsink
+   /guides/firmware

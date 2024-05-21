@@ -55,7 +55,7 @@ To use the full potential of the board, some cable re-routing needs to be applie
 .. image:: ../_static/hw_devboard_4.jpg
    :alt: The development board: uSDR rewiring
 
-* Apply a thicker thermal interface (2.0 mm) and the heatsink as described in the ‘Heatsink Installation’ chapter.
+* Apply a thicker thermal interface (2.0 mm) and the heatsink as described in the :doc:`/guides/heatsink` chapter.
 * Here is the final SMA schematic on the panel.
 
 .. image:: ../_static/hw_devboard_5.jpg
