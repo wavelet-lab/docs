@@ -23,7 +23,7 @@ Instruction
    usdr_flash -w <firmware_file>
 
 * Wait for the process to finish.
-* **WARNING**: Please do not disconnect the device during the burning process.
+* **WARNING**: Please do not disconnect the device during the flashing process.
 
 Example
 -------
