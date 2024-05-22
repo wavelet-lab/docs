@@ -2,8 +2,8 @@
 uSDR module
 ===========
 
-uSDR is a tiny board, in the M.2 2230 form factor, with A+E keys.
-This is a common format for Wi-Fi cards.
+A tiny, single-sided M.2 2230 A+E key form factor Software Defined Radio board.
+
 
 .. image:: ../_static/hw_usdr_1.jpg
    :alt: uSDR module
