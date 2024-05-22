@@ -2,7 +2,7 @@
 uSDR Development Board
 ======================
 
-This board was designed for developers and advanced users.
+This board was designedddd for developers and advanced users.
 It has USB Type-C connectors and can be plugged into a computer with a PCIe x4 slot.
 It provides the following features:
 
