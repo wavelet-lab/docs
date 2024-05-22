@@ -1,18 +1,18 @@
 ======================
-uSDR Development Board
+Development Board
 ======================
 
-This board was designedddd for developers and advanced users.
-It has USB Type-C connectors and can be plugged into a computer with a PCIe x4 slot.
-It provides the following features:
+The development board is intended for developers and advanced users. It features USB Type-C connectors and can be connected to a computer via a PCIe x4 slot
+Features:
+---------
 
-* A very simple radio fronted that allows you to prototype using the 2.4-GHz ISM band
-* Duplexer for common cellular bands
-* Increased TX power
-* Increased RX sensitivity
-* Extended automatic gain control (AGC)
-* More precise clock synchronization thanks to a GNSS module.
-* Mounting holes for a heatsink or enclosure
+* Simple Radio Frontend: Facilitates prototyping in the 2.4-GHz ISM band
+* Cellular Band Duplexer: Supports common cellular frequency bands.
+* Enhanced TRX Power
+* Improved RX Sensitivity
+* Extended Automatic Gain Control (AGC)
+* Precision Clock Synchronization: Synchronization via a GNSS module.
+* Mounting Options: Includes mounting holes for a heatsink or enclosure.
 
 .. image:: ../_static/hw_devboard_1.jpg
    :alt: The development board
@@ -63,5 +63,5 @@ To use the full potential of the board, some cable re-routing needs to be applie
 
 .. note::
 
-    If you on’t need to use the development board,
+    If you don’t need to use the development board,
     you can route SMA cables directly to the uSDR connectors in the order you want.
