@@ -21,7 +21,7 @@ Ubuntu 18.04
     sudo apt install build-essential dwarves -y
     sudo apt install libusb-1.0-0-dev check dkms curl -y
 
-    # Install fresh version of Cmake
+    # Install latest version of Cmake
     apt-get install libssl-dev -y
     curl https://cmake.org/files/v3.28/cmake-3.28.3.tar.gz -o cmake-3.28.3.tar.gz
     tar xvf cmake-3.28.3.tar.gz
@@ -31,7 +31,7 @@ Ubuntu 18.04
     make install
     update-alternatives --install /usr/bin/cmake cmake /usr/local/bin/cmake 10
 
-    # Install Python3.8
+    # Install Python 3.8
     apt-get install python3.8 python3.8-distutils -y
     update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 10
     curl https://bootstrap.pypa.io/get-pip.py | python3.8
