@@ -23,7 +23,7 @@ Instruction
 
 * Wait for the process to complete.
 * **WARNING**: Please do not disconnect the device during the flashing process.
-*When flashing is complete, perform a "power cycle" of the device (reconnect it)
+* When flashing is complete, perform a "power cycle" of the device (reconnect it)
 
 Example
 -------
