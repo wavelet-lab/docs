@@ -13,8 +13,7 @@ Instruction
    | You have to install ``usdr-tools`` package first.
    | Please refer to the :doc:`/software/install` document.
 
-* Connect the device to your computer.
-* Please be sure that your computer is connected to the wall power.
+* Connect the uSDR module to the computer using a USB adapter or Development board (Both PCIe and USB-C options are supported)
 * Download the required firmware file.
 * Open a terminal and run the following command:
 
@@ -22,9 +21,9 @@ Instruction
 
    usdr_flash -w <firmware_file>
 
-* Wait for the process to finish.
+* Wait for the process to complete.
 * **WARNING**: Please do not disconnect the device during the flashing process.
-* Reconnect the device to your computer.
+*When flashing is complete, perform a "power cycle" of the device (reconnect it)
 
 Example
 -------
