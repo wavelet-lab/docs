@@ -24,6 +24,7 @@ Instruction
 
 * Wait for the process to finish.
 * **WARNING**: Please do not disconnect the device during the flashing process.
+* Reconnect the device to your computer.
 
 Example
 -------
