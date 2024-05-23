@@ -1,5 +1,5 @@
 =================
-Flushing firmware
+Flashing firmware
 =================
 
 .. note::
