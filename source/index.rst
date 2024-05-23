@@ -5,7 +5,7 @@ Welcome to the official documentation of Wavelet Lab's projects! Here, you will 
 
 We regularly update our documentation to provide you with the latest information and improvements. Be sure to check back often for new guides, updates, and additional resources.
 
-If you have any questions or need further assistance, please don’t hesitate to reach out to our support team via .. _Crowd Supply: https://www.crowdsupply.com/wavelet-lab/usdr/ask-question.
+If you have any questions or need further assistance, please don’t hesitate to reach out to our support team via 'Crowd Supply <https://www.crowdsupply.com/wavelet-lab/usdr/ask-question>'.
 
 Happy exploring!
 
