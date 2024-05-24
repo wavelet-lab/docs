@@ -41,15 +41,16 @@ Happy exploring!
 .. toctree::
    :maxdepth: 2
    :hidden:
-   :caption: Applications
-
-   /applications/cubicsdr
-   /applications/gqrx
-
-.. toctree::
-   :maxdepth: 2
-   :hidden:
    :caption: Guides
 
    /guides/heatsink
    /guides/firmware
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :caption: Applications
+
+   /applications/cubicsdr
+   /applications/gqrx
+   /applications/gnuradio
