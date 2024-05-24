@@ -5,7 +5,7 @@ Development Board
 The development board is intended for developers and advanced users. It features USB Type-C connectors and can be connected to a computer via a PCIe x4 slot
 
 Features
----------
+--------
 
 * Simple Radio Frontend: Facilitates prototyping in the 2.4-GHz ISM band
 * Cellular Band Duplexer: Supports common cellular frequency bands.
