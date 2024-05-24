@@ -41,6 +41,13 @@ Happy exploring!
 .. toctree::
    :maxdepth: 2
    :hidden:
+   :caption: Applications
+
+   /applications/cubicsdr
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
    :caption: Guides
 
    /guides/heatsink
