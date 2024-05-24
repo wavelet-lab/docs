@@ -54,3 +54,4 @@ Happy exploring!
    /applications/cubicsdr
    /applications/gqrx
    /applications/gnuradio
+   /applications/cyberether
