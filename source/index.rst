@@ -44,6 +44,7 @@ Happy exploring!
    :caption: Applications
 
    /applications/cubicsdr
+   /applications/gqrx
 
 .. toctree::
    :maxdepth: 2
