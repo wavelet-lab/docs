@@ -7,7 +7,7 @@ Installation
 
 .. note::
 
-   This application needs SoapySDR plugin. Please refer :doc:`/software/install` for installation instructions.
+   This application needs a SoapySDR plugin. Please refer to:doc:`/software/install`
 
 
 .. code-block:: bash
@@ -23,7 +23,7 @@ Run the application and select USDR device from the list of available devices.
    :alt: CubicSDR source settings
 
 Start processing you will see the spectrum of the signal.
-There you will able to tune and decode signals with several modulation types.
+There you will able to tune and decode signals with various modulation types.
 
 .. image:: ../_static/applications/cubicsdr_2.jpg
    :alt: CubicSDR example of signal processing
