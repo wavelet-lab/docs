@@ -7,7 +7,7 @@ Installation
 
 .. note::
 
-   This application needs SoapySDR plugin. Please refer to :doc:`/software/install`.
+   This application needs a SoapySDR plugin. Please refer to :doc:`/software/install`.
 
 
 .. code-block:: bash
