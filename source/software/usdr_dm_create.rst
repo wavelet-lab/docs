@@ -9,7 +9,7 @@ usdr_dm_create tool
 This tool is used to transmit a simple sinus waveform with a given frequency and power and/or
 to receive and record a signal into a raw file as well as other testing purposes.
 
-Transmission (signal generation)
+Transmission RF (signal generation)
 --------------------------------
 
 The following commands will generate a simple sinus waveform with a given frequency.
@@ -26,7 +26,7 @@ The following commands will generate a simple sinus waveform with a given freque
 
    usdr_dm_create -t -r3e6 -c-1 -l3 -E900e6
 
-Receiving (signal recording)
+Receiving RF (signal recording)
 ----------------------------
 
 The following command will record 100000 blocks of 4096 samples each of a signal into
