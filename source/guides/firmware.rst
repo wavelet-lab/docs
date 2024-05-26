@@ -25,6 +25,11 @@ Instruction
 * **WARNING**: Please do not disconnect the device during the flashing process.
 * When flashing is complete, perform a "power cycle" of the device (reconnect it)
 
+Firmwares
+---------
+
+You can download the firmware files from the `firmwares <https://github.com/wavelet-lab/firmwares>`_ repository.
+
 Example
 -------
 
