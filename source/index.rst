@@ -36,7 +36,7 @@ Happy exploring!
 
    /software/install
    /software/compile
-   /software/usage
+   /software/usdr_dm_create
 
 .. toctree::
    :maxdepth: 2
