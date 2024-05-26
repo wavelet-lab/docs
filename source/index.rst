@@ -37,6 +37,7 @@ Happy exploring!
    /software/install
    /software/compile
    /software/usdr_dm_create
+   /guides/firmware
 
 .. toctree::
    :maxdepth: 2
