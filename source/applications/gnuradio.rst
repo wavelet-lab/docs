@@ -7,7 +7,7 @@ Installation
 
 .. note::
 
-   This application needs SoapySDR plugin. Please refer :doc:`/software/install` for installation instructions.
+   This application needs a SoapySDR plugin. Please refer to :doc:`/software/install`.
 
 
 .. code-block:: bash
@@ -17,7 +17,7 @@ Installation
 Usage
 -----
 
-In order to use USDR with GNURadio, you have to use "osmocom Source" block with the following Device Arguments.
+In order to use USDR with GNURadio, you have to use the "Osmocom Source" block with the following "Device Arguments".
 
 .. code-block:: text
 
@@ -26,12 +26,11 @@ In order to use USDR with GNURadio, you have to use "osmocom Source" block with 
 .. image:: ../_static/applications/gnuradio_1.jpg
    :alt: GNURadio source settings
 
-Now you can create a simple FM receiver like shown on the following screenshot.
+Now you can create a simple FM receiver and start listening to the radio.
 
 .. image:: ../_static/applications/gnuradio_2.jpg
    :alt: GNURadio fm receiver
 
-And start listening to the radio.
 
 .. image:: ../_static/applications/gnuradio_3.jpg
    :alt: GNURadio fm receiver in action

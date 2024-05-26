@@ -7,9 +7,9 @@ Installation
 
 .. note::
 
-   This application needs SoapySDR plugin. Please refer to :doc:`/software/install`.
+   This application needs a SoapySDR plugin. Please refer to :doc:`/software/install`.
 
-You have to build CyberEther from source with SoapySDR support.
+You need to build CyberEther from source with SoapySDR support.
 
 Usage
 -----
@@ -22,7 +22,7 @@ Usage
 .. image:: ../_static/applications/cyberether_1.jpg
    :alt: CyberEther example of signal processing
 
-* You should see the spectrum of the signal.
+* You should be able to see the signal spectrum.
 
 References
 ----------
