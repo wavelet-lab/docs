@@ -29,11 +29,12 @@ The following commands will generate a simple sinus waveform with a given freque
 Receiving (signal recording)
 ----------------------------
 
-The following command will record 100000 blocks of 4096 samples each of a signal into a raw file with center frequency of 1200Mhz a sample rate of 4MHz:
+The following command will record 100000 blocks of 4096 samples each of a signal into
+a raw file with center frequency of 1200Mhz a sample rate of 4MHz:
 
 .. code-block:: bash
 
-   usdr_dm_create -t -r4e6 -c100000 -l3 -e1200e6 -f output.raw
+   usdr_dm_create -r4e6 -c100000 -l3 -e1200e6 -f output.raw
 
 The output file will have ``int16`` complex pairs and can be visualized using ``nympy`` and ``matplotlib``.
 
