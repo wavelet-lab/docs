@@ -78,3 +78,13 @@ Install package
 
     sudo apt install libusb-1.0-0 libsoapysdr0.8 dkms
     sudo dpkg -i *.deb
+
+Ubuntu on Raspberry Pi
+^^^^^^^^^^^^^^^^^^^^^^
+
+For MiniPCIe usage on Raspberry Pi with Ubuntu, additional configuration is required.
+
+.. code-block:: sh
+
+    echo "dtoverlay=pcie-32bit-dma" | sudo tee /boot/firmware/config.txt
+    sudo reboot
