@@ -63,4 +63,6 @@ Build kernel module
     sudo apt install linux-headers-$(uname -r)
     cd ../src/lib/lowlevel/pcie_uram/driver
     make
+    # Sign the module
+    sudo kmodsign sha512 /var/lib/shim-signed/mok/MOK.priv /var/lib/shim-signed/mok/MOK.der usdr_pcie_uram.ko
     sudo insmod usdr_pcie_uram.ko
