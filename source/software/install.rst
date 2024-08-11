@@ -82,7 +82,7 @@ Install package
 Ubuntu on Raspberry Pi
 ^^^^^^^^^^^^^^^^^^^^^^
 
-For MiniPCIe usage on Raspberry Pi with Ubuntu, additional configuration is required.
+For MiniPCIe usage on Raspberry Pi with Raspbian, additional configuration is required.
 
 .. code-block:: sh
 
