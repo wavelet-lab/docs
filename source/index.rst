@@ -24,6 +24,7 @@ Happy exploring!
    :caption: Hardware
 
    /hardware/usdr
+   /hardware/xsdr
    /hardware/devboard
    /hardware/usbadapter
    /hardware/minipcieadapter
