@@ -5,8 +5,8 @@ xSDR module
 A tiny 2RX/TX, single-sided M.2 2230 A+E key form factor Software Defined Radio board.
 
 
-.. image:: ../_static/hw_usdr_1.jpg
-   :alt: uSDR module
+.. image:: ../_static/hw_xsdr.png
+   :alt: xSDR module
 
 Features & Specifications
 -------------------------
@@ -24,12 +24,7 @@ Features & Specifications
 * PCIe support in legacy mode
 * MHF4 RF connectors
 
-uSDR Pinout Diagram
--------------------
 
-.. image:: ../_static/hw_usdr_2.jpg
-   :alt: uSDR Pinout Diagram
 
-* RX(HF) - RF Input (for signal below 250 MHz)
 * RX - RF Input
 * TRX - RF Output
