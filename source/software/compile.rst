@@ -19,7 +19,7 @@ Ubuntu 18.04
 .. code-block:: sh
 
     sudo apt install build-essential dwarves -y
-    sudo apt install libusb-1.0-0-dev check dkms curl -y
+    sudo apt install libsoapysdr-dev libusb-1.0-0-dev check dkms curl -y
 
     # Install latest version of Cmake
     apt-get install libssl-dev -y
@@ -43,7 +43,7 @@ Ubuntu 20.04, 22.04, 24.04, Debian 12
 .. code-block:: sh
 
     sudo apt install build-essential cmake python3 python3-venv python3-yaml dwarves -y
-    sudo apt install libusb-1.0-0-dev check dkms -y
+    sudo apt install libsoapysdr-dev libusb-1.0-0-dev check dkms -y
 
 Build
 -----
@@ -55,7 +55,17 @@ Build
     cmake ../src
     make
 
-Build kernel module
+Debug build
+-----------
+
+.. code-block:: sh
+
+    mkdir build
+    cd build
+    cmake -DCMAKE_BUILD_TYPE=Debug ../src
+    make
+
+Build the kernel module
 -------------------
 
 .. code-block:: sh
