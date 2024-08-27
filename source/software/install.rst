@@ -2,6 +2,9 @@
 Software installation
 =====================
 
+.. note::
+   | For Raspberry Pi 5, please refer to the :doc:`/intro/raspberrypi5` document for additional configuration.
+
 Ubuntu 20.04, 22.04, 24.04
 --------------------------
 
@@ -78,13 +81,3 @@ Install package
 
     sudo apt install libusb-1.0-0 libsoapysdr0.8 dkms
     sudo dpkg -i *.deb
-
-Ubuntu on Raspberry Pi
-^^^^^^^^^^^^^^^^^^^^^^
-
-For MiniPCIe usage on Raspberry Pi with Raspbian, additional configuration is required.
-
-.. code-block:: sh
-
-    echo "dtoverlay=pcie-32bit-dma" | sudo tee /boot/firmware/config.txt
-    sudo reboot
