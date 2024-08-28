@@ -25,10 +25,12 @@ Most options have reasonable default values, but some require a brief explanatio
 * Data blocks count (-c option) - the number of RX/TX iterations usdr_dm_create utility runs before normal exit. You can specify -1 for almoust 'infinite' data processing (can be interrupted by pressing CTRL-C anyway). However, if you 'replay' TX data from file (-I option, see below), the iterations count depends on your file size - the inner loop will be interrupted by EOF. The utility will always play all the file data, even if it's size is less than/not multiple to one data block size - except you use -c option explicitly and specify the number of blocks smaller than your file contains (this is a way to partially transfer data from a file). You can not play a file that contains less than one data sample.
 * Input file for TX stream (option -I) - if this option is specified and the name/path is correct, the utility opens the file and 'replays' it's content in TX RF stream. Data blocks are read in series according to the data format and data block size, specified by -F and -O options. It's not a problem if the last portion of the file data has it's size less than the TX data block size - the file will always be processed completely (within a sample size).
  For example, you have ci16 format and the data block size is 4096 samples. The physical block size (in bytes) will be = 2*2*4096 = 16384 bytes. If your file size is 100 000 bytes, the utility will transmit 4 blocks of 16384 bytes (4096 samples each) and 1 reduced block of 1696 bytes (424 samples).
+ 
  Now imagine that your file size is 99 999 bytes, so the last chunk of data is 1695 bytes. One sample is ci16, that means it's physical size is 2*2 = 4 bytes. So the last block would contain 423 samples = 1692 bytes, and the last 3 bytes will be ignored. To avoid such situations, it is best to match the data size to the physical size of a single sample.
+ 
  If the -I option is omitted and you specify -t or -T (TX or TX+RX), the TX data will be generated as a simple sine wave. The sine wave generator only supports ci16 and cf32 formats.
 * TX from file in a cycle (-o option) - that's a way to 'infinitely' loop you file transmission (CTRL-C always works). It other words, your file is played up to EOF and then rewinded to the beginning, and so on. All the considerations given in paragraph above (option -I) apply here too. This option has no effect if -I is omitted (the sine generator is always looped) or you are using the RX-only mode (no -t/-T option).
-* Channels mask (option -C) - is useful if you sdr device has more than one RF channel. This option allows you to turn some channels on or off as you wish according to the bit mask you specify. For example, you have an xSDR device with 3 channels on board. You can specify 0b01(1) mask to enable channel#0 and disable channel#1, 0b10(2) to enable channel#1 and disable channel#0, or 0b11(3) to enable both.
+* Channels mask (option -C) - is useful if you sdr device has more than one RF channel. This option allows you to turn some channels on or off as you wish according to the bit mask you specify. For example, you have an xSDR device with 3 channels on board. You can specify 0b01(1) mask to enable channel#0 and disable channel#1, 0b10(2) to enable channel#1 and disable channel#0, or 0b11(3) to enable both. The -C option affects both TX and RX.
 
 
 Available options
@@ -76,23 +78,58 @@ Examples
 Receiving RF (signal recording)
 -------------------------------
 
-The following command will record 100000 blocks of 4096 samples each of a signal into
+The following command will record 100000 blocks of 4096 samples each of a RF signal into
 a raw file with center frequency of 1200Mhz a sample rate of 4MHz:
 
 .. code-block:: bash
 
    usdr_dm_create -r4e6 -c100000 -l3 -e1200e6 -f output.raw
 
-The output file will have ``int16`` complex pairs and can be visualized using ``nympy`` and ``matplotlib``.
+The output file will have ``int16`` I-Q complex pairs and can be visualized using ``nympy`` and ``matplotlib``.
+
+Estimated file size is 100000 * 4096 * 2 * 2 = 1 600 000 Kb (be careful, otherwise your HDD may get clogged up!:)
 
 Transmission RF (from a recorded file)
 --------------------------------------
 
-The following command will transmit a signal from a raw file with a sample rate of 1MHz and a center frequency of 1700MHz:
+The following command will transmit a signal from a raw file with a sample rate of 1MHz and a center frequency of 1700MHz, using sample rate = 1M and TX packet size = 16 Ksamples:
 
 .. code-block:: bash
 
    usdr_dm_create -t -r1e6 -e1701e6 -E1700e6 -I ~/signal.ci16 -O 16384
+
+Suggesting signal.ci16 size = 20M (for example):
+
+* The file will be transferred completely and the utility should exit when the file is read to EOF
+* Sample size (ci16) = 4 bytes, the whole file contains 5 Msamples
+* Estimated TX send iteration count = 5 * 1024 / 16 = 320 sends
+* Estimated TX time = 5 / 1 = 5s
+
+Transmission RF (just a part of a recorded file)
+------------------------------------------------
+
+Same as above, but we explicitly limit the number of TX data packets to 100 (option -c):
+
+.. code-block:: bash
+
+   usdr_dm_create -t -r1e6 -e1701e6 -E1700e6 -I ~/signal.ci16 -O 16384 -c100
+
+In this case:
+
+* Only 1638400 of 5Msamples will be transmitted
+* Estimated TX time = 1638400 / 1M = 1.64s
+* The utility should exit when 100 data packets are read and transmitted
+
+Transmission RF (from a recorded file in a loop)
+------------------------------------------------
+
+The following command works the same as above, but rewinds to the beginning of the file after EOF (option -o does the job):
+
+.. code-block:: bash
+
+   usdr_dm_create -t -r1e6 -e1701e6 -E1700e6 -I ~/signal.ci16 -O 16384 -o
+
+In this case the transmission will last for a long time (say 'infinitely'), until it's interrupted by CTRL-C hit.
 
 Transmission RF (signal generation)
 -----------------------------------
