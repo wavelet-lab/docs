@@ -2,17 +2,17 @@ Using Raspberry Pi 5
 ====================
 
 .. note::
-   | To connect uSDR via MiniPCIe you have to use MiniPCIe hat and MiniPCIe to M.2 E Key Adapter.
+   | To connect uSDR to Rasberry Pi 5 you need to use the MiniPCIe hat and MiniPCIe to M.2 E Key Adapter.
    | Please refer to the :doc:`/hardware/minipcieadapter` document and `M2 HAT+ <https://www.raspberrypi.com/documentation/accessories/m2-hat-plus.html>`_.
 
 .. note::
-   | You don't need any additional configuration for the USB connection.
+   | No additional configuration for the USB connection is required.
 
 Prepare the system
 ^^^^^^^^^^^^^^^^^^
 
-For MiniPCIe usage on Raspberry Pi, additional configuration is required.
-You have to enable 32bit dma and enable PCIe x1 mode.
+Raspberry Pi requires an additional configuration For MiniPCIe.
+You have to enable 32-bit DMA and PCIe x1 mode.
 
 .. code-block:: sh
 
