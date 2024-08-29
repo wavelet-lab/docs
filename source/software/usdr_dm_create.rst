@@ -93,3 +93,41 @@ Available options
 * ``[-z <flag: Continue on error>]``
 * ``[-l loglevel [3(INFO)]]`` - Set log level
 * ``[-h <flag: This help>]`` - Print help
+
+API to enable the external clocking
+-----------------
+
+.. code-block:: bash
+
+   res = usdr_dme_set_string(dev, "/dm/sdr/refclk/path", refclkpath);
+
+* pdm_dev_t dev is your SDR connection handle, obtained previously by usdr_dmd_create_string() call;
+* const char* refclkpath: "external" or "internal" to enable/disable the external clocking resp.
+* int res == 0 on success, or errno on error.
+
+Set the external clock frequency: 
+
+.. code-block:: bash
+
+   res = usdr_dme_set_uint(dev, "/dm/sdr/refclk/frequency", fref);
+
+* pdm_dev_t dev is your SDR connection handle, obtained previously by usdr_dmd_create_string() call;
+* uint64_t fref - your external clock frequency value, in Hz;
+* int res == 0 on success, or errno on error.
+
+Also, you can get the actual extclock value (in Hz):
+
+.. code-block:: bash
+
+   res = usdr_dme_get_uint(dev, "/dm/sdr/refclk/frequency", pfref);
+
+where uint64_t *pfref is a pointer to your local var.
+
+
+
+
+
+
+
+
+
