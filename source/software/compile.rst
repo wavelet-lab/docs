@@ -2,6 +2,9 @@
 Build from source
 =================
 
+.. note::
+   | For Raspberry Pi 5, please refer to the :doc:`/intro/raspberrypi5` document for additional configuration.
+
 Clone the repository
 --------------------
 
@@ -52,8 +55,12 @@ Build
 
     mkdir build
     cd build
-    cmake ../src
+    cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ../src
     make
+
+.. note::
+   | If you want to install the library to ``/usr/local``, you can skip the ``-DCMAKE_INSTALL_PREFIX:PATH=/usr`` option.
+   | In this case, you will need to set ``LD_LIBRARY_PATH=/usr/local/lib`` to run utilities.
 
 Debug build
 -----------
@@ -62,11 +69,11 @@ Debug build
 
     mkdir build
     cd build
-    cmake -DCMAKE_BUILD_TYPE=Debug ../src
+    cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_BUILD_TYPE=Debug ../src
     make
 
 Build the kernel module
--------------------
+-----------------------
 
 .. code-block:: sh
 

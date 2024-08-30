@@ -29,9 +29,9 @@ Most options have reasonable default values, but some require a brief explanatio
 
 
   For example, you have ``ci16`` format and the data block size is 4096 samples. The physical block size (in bytes) will be = 2*2*4096 = 16384 bytes. If your file size is 100 000 bytes, the utility will transmit 4 blocks of 16384 bytes (4096 samples each) and 1 reduced block of 1696 bytes (424 samples).
- 
+
   Now imagine that your file size is 99 999 bytes, so the last chunk of data is 1695 bytes. One sample is ci16, that means it's physical size is 2*2 = 4 bytes. So the last block would contain 423 samples = 1692 bytes, and the last 3 bytes will be ignored. To avoid such situations, it is best to match the data size to the physical size of a single sample.
- 
+
   If the ``-I`` option is omitted and you specify ``-t`` or ``-T`` (TX or TX+RX), the TX data will be generated as a simple sine wave. The sine wave generator only supports ci16 and cf32 formats.
 * TX from file in a cycle (``-o`` option) - that's a way to 'infinitely' loop you file transmission (CTRL-C always works). It other words, your file is played up to EOF and then rewinded to the beginning, and so on. All the considerations given in paragraph above (option ``-I``) apply here too. This option has no effect if ``-I`` is omitted (the sine generator is always looped) or you are using the RX-only mode (no ``-t``/``-T`` option).
 * Channels mask (option ``-C``) - is useful if you sdr device has more than one RF channel. This option allows you to turn some channels on or off as you wish according to the bit mask you specify.
@@ -49,7 +49,7 @@ Available options
 * ``[-f RX_filename [./out.data]]`` - Output file for RX data recording
 * ``[-I TX_filename ]`` - Input file for TX stream
 * ``[-o <flag: cycle TX from file>]`` - Transmit from file in a loop
-* ``[-c count [128]]`` - Number of data blocks to transmit/receive. 
+* ``[-c count [128]]`` - Number of data blocks to transmit/receive.
 * ``[-r samplerate [50e6]]`` - Sample rate in Hz, for both TX and RX
 * ``[-F format [ci16] | cf32]`` - Data format, both TX and RX
 * ``[-C chmsk [0x1]]``
@@ -164,3 +164,32 @@ List of available devices
 .. code-block:: bash
 
    usdr_dm_create -Q
+
+API to enable the external clocking
+-----------------------------------
+
+.. code-block:: bash
+
+   res = usdr_dme_set_string(dev, "/dm/sdr/refclk/path", refclkpath);
+
+* pdm_dev_t dev is your SDR connection handle, obtained previously by usdr_dmd_create_string() call;
+* const char* refclkpath: "external" or "internal" to enable/disable the external clocking resp.
+* int res == 0 on success, or errno on error.
+
+Set the external clock frequency:
+
+.. code-block:: bash
+
+   res = usdr_dme_set_uint(dev, "/dm/sdr/refclk/frequency", fref);
+
+* pdm_dev_t dev is your SDR connection handle, obtained previously by usdr_dmd_create_string() call;
+* uint64_t fref - your external clock frequency value, in Hz;
+* int res == 0 on success, or errno on error.
+
+Also, you can get the actual extclock value (in Hz):
+
+.. code-block:: bash
+
+   res = usdr_dme_get_uint(dev, "/dm/sdr/refclk/frequency", pfref);
+
+where ``uint64_t *pfref`` is a pointer to your local var.
