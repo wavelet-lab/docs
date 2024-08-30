@@ -13,6 +13,10 @@ How to assemble
 
 .. image:: ../_static/RPI-1-sm.png
 
+.. image:: ../_static/RPI-2-sm.png
+
+.. image:: ../_static/RPI-3-sm.png
+
 
 Prepare the system
 ^^^^^^^^^^^^^^^^^^
