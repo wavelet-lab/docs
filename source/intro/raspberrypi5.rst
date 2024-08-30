@@ -8,6 +8,12 @@ Using Raspberry Pi 5
 .. note::
    | No additional configuration for the USB connection is required.
 
+How to assemble
+^^^^^^^^^^^^^^^^^^
+
+.. image:: ../_static/RPI-1-sm.png
+
+
 Prepare the system
 ^^^^^^^^^^^^^^^^^^
 
