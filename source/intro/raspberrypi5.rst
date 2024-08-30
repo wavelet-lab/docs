@@ -6,12 +6,14 @@ Using Raspberry Pi 5
    | Please refer to the :doc:`/hardware/minipcieadapter` document and `M2 HAT+ <https://www.raspberrypi.com/documentation/accessories/m2-hat-plus.html>`_.
 
 .. note::
-   | No additional configuration for the USB connection is required.
+   | No configuration is required for the USB connection.
 
 How to assemble
 ^^^^^^^^^^^^^^^^^^
 
 .. image:: ../_static/RPI-1-sm.png
+
+____________________________________
 
 .. image:: ../_static/RPI-2-sm.png
 
