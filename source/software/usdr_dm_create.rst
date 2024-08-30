@@ -37,7 +37,10 @@ Most options have reasonable default values, but some require a brief explanatio
 * Channels mask (option ``-C``) - is useful if you sdr device has more than one RF channel. This option allows you to turn some channels on or off as you wish according to the bit mask you specify.
 
   For example, you have an xSDR device with 3 channels on board. You can specify ``0b01(1)`` mask to enable ``channel#0`` and disable ``channel#1``, ``0b10(2)`` to enable ``channel#1`` and disable ``channel#0``, or ``0b11(3)`` to enable both. The ``-C`` option affects both TX and RX.
+* External Reference Clock:
 
+  * Reference Clock Path (option -a) - allows you to use a reference signal from external source for clocking you device. You can specify "external" for external clock use, or "internal" (by default) for device self-clocking. All the other values are invalid. Of course you should physically wire your sdr device to the clock source to use the "external" option.
+  * Reference clock frequency (-x option) - specifies the external clock signal frequency (in Hz).
 
 Available options
 -----------------
@@ -66,7 +69,8 @@ Available options
 * ``[-P TX_PATH ([tx_auto]|txb1|txb2|txw|txh)]``
 * ``[-u RX_GAIN_PGA [15]]`` - PGA gain
 * ``[-U RX_GAIN_VGA [15]]`` - VGA gain
-* ``[-a Reference clock path) []]``
+* ``[-a Reference clock path []]``
+* ``[-x Reference clock frequency [0(not set)]]``
 * ``[-B Calibration freq [0]]``
 * ``[-s Sync type [all]]``
 * ``[-Q <flag: Discover and exit>]`` - Discover devices and exit
