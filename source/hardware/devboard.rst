@@ -1,6 +1,6 @@
-======================
+=================
 Development Board
-======================
+=================
 
 The development board is intended for developers and advanced users. It features USB Type-C connectors and can be connected to a computer via a PCIe x4 slot
 
@@ -66,3 +66,12 @@ To use the full potential of the board, some cable re-routing needs to be applie
 
     If you don’t need to use the development board,
     you can route SMA cables directly to the uSDR connectors in the order you want.
+
+Reference clock
+---------------
+
+You have several options for the reference clock source:
+
+* uSDR's internal reference clock source: 26 MHz.
+* DevBoard's clock generator with 25 MHz. It can be adjusted in range of 23 to 41 MHz.
+* The connector for an external clock generator. You may use from 23 to 41Mhz and no more 3.3V peak voltage.
