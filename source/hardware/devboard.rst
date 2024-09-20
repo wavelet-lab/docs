@@ -96,6 +96,12 @@ The correct meaning of ``fe`` is:
 * params separator, should be colon here;
 * a colon-delimited params list.
 
+Example of enabling the DevBoard's reference clock oscillator:
+
+.. code-block:: bash
+
+   usdr_dm_create -t -r1e6 -c-1 -Y4 -E390e6 -e390e6 -I ./signal_1khz.ci16 -C1 -o -aexternal -Dfe=pciefev1:osc_on -x26e6
+
 The supported revisions are:
 
 * ``v0``
