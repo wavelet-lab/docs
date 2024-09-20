@@ -3,7 +3,7 @@ usdr_dm_create tool
 
 .. note::
    | You have to install ``usdr-tools`` package first.
-   | Please refer to the :doc:`/software/install` document.
+   | Please refer to the `this document <./install.rst>`_ document.
 
 
 This tool is used to transmit a simple sinus waveform with a given frequency and power and/or
@@ -223,3 +223,5 @@ The correct meaning of ``fe`` is:
   * ``osc_off`` - disable oscillator
 
 Note that you must know the exact reference clock frequency (the "-x" option) in order for your sdr device to work correctly.
+
+You can find much more information about the Deveplopemt board `here <../hardware/devboard.rst>`_
