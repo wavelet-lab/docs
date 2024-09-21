@@ -225,3 +225,35 @@ The correct meaning of ``fe`` is:
 Note that you must know the exact reference clock frequency (the "-x" option) in order for your sdr device to work correctly.
 
 You can find much more information about the Deveplopemt board `here <../hardware/devboard.rst>`_
+
+Device parameters (option -D)
+-----------------------------
+
+As we mentioned above, the device parameters string is a comma-separated list of ``name=val`` pairs. Note that each ``val`` may contain a sub-parameters list, which are generally separated by a colon. So, the most general template is:
+
+.. code-block:: bash
+
+   usdr_dm_create -D<name1>=<val1[:subname1[=subval1]:..:subvalN[=subvalN]]>..<nameM>=<valM>
+
+Available device parameters:
+
+* ``bus`` - specifies the device connection bus(es) name(s) and the filtering parameters, may be a colon-separated list
+
+  * ``bus=usb[@filter]``, where filter is ``<usb_addr>/<usb_port>/<usb_addr>`` (for instance - ``usb@3/1/31``)
+  * ``bus=pci[/filter]``
+  * ``bus=/dev/[filter]``
+* ``fe`` - `see DevBoard docs <../hardware/devboard.rst>`_;
+* ``cpulimit`` = max CPUs count, the usdr library can use;
+* ``loglevel`` = 0(errors only) .. 6+(everything), specifies the level of the usdr library logging;
+* xSDR:
+
+  * ``bifurcation`` = 1 : enable, 0 : disable
+  * ``nodec``
+* uSDR:
+
+  * ``extclk`` = (1 or 'o') : enable, otherwise - disable
+  * ``extref``
+* PCIE only:
+  
+  * ``mmapio`` = (1 or 'o') : enable, otherwise - disable, use mmap() instead of ioctl()
+
