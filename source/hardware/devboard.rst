@@ -72,10 +72,13 @@ Reference clock
 
 You have several options for the reference clock source:
 
-* uSDR's internal reference clock source: 26 MHz.
-* Blue DevBoard's reference clock generator runs at 25 MHz.
-* Green DevBoard's reference clock generator operates at 26 MHz.
-* The reference frequency can be adjusted in range of 23 to 41 MHz.
+* uSDR's internal reference clock source: 26 MHz - default operating mode;
+* The Development board reference clock:
+
+  * Blue DevBoard's reference clock generator runs at 25 MHz;
+  * Green DevBoard's reference clock generator operates at 26 MHz;
+  * The reference frequency can be adjusted in range of 23 to 41 MHz;
+  * Your should explicitly instruct your uSDR to get a reference clock from the Devboard - see section below or `usdr_dm_create utility docs <../software/usdr_dm_create.rst>`_.
 * Connection to an external clock generator. A frequency range of 23 to 41 MHz should be used and a peak voltage of up to 3.3 V should be provided.
 
 DevBoard additional options and settings
@@ -120,7 +123,7 @@ Each option is specified in a form like <name>_<suffix>, where suffix can be:
 
 The complete options list:
 
-* ``path_`` - operation mode, see belo;
+* ``path_`` - operation mode, see below;
 * ``gps``   - on/off GPS module;
 * ``osc_``  - on/off reference clock oscillator;
 * ``lna_``  - on/off LNA (Low Noise Amplifier);
