@@ -86,11 +86,36 @@ DevBoard additional options and settings
 
 Your DevBoard has a set of "secret" options. You can use them for fine tuning/tweaking and get the most out of your device.
 
-The most common way to access these options is using the ``-D`` option of the `usdr_dm_create utility <../software/usdr_dm_create.rst>`_. All the magic is in the ``fe`` variable settings. like 
+The most common way to access these options is using the ``-D`` option of the `usdr_dm_create utility <../software/usdr_dm_create.rst>`_. All the magic is in the ``fe`` (front-end) variable settings, like
 
 .. code-block:: bash
 
    usdr_dm_create -Dfe=<dev_board_id><dev_board_rev>:<par1>:<par2>:..:<parN>
+
+If you prefer to work with the API, a parameter string can be passed to the usdr_dmd_create_string() call:
+
+.. code-block:: C
+
+    pdm_dev_t dev = NULL;
+    int res = 0;
+    const char* params = "fe=pciefev1:osc_on";
+    /*
+    ..
+    */
+    res = usdr_dmd_create_string(params, &dev);
+    if (res)
+    {
+        /*
+        error handler
+        */
+    }
+
+where:
+
+* int res == 0 on success, errno otherwise;
+* const char* params - your parameter string (equivalent to -D option);
+* pdm_dev_t dev - your SDR connection handle.
+
 
 The correct meaning of ``fe`` is:
 
@@ -117,21 +142,21 @@ The supported revisions are:
 
 Each option is specified in a form like <name>_<suffix>, where suffix can be:
 
-* ``on``/``en`` to enable the option;
+* ``on`` or ``en`` to enable the option;
 * ``off`` to disable the option;
 * <val> - option-specific value.
 
 The complete options list:
 
-* ``path_`` - operation mode, see below;
-* ``gps``   - on/off GPS module;
-* ``osc_``  - on/off reference clock oscillator;
-* ``lna_``  - on/off LNA (Low Noise Amplifier);
-* ``pa_``   - on/off;
-* ``dac_``  - sets;
-* ``lb_``   - on/off;
-* ``uart_``
-* ``attn_`` - sets the value for the embedded attenuator.
+* ``path_`` - set operation mode, see below;
+* ``gps_``  - (on/off) GPS module;
+* ``osc_``  - (on/off) reference clock oscillator;
+* ``lna_``  - (on/off) LNA (Low Noise Amplifier);
+* ``pa_``   - (on/off) ???;
+* ``dac_``  - set      ???;
+* ``lb_``   - (on/off) ???;
+* ``uart_`` - (on/off) UART interface;
+* ``attn_`` - set the value for the built-in attenuator.
 
 Supported operation modes (``path_``):
 

@@ -210,7 +210,7 @@ Configure the utility to obtain an external reference clock from the Development
 
    usdr_dm_create -t -r1e6 -c-1 -Y4 -E390e6 -e390e6 -I ./signal_1khz.ci16 -C1 -o -aexternal -Dfe=pciefev1:osc_on -x26e6
 
-With the exception of ``-a`` and ``-x`` options, you should enable your Development board's reference clock generator. It can be done with option ``-D``, setting the appropriate value or ``fe`` parameter.
+With the exception of ``-a`` and ``-x`` options, you should enable your Development board's reference clock generator. It can be done with option ``-D``, setting the appropriate value or ``fe`` (front-end) parameter.
 
 The correct meaning of ``fe`` is:
 
@@ -242,18 +242,18 @@ Available device parameters:
   * ``bus=usb[@filter]``, where filter is ``<usb_addr>/<usb_port>/<usb_addr>`` (for instance - ``usb@3/1/31``)
   * ``bus=pci[/filter]``
   * ``bus=/dev/[filter]``
-* ``fe`` - `see DevBoard docs <../hardware/devboard.rst>`_;
+* ``fe`` - front-end settings, `see DevBoard docs <../hardware/devboard.rst>`_;
 * ``cpulimit`` = max CPUs count, the usdr library can use;
-* ``loglevel`` = 0(errors only) .. 6+(everything), specifies the level of the usdr library logging;
-* xSDR:
+* ``loglevel`` = 0(errors only) .. 6+(everything), specifies the severity level of the usdr library logging;
+* xSDR + USB only options:
 
-  * ``bifurcation`` = 1 : enable, 0 : disable
-  * ``nodec``
-* uSDR:
+  * ``bifurcation`` = 1|0, enable/disable channel bifurcation;
+  * ``nodec`` (no value) - ;
+* uSDR + USB only options:
 
-  * ``extclk`` = (1 or 'o') : enable, otherwise - disable
-  * ``extref``
-* PCIE only:
+  * ``extclk`` = (1 or 'o') : enable external reference clock selector, otherwise - disable. This option has just the same effect as ``-a external``;
+  * ``extref`` = external clock frequency, in Hz. This option has just the same effect as ``-x <fref>``;
+* PCIE only options:
   
   * ``mmapio`` = (1 or 'o') : enable, otherwise - disable, use mmap() instead of ioctl()
 
