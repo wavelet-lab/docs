@@ -1,6 +1,6 @@
-======================
+=================
 Development Board
-======================
+=================
 
 The development board is intended for developers and advanced users. It features USB Type-C connectors and can be connected to a computer via a PCIe x4 slot
 
@@ -66,3 +66,140 @@ To use the full potential of the board, some cable re-routing needs to be applie
 
     If you don’t need to use the development board,
     you can route SMA cables directly to the uSDR connectors in the order you want.
+
+Reference clock
+---------------
+
+You have several options for the reference clock source:
+
+* uSDR's internal reference clock source: 26 MHz - default operating mode;
+* The Development board reference clock:
+
+  * Blue DevBoard's reference clock generator runs at 25 MHz;
+  * Green DevBoard's reference clock generator operates at 26 MHz;
+  * The reference frequency can be adjusted in range of 23 to 41 MHz;
+  * Your should explicitly instruct your uSDR to get a reference clock from the Devboard - see section below or `usdr_dm_create utility docs <../software/usdr_dm_create.rst>`_.
+* Connection to an external clock generator. A frequency range of 23 to 41 MHz should be used and a peak voltage of up to 3.3 V should be provided.
+
+DevBoard additional options and settings
+----------------------------------------
+
+Your DevBoard has a set of "secret" options. You can use them for fine tuning/tweaking and get the most out of your device.
+
+The most common way to access these options is using the ``-D`` option of the `usdr_dm_create utility <../software/usdr_dm_create.rst>`_. All the magic is in the ``fe`` (front-end) variable settings, like
+
+.. code-block:: bash
+
+   usdr_dm_create -Dfe=<dev_board_id><dev_board_rev>:<par1>:<par2>:..:<parN>
+
+If you prefer to work with the API, a parameter string can be passed to the usdr_dmd_create_string() call:
+
+.. code-block:: C
+
+    pdm_dev_t dev = NULL;
+    int res = 0;
+    const char* params = "fe=pciefev1:osc_on";
+    /*
+    ..
+    */
+    res = usdr_dmd_create_string(params, &dev);
+    if (res)
+    {
+        /*
+        error handler
+        */
+    }
+
+where:
+
+* int res == 0 on success, errno otherwise;
+* const char* params - your parameter string (equivalent to -D option);
+* pdm_dev_t dev - your SDR connection handle.
+
+
+The correct meaning of ``fe`` is:
+
+* dev board name - ``pciefe`` here;
+* dev board revision, added without any separator;
+* params separator, should be colon here;
+* a colon-delimited params list.
+
+Example of enabling the DevBoard's reference clock oscillator:
+
+.. code-block:: bash
+
+   usdr_dm_create -t -r1e6 -c-1 -Y4 -E390e6 -e390e6 -I ./signal_1khz.ci16 -C1 -o -aexternal -Dfe=pciefev1:osc_on -x26e6
+
+The supported revisions are:
+
+* ``v0``
+* ``v0a``
+* ``v1``
+
+.. note::
+
+   If the revision string is unrecognized, ``v1`` is used.
+
+Each option is specified in a form like <name>_<suffix>, where suffix can be:
+
+* ``on`` or ``en`` to enable the option;
+* ``off`` to disable the option;
+* <val> - option-specific value.
+
+The complete options list:
+
+* ``path_`` - set operation mode, see below;
+* ``gps_``  - (on/off) GPS module;
+* ``osc_``  - (on/off) reference clock oscillator;
+* ``lna_``  - (on/off) LNA (Low Noise Amplifier);
+* ``pa_``   - (on/off) ???;
+* ``dac_``  - set      ???;
+* ``lb_``   - (on/off) ???;
+* ``uart_`` - (on/off) UART interface;
+* ``attn_`` - set the value for the built-in attenuator.
+
+Supported operation modes (``path_``):
+
+.. code-block:: C
+
+    // Duplexers path
+    { "band2", TRX_BAND2, RX_LPF1200, TX_LPF400, EN_PA | EN_LNA },
+    { "pcs", TRX_BAND2, RX_LPF1200, TX_LPF400, EN_PA | EN_LNA },
+    { "gsm1900", TRX_BAND2, RX_LPF1200, TX_LPF400, EN_PA | EN_LNA },
+
+    { "band3", TRX_BAND3, RX_LPF1200, TX_LPF400, EN_PA | EN_LNA },
+    { "dcs", TRX_BAND3, RX_LPF1200, TX_LPF400, EN_PA | EN_LNA },
+    { "gsm1800", TRX_BAND3, RX_LPF1200, TX_LPF400, EN_PA | EN_LNA },
+
+    { "band5", TRX_BAND5, RX_LPF1200, TX_LPF400, EN_PA | EN_LNA },
+    { "gsm850", TRX_BAND5, RX_LPF1200, TX_LPF400, EN_PA | EN_LNA },
+
+    { "band7", TRX_BAND7, RX_LPF1200, TX_LPF400, EN_PA | EN_LNA },
+    { "imte", TRX_BAND7, RX_LPF1200, TX_LPF400, EN_PA | EN_LNA },
+
+    { "band8", TRX_BAND8, RX_LPF1200, TX_LPF400, EN_PA | EN_LNA },
+    { "gsm900", TRX_BAND8, RX_LPF1200, TX_LPF400, EN_PA | EN_LNA },
+
+    // TX-only path
+    { "txlpf400", TRX_BYPASS, RX_LPF1200, TX_LPF400, EN_PA },
+    { "txlpf1200", TRX_BYPASS, RX_LPF1200, TX_LPF1200, EN_PA },
+    { "txlpf2100", TRX_BYPASS, RX_LPF1200, TX_LPF2100, EN_PA },
+    { "txlpf4200", TRX_BYPASS, RX_LPF1200, TX_BYPASS, EN_PA },
+
+    // RX-only path
+    { "rxlpf1200", TRX_BYPASS, RX_LPF1200, TX_LPF400, EN_LNA },
+    { "rxlpf2100", TRX_BYPASS, RX_LPF2100, TX_LPF400, EN_LNA },
+    { "rxbpf2100_3000", TRX_BYPASS, RX_BPF2100_3000, TX_LPF400, EN_LNA },
+    { "rxbpf3000_4200", TRX_BYPASS, RX_BPF3000_4200, TX_LPF400, EN_LNA },
+
+    // TDD / half duplex modes
+    { "trx0_400", TRX_BYPASS, RX_LPF1200, TX_LPF400, EN_PA | EN_LNA },
+    { "trx400_1200", TRX_BYPASS, RX_LPF1200, TX_LPF1200, EN_PA | EN_LNA },
+    { "trx1200_2100", TRX_BYPASS, RX_LPF2100, TX_LPF2100, EN_PA | EN_LNA },
+    { "trx2100_3000", TRX_BYPASS, RX_BPF2100_3000, TX_BYPASS, EN_PA | EN_LNA },
+    { "trx3000_4200", TRX_BYPASS, RX_BPF3000_4200, TX_BYPASS, EN_PA | EN_LNA },
+
+
+
+
+
