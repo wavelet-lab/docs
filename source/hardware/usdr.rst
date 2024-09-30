@@ -31,5 +31,5 @@ uSDR Pinout Diagram
    :alt: uSDR Pinout Diagram
 
 * RX(HF) - RF Input (for signal below 250 MHz)
-* RX - RF Input
-* TRX - RF Output
+* RX(UHF) - RF Input
+* TX(UHF) - RF Output
