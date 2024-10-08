@@ -54,7 +54,7 @@ Most options have reasonable default values, but some require a brief explanatio
 Available options
 -----------------
 
-* ``[-D device_parameters]`` - Device name & additional options, comma-separated
+* ``[-D device_parameters]`` - Device additional options & parameters, comma-separated
 * ``[-f RX_filename [./out.data]]`` - Output file for RX data recording
 * ``[-I TX_filename(s) (optionally colon-separated list)]`` - Input file(s) for TX stream(s)
 * ``[-o <flag: cycle TX from file>]`` - Transmit from file in a loop
