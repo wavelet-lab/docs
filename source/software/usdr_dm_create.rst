@@ -248,7 +248,7 @@ Available device parameters:
 * xSDR + USB only options:
 
   * ``bifurcation`` = 1|0, enable/disable channel bifurcation;
-  * ``nodec`` (no value) - ;
+  * ``nodec`` (no value) - disable decimation;
 * uSDR + USB only options:
 
   * ``extclk`` = (1 or 'o') : enable external reference clock selector, otherwise - disable. This option has just the same effect as ``-a external``;
