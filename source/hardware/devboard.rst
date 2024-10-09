@@ -77,9 +77,9 @@ You have several options for the reference clock source:
 
   * Blue DevBoard's reference clock generator runs at 25 MHz;
   * Green DevBoard's reference clock generator operates at 26 MHz;
-  * The reference frequency can be adjusted in range of 23 to 41 MHz;
+  * The devboard's reference frequency can be slightly adjusted using the voltage-controlled oscillator settings (the ``dac_`` option, see below);
   * Your should explicitly instruct your uSDR to get a reference clock from the Devboard - see section below or `usdr_dm_create utility docs <../software/usdr_dm_create.rst>`_.
-* Connection to an external clock generator. A frequency range of 23 to 41 MHz should be used and a peak voltage of up to 3.3 V should be provided.
+* Connection to an external clock generator. An input frequency range of 23 to 41 MHz should be used and a peak voltage of up to 3.3 V should be provided.
 
 DevBoard additional options and settings
 ----------------------------------------
@@ -153,7 +153,7 @@ The complete options list:
 * ``osc_``  - (on/off) reference clock oscillator;
 * ``lna_``  - (on/off) RX LNA (Low Noise Amplifier), typical gain +19.5dB (see `QPL9547TR7 <https://www.qorvo.com/products/d/da007268>`_ specs for details);
 * ``pa_``   - (on/off) TX Power Amplifier, typical gain +19.5dB (see `QPL9547TR7 <https://www.qorvo.com/products/d/da007268>`_ specs for details);
-* ``dac_``  - set      ??? (0..65535);
+* ``dac_``  - adjust the voltage-controlled reference clock oscillator frequency (valid values for correction are 0..65535). The default value is 32768 (no correction);
 * ``lb_``   - (on/off) RX->TX loopback;
 * ``uart_`` - (on/off) UART interface;
 * ``attn_`` - RX attenuator (0..18 corresponds to 0..-18dB).
