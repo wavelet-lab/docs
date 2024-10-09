@@ -151,12 +151,12 @@ The complete options list:
 * ``path_`` - set operation mode, see below;
 * ``gps_``  - (on/off) GPS module;
 * ``osc_``  - (on/off) reference clock oscillator;
-* ``lna_``  - (on/off) LNA (Low Noise Amplifier);
-* ``pa_``   - (on/off) ???;
-* ``dac_``  - set      ???;
-* ``lb_``   - (on/off) ???;
+* ``lna_``  - (on/off) RX LNA (Low Noise Amplifier), typical gain +19.5dB (see `QPL9547TR7 <https://www.qorvo.com/products/d/da007268>`_ specs for details);
+* ``pa_``   - (on/off) TX Power Amplifier, typical gain +19.5dB (see `QPL9547TR7 <https://www.qorvo.com/products/d/da007268>`_ specs for details);
+* ``dac_``  - set      ??? (0..65535);
+* ``lb_``   - (on/off) RX->TX loopback;
 * ``uart_`` - (on/off) UART interface;
-* ``attn_`` - set the value for the built-in attenuator.
+* ``attn_`` - RX attenuator (0..18 corresponds to 0..-18dB).
 
 Supported operation modes (``path_``):
 
