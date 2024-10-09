@@ -3,7 +3,7 @@ usdr_dm_create tool
 
 .. note::
    | You have to install ``usdr-tools`` package first.
-   | Please refer to the :doc:`/software/install` document.
+   | Please refer to the `this document <./install.rst>`_ document.
 
 
 This tool is used to transmit a simple sinus waveform with a given frequency and power and/or
@@ -25,8 +25,16 @@ Most options have reasonable default values, but some require a brief explanatio
 * Sample rate (``-r`` option) - measured in samples/sec or Hz, and determines the average number of a waveform samples transmitted per 1 second to/from usdr device via data exchange bus (USB or PCIE). The minimal sample rate it 1MHz, the maximal value depends on your bus - you should not expect >30MHz using USB, but PCIE can handle up to 65-70MHz.
 * Data block - a maximal piece of data, measured in samples, processed by one send/recv library call within one processing iteration. RX and TX data block sizes can be set by -S and -O options resp.
 * Data blocks count (``-c`` option) - the number of RX/TX iterations usdr_dm_create utility runs before normal exit. You can specify -1 for almoust 'infinite' data processing (can be interrupted by pressing CTRL-C anyway). However, if you 'replay' TX data from file (``-I`` option, see below), the iterations count depends on your file size - the inner loop will be interrupted by EOF. The utility will always play all the file data, even if it's size is less than/not multiple to one data block size - except you use ``-c`` option explicitly and specify the number of blocks smaller than your file contains (this is a way to partially transfer data from a file). You can not play a file that contains less than one data sample.
-* Input file for TX stream (option ``-I``) - if this option is specified and the name/path is correct, the utility opens the file and 'replays' it's content in TX RF stream. Data blocks are read in series according to the data format and data block size, specified by ``-F`` and ``-O`` options. It's not a problem if the last portion of the file data has it's size less than the TX data block size - the file will always be processed completely (within a sample size).
+* Output file for RX stream(s) (option ``-f``) - if this option is specified and the name/path is correct, the utility creates a file and saves the IQ data received from the RX channel (according to the specified data format) into it.
 
+  If your device supports more than one RX channel (such as xSDR) and an appropriate channel mask is set, a digital suffix will be added to the specified file name.
+* Input file(s) for TX stream(s) (option ``-I``) - if this option is specified and the name/path is correct, the utility opens the file and 'replays' it's content in TX RF stream. 
+
+  If your device supports more than one TX channel (such as xSDR) and an appropriate channel mask is specified, you can provide multiple files as a colon-separated list. If the number of channels exceeds the number of files, round-robin file rotation will be applied.
+
+  For example, you have xSDR with two TX channels, and you set a channel mask to 3 (0b11) to use both. You can set -I option as file1.dat:file2.dat, in this case ch#0 will pass the IQ data from file1.dat and ch#1 will pass IQ data from file2.dat. And if you specify only one file (-I file.dat), that file will be used by both ch#0 and ch#1.
+
+  Data blocks are read in series according to the data format and data block size, specified by ``-F`` and ``-O`` options. It's not a problem if the last portion of the file data has it's size less than the TX data block size - the file will always be processed completely (within a sample size).
 
   For example, you have ``ci16`` format and the data block size is 4096 samples. The physical block size (in bytes) will be = 2*2*4096 = 16384 bytes. If your file size is 100 000 bytes, the utility will transmit 4 blocks of 16384 bytes (4096 samples each) and 1 reduced block of 1696 bytes (424 samples).
 
@@ -41,13 +49,14 @@ Most options have reasonable default values, but some require a brief explanatio
 
   * Reference Clock Path (option -a) - allows you to use a reference signal from external source for clocking you device. You can specify "external" for external clock use, or "internal" (by default) for device self-clocking. All the other values are invalid. Of course you should physically wire your sdr device to the clock source to use the "external" option.
   * Reference clock frequency (-x option) - specifies the external clock signal frequency (in Hz).
+  * Below you can see an example of using an external reference clock from the Development Board.
 
 Available options
 -----------------
 
-* ``[-D device]`` - Path to the device
+* ``[-D device_parameters]`` - Device additional options & parameters, comma-separated
 * ``[-f RX_filename [./out.data]]`` - Output file for RX data recording
-* ``[-I TX_filename ]`` - Input file for TX stream
+* ``[-I TX_filename(s) (optionally colon-separated list)]`` - Input file(s) for TX stream(s)
 * ``[-o <flag: cycle TX from file>]`` - Transmit from file in a loop
 * ``[-c count [128]]`` - Number of data blocks to transmit/receive.
 * ``[-r samplerate [50e6]]`` - Sample rate in Hz, for both TX and RX
@@ -193,3 +202,58 @@ Also, you can get the actual extclock value (in Hz):
    res = usdr_dme_get_uint(dev, "/dm/sdr/refclk/frequency", pfref);
 
 where ``uint64_t *pfref`` is a pointer to your local var.
+
+Configure the utility to obtain an external reference clock from the Development board
+--------------------------------------------------------------------------------------
+
+.. code-block:: bash
+
+   usdr_dm_create -t -r1e6 -c-1 -Y4 -E390e6 -e390e6 -I ./signal_1khz.ci16 -C1 -o -aexternal -Dfe=pciefev1:osc_on -x26e6
+
+With the exception of ``-a`` and ``-x`` options, you should enable your Development board's reference clock generator. It can be done with option ``-D``, setting the appropriate value or ``fe`` (front-end) parameter.
+
+The correct meaning of ``fe`` is:
+
+* dev board name - ``pciefe`` in this case;
+* dev board revision, added without any separator - ``v1``
+* params separator, should be colon here;
+* a colon-delimited params list. We need only one parameter to work with oscillator, which can vary:
+
+  * ``osc_on`` (or ``osc_en``) - enable oscillator
+  * ``osc_off`` - disable oscillator
+
+Note that you must know the exact reference clock frequency (the "-x" option) in order for your sdr device to work correctly.
+
+You can find much more information about the Deveplopemt board `here <../hardware/devboard.rst>`_
+
+Device parameters (option -D)
+-----------------------------
+
+As we mentioned above, the device parameters string is a comma-separated list of ``name=val`` pairs. Note that each ``val`` may contain a sub-parameters list, which are generally separated by a colon. So, the most general template is:
+
+.. code-block:: bash
+
+   usdr_dm_create -D<name1>=<val1[:subname1[=subval1]:..:subvalN[=subvalN]]>..<nameM>=<valM>
+
+Available device parameters:
+
+* ``bus`` - specifies the device connection bus(es) name(s) and the filtering parameters, may be a colon-separated list
+
+  * ``bus=usb[@filter]``, where filter is ``<usb_addr>/<usb_port>/<usb_addr>`` (for instance - ``usb@3/1/31``)
+  * ``bus=pci[/filter]``
+  * ``bus=/dev/[filter]``
+* ``fe`` - front-end settings, `see DevBoard docs <../hardware/devboard.rst>`_;
+* ``cpulimit`` = max CPUs count, the usdr library can use;
+* ``loglevel`` = 0(errors only) .. 6+(everything), specifies the severity level of the usdr library logging;
+* xSDR + USB only options:
+
+  * ``bifurcation`` = 1|0, enable/disable channel bifurcation;
+  * ``nodec`` (no value) - disable decimation;
+* uSDR + USB only options:
+
+  * ``extclk`` = (1 or 'o') : enable external reference clock selector, otherwise - disable. This option has just the same effect as ``-a external``;
+  * ``extref`` = external clock frequency, in Hz. This option has just the same effect as ``-x <fref>``;
+* PCIE only options:
+  
+  * ``mmapio`` = (1 or 'o') : enable, otherwise - disable, use mmap() instead of ioctl()
+
