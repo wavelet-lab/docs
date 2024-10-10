@@ -154,6 +154,11 @@ The complete options list:
 * ``lna_``  - (on/off) RX LNA (Low Noise Amplifier), typical gain +19.5dB (see `QPL9547TR7 <https://www.qorvo.com/products/d/da007268>`_ specs for details);
 * ``pa_``   - (on/off) TX Power Amplifier, typical gain +19.5dB (see `QPL9547TR7 <https://www.qorvo.com/products/d/da007268>`_ specs for details);
 * ``dac_``  - adjust the voltage-controlled reference clock oscillator frequency (valid values for correction are 0..65535). The default value is 32768 (no correction);
+  
+  The typical adjustment range is around -275Hz(0)..0Hz(32768)..+275Hz(65535), i.e. ~0.008Hz per one point.
+
+  *Note: Some versions of development boards do not support adjustable reference frequency. Contact your dealer for details.*
+
 * ``lb_``   - (on/off) RX->TX loopback;
 * ``uart_`` - (on/off) UART interface;
 * ``attn_`` - RX attenuator (0..18 corresponds to 0..-18dB).
