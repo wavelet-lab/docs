@@ -72,14 +72,16 @@ Debug build
     cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_BUILD_TYPE=Debug ../src
     make
 
-Build the kernel module
------------------------
+Build and install the kernel module
+-----------------------------------
 
 .. code-block:: sh
 
     sudo apt install linux-headers-$(uname -r)
-    cd ../src/lib/lowlevel/pcie_uram/driver
+    cd ../src/lib/lowlevel/pcie_uram/driver/
     make
     # Sign the module
     sudo kmodsign sha512 /var/lib/shim-signed/mok/MOK.priv /var/lib/shim-signed/mok/MOK.der usdr_pcie_uram.ko
     sudo insmod usdr_pcie_uram.ko
+    # Copy the udev rules
+    sudo cp ./helpers/50-usdr-pcie-driver.rules /etc/udev/rules.d/
