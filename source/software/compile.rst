@@ -72,6 +72,25 @@ Debug build
     cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_BUILD_TYPE=Debug ../src
     make
 
+Enroll the MOK key
+------------------
+
+.. note::
+    | This step is required for the kernel module to be loaded on secure boot systems.
+    | The following steps only need to be done once.
+
+.. code-block:: sh
+
+    sudo apt-get install shim-signed mokutil
+    sudo update-secureboot-policy --new-key
+    sudo update-secureboot-policy --enroll-key
+
+* The utility will ask you to create a new password for the MOK key.
+* After that, reboot the system.
+* The BIOS interface will ask you to enroll the key.
+* You have to choose the option to enroll the key and enter the password you set before.
+* Boot the system back and continue with the next steps.
+
 Build and install the kernel module
 -----------------------------------
 
