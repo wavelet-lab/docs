@@ -150,7 +150,7 @@ Each option is specified in a form <name>_<suffix>, where the suffix can be:
 
 * ``on`` or ``en`` to enable the option;
 * ``off`` to disable the option;
-* <val>: option-specific value.
+* <val> - option-specific value.
 
 The complete options list:
 
