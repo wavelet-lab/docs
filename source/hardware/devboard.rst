@@ -70,29 +70,35 @@ To use the full potential of the board, some cable re-routing needs to be applie
 Reference clock
 ---------------
 
-You have several options for the reference clock source:
+Several options are available for the reference clock source:
 
-* uSDR's internal reference clock source: 26 MHz - default operating mode;
-* The Development board reference clock:
+* uSDR's internal reference clock source: 26 MHz (default mode)
+* Development board reference clock:
 
-  * Blue DevBoard's reference clock generator runs at 25 MHz;
-  * Green DevBoard's reference clock generator operates at 26 MHz;
-  * The devboard's reference frequency can be slightly adjusted using the voltage-controlled oscillator settings (the ``dac_`` option, see below);
-  * Your should explicitly instruct your uSDR to get a reference clock from the Devboard - see section below or `usdr_dm_create utility docs <../software/usdr_dm_create.rst>`_.
-* Connection to an external clock generator. An input frequency range of 23 to 41 MHz should be used and a peak voltage of up to 3.3 V should be provided.
+  * Development Board Rev 1.0 reference clock generator runs at 25 MHz;
+  * The dev board's reference frequency can be slightly adjusted using the voltage-controlled oscillator settings (the ``dac_`` option, see below);
+  * You must configure uSDR to use the reference clock from the DevBoard. For instructions, refer to the section below or `usdr_dm_create utility docs <../software/usdr_dm_create.rst>`_.
 
-DevBoard additional options and settings
+* Connection to an external clock generator. 
+
+  * The input frequency range should be between 23 and 41 MHz.
+  * The peak voltage should not exceed 3.3 V.
+
+
+
+Additional settings
 ----------------------------------------
 
-Your DevBoard has a set of "secret" options. You can use them for fine tuning/tweaking and get the most out of your device.
+Development Board includes a set of "hidden" options that allow for fine-tuning and optimization, enabling you to get the most out of your device.
 
-The most common way to access these options is using the ``-D`` option of the `usdr_dm_create utility <../software/usdr_dm_create.rst>`_. All the magic is in the ``fe`` (front-end) variable settings, like
+The most common way to access these options is by using the ``-D`` option of the `usdr_dm_create utility <../software/usdr_dm_create.rst>`_. The key lies in the ``fe`` (front-end) variable settings, such as:
 
 .. code-block:: bash
 
    usdr_dm_create -Dfe=<dev_board_id><dev_board_rev>:<par1>:<par2>:..:<parN>
 
-If you prefer to work with the API, a parameter string can be passed to the usdr_dmd_create_string() call:
+If you prefer to work with the API, you can pass a parameter string to the usdr_dmd_create_string() function call:
+
 
 .. code-block:: C
 
@@ -117,12 +123,12 @@ where:
 * pdm_dev_t dev - your SDR connection handle.
 
 
-The correct meaning of ``fe`` is:
+The correct meaning of ``fe``:
 
-* dev board name - ``pciefe`` here;
-* dev board revision, added without any separator;
-* params separator, should be colon here;
-* a colon-delimited params list.
+* Dev board name - ``pciefe``;
+* Dev board revision added without any separator;
+* Use a colon ``(:)`` as the parameter separator;
+* Colon-delimited parameters list.
 
 Example of enabling the DevBoard's reference clock oscillator:
 
@@ -140,24 +146,23 @@ The supported revisions are:
 
    If the revision string is unrecognized, ``v1`` is used.
 
-Each option is specified in a form like <name>_<suffix>, where suffix can be:
+Each option is specified in a form <name>_<suffix>, where the suffix can be:
 
 * ``on`` or ``en`` to enable the option;
 * ``off`` to disable the option;
-* <val> - option-specific value.
+* <val>: option-specific value.
 
 The complete options list:
 
-* ``path_`` - set operation mode, see below;
+* ``path_`` - set operation mode (see below);
 * ``gps_``  - (on/off) GPS module;
 * ``osc_``  - (on/off) reference clock oscillator;
 * ``lna_``  - (on/off) RX LNA (Low Noise Amplifier), typical gain +19.5dB (see `QPL9547TR7 <https://www.qorvo.com/products/d/da007268>`_ specs for details);
 * ``pa_``   - (on/off) TX Power Amplifier, typical gain +19.5dB (see `QPL9547TR7 <https://www.qorvo.com/products/d/da007268>`_ specs for details);
-* ``dac_``  - adjust the voltage-controlled reference clock oscillator frequency (valid values for correction are 0..65535). The default value is 32768 (no correction);
+* ``dac_``  - adjust the voltage-controlled reference clock oscillator frequency (valid range for correction: 0..65535). The default value is 32768 (no correction);
   
-  The typical adjustment range is around -275Hz(0)..0Hz(32768)..+275Hz(65535), i.e. ~0.008Hz per one point.
+Typical adjustment range: ~-275Hz ``(0)``..0Hz ``(32768)``..+275Hz ``(65535)``, i.e. ~0.008Hz per one point.
 
-  *Note: Some versions of development boards do not support adjustable reference frequency. Contact your dealer for details.*
 
 * ``lb_``   - (on/off) RX->TX loopback;
 * ``uart_`` - (on/off) UART interface;
