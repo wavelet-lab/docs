@@ -320,7 +320,7 @@ Available device parameters:
   * ``bus=usb[@filter]``, where filter is ``<usb_addr>/<usb_port>/<usb_addr>`` (for instance - ``usb@3/1/31``)
   * ``bus=pci[/filter]``
   * ``bus=/dev/[filter]``
-* ``fe`` - front-end settings, `see :doc:`/hardware/devboard`
+* ``fe`` - front-end settings, see :doc:`/hardware/devboard`
 * ``cpulimit`` = max CPUs count, the usdr library can use;
 * ``loglevel`` = 0(errors only) .. 6+(everything), specifies the verbosity level  of the uSDR library logging;
 * xSDR + USB only options:
