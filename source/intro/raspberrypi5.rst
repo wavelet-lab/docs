@@ -30,8 +30,8 @@ You have to enable 32-bit DMA and PCIe x1 mode.
 
 .. code-block:: sh
 
-    echo "dtparam=pciex1" | sudo tee /boot/firmware/config.txt
-    echo "dtoverlay=pcie-32bit-dma" | sudo tee /boot/firmware/config.txt
+    echo "dtparam=pciex1" | sudo tee -a /boot/firmware/config.txt
+    echo "dtoverlay=pcie-32bit-dma" | sudo tee -a /boot/firmware/config.txt
     sudo reboot
 
 Installation
