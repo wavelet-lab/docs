@@ -2,7 +2,7 @@ Using Raspberry Pi 5
 ====================
 
 .. note::
-   | To connect uSDR to Rasberry Pi 5 you need to use the MiniPCIe hat and MiniPCIe to M.2 E Key Adapter.
+   | To connect uSDR to Raspberry Pi 5 you need to use the MiniPCIe hat and MiniPCIe to M.2 E Key Adapter.
    | Please refer to the :doc:`/hardware/minipcieadapter` document and `M2 HAT+ <https://www.raspberrypi.com/documentation/accessories/m2-hat-plus.html>`_.
 
 .. note::
