@@ -24,7 +24,7 @@ Ubuntu 18.04
     sudo apt install build-essential dwarves -y
     sudo apt install libsoapysdr-dev libusb-1.0-0-dev check dkms curl -y
 
-    # Install latest version of Cmake
+    # Install Cmake 3.28.3
     apt-get install libssl-dev -y
     curl https://cmake.org/files/v3.28/cmake-3.28.3.tar.gz -o cmake-3.28.3.tar.gz
     tar xvf cmake-3.28.3.tar.gz
@@ -40,8 +40,8 @@ Ubuntu 18.04
     curl https://bootstrap.pypa.io/get-pip.py | python3.8
     python3.8 -m pip install pyyaml
 
-Ubuntu 20.04, 22.04, 24.04, Debian 12
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Ubuntu 20.04, 22.04, 24.04, Debian 12, Raspberry Pi OS, Raspberry Pi OS Lite
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: sh
 

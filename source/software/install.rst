@@ -46,7 +46,7 @@ Install the development package
 
     sudo apt install libusdr-dev
 
-Ubuntu 18.04, Debian 12
+Ubuntu 18.04, Debian 12, Raspberry Pi OS, Raspberry Pi OS Lite
 -----------------------
 
 Download
@@ -55,7 +55,7 @@ Download
 Go to `releases page <https://github.com/wavelet-lab/usdr-lib/releases>`_ and download the corresponding archive.
 
 * Ubuntu 18.04: ``usdr_X.Y.Z~bionic1.tar``
-* Debian 12: ``usdr_X.Y.Z~bookworm1.tar``
+* Debian 12, Raspberry Pi OS, Raspberry Pi OS Lite: ``usdr_X.Y.Z~bookworm1.tar``
 
 Unpack
 ^^^^^^
@@ -67,8 +67,8 @@ Ubuntu 18.04
 
     tar xf usdr_X.Y.Z~bionic1.tar
 
-Debian 12
-"""""""""
+Debian 12, Raspberry Pi OS, Raspberry Pi OS Lite
+""""""""""""""""""""""""""""""""""""""""""""""""
 
 .. code-block:: sh
 
