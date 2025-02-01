@@ -2,7 +2,7 @@
 xSDR module
 ===========
 
-A tiny 2RX/TX, single-sided M.2 2230 A+E key form factor Software Defined Radio board.
+A tiny 2RX/2TX, single-sided M.2 2230 A+E key form factor Software Defined Radio board.
 
 
 .. image:: ../_static/hw_xsdr.png
@@ -23,7 +23,8 @@ Features & Specifications
 * PCIe support in legacy mode
 * MHF4 RF connectors
 
-
+xSDR Pinout Diagram
+-------------------
 
 * RX - RF Input
-* TRX - RF Output
+* TX - RF Output
