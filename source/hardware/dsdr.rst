@@ -74,3 +74,9 @@ Legacy Software Support
 =======================
 
 - GNU Radio, srsRAN, and many more through SoapySDR.
+
+Contact
+=======
+
+- **Website:** [wavelet-lab.com](https://wavelet-lab.com)  
+- **Email:** [contact@wavelet-lab.com](mailto:contact@wavelet-lab.com)  
