@@ -24,6 +24,7 @@ If you have any questions or need further assistance, please don’t hesitate to
 
    /hardware/usdr
    /hardware/xsdr
+   /hardware/dsdr
    /hardware/devboard
    /hardware/usbadapter
    /hardware/minipcieadapter
