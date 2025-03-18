@@ -77,7 +77,7 @@ Legacy Software Support
 
 
 uSDR Pinout Diagram
--------------------
+=======================
 
 .. image:: ../_static/hw_usdr_2.jpg
    :alt: uSDR Pinout Diagram
