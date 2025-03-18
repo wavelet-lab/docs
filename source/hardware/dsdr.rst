@@ -78,5 +78,6 @@ Legacy Software Support
 Contact
 =======
 
-- **Website:** [wavelet-lab.com](https://wavelet-lab.com)  
-- **Email:** [contact@wavelet-lab.com](mailto:contact@wavelet-lab.com)  
+- **Website:** `Wavelet Lab <https://wavelet-lab.com>`_  
+- **Email:** `contact@wavelet-lab.com <mailto:contact@wavelet-lab.com>`_
+
