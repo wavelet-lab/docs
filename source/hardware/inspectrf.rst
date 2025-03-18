@@ -2,7 +2,7 @@
 InSpectRF
 =========
 
-A **superheterodyne receiver solution** offering **wide dynamic range and linearity** for **spectrum monitoring applications**.
+A superheterodyne receiver solution offering wide dynamic range and linearity for spectrum monitoring applications.
 
 .. image:: ../_static/inspectrf.jpg
    :alt: inspectrf
@@ -48,26 +48,26 @@ RF Specifications
     - **2, 3, 4, 5, 6, 8, 9, 10, 12, 16, 18, 20, 24, 32, 48, 64**  
 
 **Channel Bandwidth**  
-  - **100 MHz filtered usable bandwidth**  
+  - 100 MHz filtered usable bandwidth 
 
 Target Applications
 ===================
 
 **Cellular Communication Monitoring**  
-  - **Real-time 4G/5G base station spectrum monitoring**  
-  - **Up to 100 MHz analog bandwidth**  
-  - **Indoor mapping and link quality control**  
+  - Real-time 4G/5G base station spectrum monitoring  
+  - Up to 100 MHz analog bandwidth
+  - Indoor mapping and link quality control  
 
 **Instrumentation**  
-  - **High linearity and dynamic range** ideal for **lab usage**  
-  - **RF sampling architecture eliminates RX LO & RX IQ imbalance calibration**  
-  - **Superior EVM out of the box**  
+  - High linearity and dynamic range ideal for lab usage  
+  - RF sampling architecture eliminates RX LO & RX IQ imbalance calibration  
+  - Superior EVM out of the box  
 
 **Data Acquisition**  
-  - **Built-in Raspberry Pi 5** enables onboard **data analysis and storage**  
-  - **Seamless integration with WSDR** for **automated data acquisition systems**  
+  - Built-in Raspberry Pi 5 enables onboard data analysis and storage  
+  - Seamless integration with WSDR for automated data acquisition systems  
 
 Legacy Software Support
 =======================
 
-- **GNU Radio and many more through SoapySDR**  
+- GNU Radio and many more through SoapySDR 
