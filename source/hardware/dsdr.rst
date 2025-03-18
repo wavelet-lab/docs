@@ -1,5 +1,5 @@
 ====
-dSDR
+dSDR module
 ====
 
 An M.2 advanced direct-sampling SDR with phase-coherent 6 RX and 4 TX channels. The direct sampling architecture eliminates RX/TX LO leakage and RX/TX IQ imbalance issues, providing better overall linearity, superior phase noise, a more compact design, and greater flexibility.
