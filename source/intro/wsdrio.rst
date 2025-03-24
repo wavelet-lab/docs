@@ -14,3 +14,8 @@ wsdr.io Platform
       <source src="_static/video/test_v.mp4" type="video/mp4">
       Your browser does not support the video tag.
    </video>
+
+.. raw:: html
+
+   <img src="_static/video/test_v.gif" width="600">
+
