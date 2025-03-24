@@ -19,3 +19,9 @@ wsdr.io Platform
 
    <img src="_static/video/test_v.gif" width="600">
 
+
+.. image:: _static/video/dsdr.jpg
+   :alt: My SDR Module
+   :width: 500px
+   :align: center
+
