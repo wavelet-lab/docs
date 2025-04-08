@@ -1,4 +1,4 @@
-Using Applications
+Applications
 ==================
 
 The WebSDR platform provides a collection of ready-to-use applications for signal processing and SDR tasks. You can launch, configure, and manage applications seamlessly within the **Applications** and **Projects** tabs.
