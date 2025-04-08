@@ -60,7 +60,4 @@ The WebSDR platform enables global collaboration and signal sharing, making SDR 
 ✅ **Cross-Platform:** Works on Linux, Windows, and macOS.  
 ✅ **Scalability:** Add extra SDR hardware to expand or distribute workloads.  
 ✅ **Device Sharing & Multitasking:** Multiple users can run separate applications on the same SDR.  
-✅ **Universal App Execution:** Access applications from device, host, or cloud.  
-
-
-
+✅ **Universal App Execution:** Access applications from device, host, or cloud.
