@@ -11,11 +11,11 @@ If you have any questions or need further assistance, please don’t hesitate to
 .. toctree::
    :maxdepth: 2
    :hidden:
-   :caption: Getting started
+   :caption: WebSDR Platform
 
    /intro/wsdrio
-   /intro/raspberrypi5
-   /intro/srslte
+   
+ 
 
 .. toctree::
    :maxdepth: 2
@@ -50,6 +50,7 @@ If you have any questions or need further assistance, please don’t hesitate to
 
    /guides/heatsink
    /guides/firmware
+   /intro/raspberrypi5
 
 .. toctree::
    :maxdepth: 2
