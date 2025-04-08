@@ -16,6 +16,10 @@ If you have any questions or need further assistance, please don’t hesitate to
    /intro/getting_started
    /intro/applications
    /intro/editing_applications
+   /intro/how_to_create_app
+   /intro/sharing_and_streams
+   /intro/signal_analyzer
+   /intro/ready_to_use_apps
  
 
 .. toctree::
