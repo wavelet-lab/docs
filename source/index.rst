@@ -11,9 +11,8 @@ If you have any questions or need further assistance, please don’t hesitate to
 .. toctree::
    :maxdepth: 2
    :hidden:
-   :caption: WebSDR Platform
+   :caption: WSDR.IO Platform
 
-   /intro/wsdrio
    /intro/getting_started
    /intro/applications
    /intro/editing_applications
