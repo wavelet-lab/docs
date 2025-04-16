@@ -43,7 +43,9 @@ The **Streams** app saves incoming SDR streams for reuse.
 - Enter a **Name**.
 - Paste the **Device Stream URL**.
 - Select **Stream Type**:
+
   - WebSocket (Uncontrolled)
+
   - WebSocket with Control
 
 - Ensure **Data Type** matches original stream.
@@ -67,8 +69,14 @@ Store and share **IQ samples** in the WSDR.io platform.
   - Azure (external integration)
 
 - Set **Access Type**:
+
   - Private Container
+
   - Shared Container
+
+.. note::
+ ‘Private container’ is for your files, and the ‘shared container’ is for the files that are being shared with you. 
+
 
 - Create directories, upload files.
 
