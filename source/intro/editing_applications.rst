@@ -52,4 +52,4 @@ Blocks are categorized by their function:
    :alt: Layout
 
 
-*For detailed guidance, click* **"How to Create an App."**
+*For detailed guidance, click* :doc:`intro/how_to_create_app`
