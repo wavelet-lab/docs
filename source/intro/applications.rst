@@ -10,6 +10,9 @@ The WebSDR platform provides a collection of ready-to-use applications for signa
 - Click the **+** button to open an app.
 - If you do not assign a name, it will be saved as a general app name in your projects.
 
+.. image:: ../_static/wsdr/apps.jpg
+   :alt: Apps
+
 2. Managing Applications
 -------------------------
 
@@ -21,6 +24,9 @@ In the **Projects** tab, you can:
 - **Delete** unwanted apps.
 - **Duplicate** apps for further modifications.
 
+.. image:: ../_static/wsdr/app_edit.jpg
+   :alt: Apps Edit
+
 3. Selecting an Input Source
 ----------------------------
 
@@ -30,6 +36,9 @@ Each application includes a **Source** selection option, allowing you to choose:
 ✅ **File-based input**  
 ✅ **Live stream**  
 ✅ **Cloud storage**
+
+.. image:: ../_static/wsdr/source_input.jpg
+   :alt: Source
 
 4. Adjusting Parameters
 ------------------------
@@ -42,3 +51,7 @@ All applications start with pre-configured default parameters.
 --------------------------
 
 - Click **Run** to start processing the signal.
+
+.. image:: ../_static/wsdr/run.jpg
+   :alt: Run
+
