@@ -52,8 +52,5 @@ Blocks are categorized by their function:
    :alt: Layout
 
 
-*For detailed guidance, click* :doc:`intro/how_to_create_app`
+*For detailed guidance, click* :doc:`/intro/how_to_create_app`
 
-See the :ref:`how-to-create-app` section for full instructions.
-
-See the :doc:`step-by-step guide to building apps <intro/how_to_create_app>`.
