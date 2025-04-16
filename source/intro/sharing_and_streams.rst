@@ -94,8 +94,11 @@ Store and share **IQ samples** in the WSDR.io platform.
 
 - Use **Source Selection** in any app.
 - If storage isn't visible:
+
   - Switch to **Edit Mode**
+
   - Enable the **Select Source** block parameter
+
   - Click **Save**, return to **Play Mode**
 
-...content...
+
