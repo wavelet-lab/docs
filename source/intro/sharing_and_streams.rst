@@ -24,8 +24,11 @@ The **Share Device** app allows you to share your SDR with others via WebSocket.
 - Open **Applications**, select **Share Device**.
 - Choose an SDR Source (USB device, network stream).
 - Configure Parameters (frequency, bandwidth, gain).
-- Copy and share the **Device Stream URL**.
+- Copy and share the **Device Stream URL** with another users.
 - Click **Run** to start streaming.
+
+.. image:: ../_static/wsdr/share_d.jpg
+   :alt:
 
 .. note::
    Any WSDR.io application can generate a stream.
@@ -34,7 +37,7 @@ The **Share Device** app allows you to share your SDR with others via WebSocket.
 2. Streams
 ----------
 
-The **Streams** app saves incoming SDR streams for reuse.
+The **Streams** tab saves incoming SDR streams.
 
 **Steps to Create a Stream:**
 
@@ -43,10 +46,15 @@ The **Streams** app saves incoming SDR streams for reuse.
 - Enter a **Name**.
 - Paste the **Device Stream URL**.
 - Select **Stream Type**:
+
   - WebSocket (Uncontrolled)
+
   - WebSocket with Control
 
 - Ensure **Data Type** matches original stream.
+
+.. image:: ../_static/wsdr/stream_c.jpg
+   :alt:
 
 .. note::
    Controlled WebSocket streams need a local daemon tool.
@@ -67,16 +75,31 @@ Store and share **IQ samples** in the WSDR.io platform.
   - Azure (external integration)
 
 - Set **Access Type**:
+
   - Private Container
+
   - Shared Container
+
+.. image:: ../_static/wsdr/storage_container.jpg
+   :alt:
+
+.. note::
+ ‘Private container’ is for your files, and the ‘shared container’ is for the files being shared with you. 
+
+
 
 - Create directories, upload files.
 
 **To Share a File:**
 
+.. image:: ../_static/wsdr/share_file.jpg
+
 - Click **+** to create a share link.
+.. image:: ../_static/wsdr/share_file_2.jpg
+
 - Send the link to another user.
-- They add the link to their Shared Container.
+- They added the link to their shared container in cloud storage.
+.. image:: ../_static/wsdr/shared_file_link.jpg
 
 **To Revoke Access:**
 
@@ -85,9 +108,17 @@ Store and share **IQ samples** in the WSDR.io platform.
 **Open Files in Applications:**
 
 - Use **Source Selection** in any app.
+.. image:: ../_static/wsdr/shared_file_stream.jpg
+
 - If storage isn't visible:
+
   - Switch to **Edit Mode**
-  - Enable the **Select Source** block parameter
+
+  - Enable **Storages** parameter in SourceSelect block
+
   - Click **Save**, return to **Play Mode**
 
-...content...
+.. image:: ../_static/wsdr/storage_enb.jpg
+.. image:: ../_static/wsdr/storage_added.jpg
+
+

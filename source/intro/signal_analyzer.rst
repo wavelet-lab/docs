@@ -28,6 +28,8 @@ WSDR currently supports FM, GMSK, and FSK modulation, with ongoing development f
 2. Getting Started
 ------------------
 
+.. image:: ../_static/wsdr/signal_anlz.jpg
+
 **A. Opening a Signal Source**
 
 - Go to **Applications** and select **Signal Analyzer**  
@@ -65,7 +67,9 @@ Choose the Signal View:
 
 - Click **Record Signal** to start recording live data  
 - To load a file, select from PC or Cloud Storage  
-- Store analyzed signals in Cloud Storage for later use  
+- Store analyzed signals in Cloud Storage for later use 
+
+
 
 3. Additional Notes
 -------------------
