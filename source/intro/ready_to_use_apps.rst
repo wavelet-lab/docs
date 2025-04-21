@@ -8,7 +8,7 @@ FM Receiver
 
 The FM Receiver application on WSDR.io allows users to tune into FM radio stations, demodulate signals, and visualize frequency spectrums in real-time.
 
-**Key Features:**
+**Key Features**
 
 - Real-time FM signal reception & demodulation  
 - Wide/Narrow FM band selection  
@@ -37,181 +37,170 @@ The FM Receiver application on WSDR.io allows users to tune into FM radio statio
 **Step 3: Configure Radio Settings**
 
 1. **Set the Frequency**  
-   - Adjust "Frequency" (e.g., 95.4 MHz)  
-   - Fine-tune with "Tune Frequency" in kHz  
+   - Adjust the main frequency (e.g., 95.4 MHz)  
+   - Use the "Tune Frequency" field for fine-tuning in kHz  
 
 2. **Adjust Bandwidth**  
-   - Default 500 kHz  
-   - Larger bandwidth = more data, more processing  
+   - Default: 500 kHz  
+   - Larger values provide more signal data  
 
 3. **Configure Gain**  
-   - Use Gain Slider (0 - 24 dB)  
+   - Adjust using the slider (0–24 dB)  
 
 4. **Set the Sample Rate**  
-   - Choose (e.g., 1 MHz)  
+   - Choose a rate (e.g., 1 MHz)  
 
 5. **Select FM Demodulation Mode**  
-   - Choose WBFM or NBFM  
+   - Choose between **WBFM** and **NBFM**  
 
 **Step 4: Adjust Audio Settings**
 
-- Use the Volume Slider  
-- Ensure system audio output is configured correctly  
+- Use the volume slider  
+- Ensure your system’s audio output is active  
 
 **Step 5: Customize the Visual Display**
 
-1. **Waterfall Spectrum Display (Left Panel)**  
-   - Displays frequency spectrum over time  
-   - Color intensity = signal strength  
+1. **Waterfall Spectrum (Left Panel)**  
+   - Frequency over time; color indicates signal strength  
 
-2. **Power Spectral Density (Top Right Panel)**  
-   - Shows instantaneous signal power  
+2. **Power Spectral Density (Top Right)**  
+   - Real-time signal power display  
 
-3. **Demodulated FM Spectrum (Bottom Right Panel)**  
-   - Displays demodulated FM  
-   - FFT configurable  
+3. **Demodulated Spectrum (Bottom Right)**  
+   - Output of the FM demodulator  
 
 **Step 6: Configure Advanced Parameters**
 
-1. **Adjust FPS (Frame Rate per Second)**  
-   - Default: 20 FPS  
+- **FPS (Frames Per Second)**: Default 20  
+- **Alpha Blending**: Default 0.1  
+- **FFT & Windowing Options**:  
+  - FFT sizes: 1024, 2048, 4096  
+  - Window types: Blackman-Harris, Hanning, Hamming  
 
-2. **Set Alpha Blending**  
-   - Default: 0.1  
-
-3. **Configure FFT & Windowing**  
-   - FFT Size: 1024, 2048, 4096  
-   - Window Types: Blackman-Harris, Hanning, Hamming  
-
-**Step 7: Start Receiving & Listening**
+**Step 7: Start Listening**
 
 - Click **Play**  
-- Scroll to fine-tune frequency  
-- View changes in real-time visualization  
+- Scroll to adjust frequency  
+- Monitor signals in real time  
 
 Cellular Network
 ----------------
 
 **Overview**
 
-The WSDR Cellular Network application enables deployment and management of a **2G GSM cellular network** based on the Osmocom stack. This cloud-based setup is ideal for experimentation, research, and development.
+The Cellular Network application enables deployment and control of a **2G GSM network** based on the Osmocom stack. Ideal for development, testing, and research in a cloud-native SDR environment.
 
 **Getting Started**
 
-1. **Interface Overview**
+**Step 1: Interface Overview**
 
-- **Device Selection**: uSDR via USB Adapter or Dev Board  
-- **Configuration Dropdown**: Select BTS config  
-- **Osmo-BTS Log**: Real-time BTS status  
+- **Device Selection**: uSDR (via USB or Dev Board)  
+- **Configuration Dropdown**: Choose BTS profile  
+- **Osmo-BTS Log**: Live BTS operation log  
 - **Network Status Bar**:  
-  - TX / RX frequencies  
-  - Connection instructions for mobile  
+  - Shows TX/RX frequencies  
+  - Includes mobile connection info  
 
-2. **BTS Configuration**
+**Step 2: BTS Configuration**
 
-- Select from predefined BTS configurations  
-- ⚠️ Note: Current version supports a limited set  
-- Each config includes:  
+- Choose from available base station configs  
+  - ⚠️ Limited options in current version  
+- Config includes:  
   - Band (e.g., GSM900, DCS1800)  
   - ARFCN  
-  - Tx/Rx Frequency pair  
+  - Tx/Rx Frequency  
 
-3. **Registering to the Network**
+**Step 3: Registering to the Network**
 
 - **Plug in uSDR**  
-  - Use USB adapter or USB-C dev board  
+  - Via USB Adapter or USB-C dev board  
 
-- **Select the Device**  
-  - Choose from dropdown in the app  
+- **Select your Device**  
+  - Choose from dropdown  
 
 - **Start the BTS**  
-  - Click **Play** to initialize  
-  - ⚠️ Stopping BTS requires power cycle to restart  
+  - Click **Play**  
+  - ⚠️ A power cycle is needed if BTS is stopped  
 
-- **Insert an Unlocked SIM Card**  
-  - Carrier-locked SIMs won’t work  
+- **Insert Unlocked SIM**  
+  - Locked SIMs are not supported  
 
 **On Your Android Device:**
 
-- Go to:  
-  Settings → Connections → Mobile networks → Network operators → Scan networks  
-- Select network named **901-70**  
-- Dial *#100# to confirm registration
+- Navigate to:  
+  `Settings → Connections → Mobile networks → Network operators → Scan networks`  
+- Select **901-70**  
+- Dial `*#100#` to confirm successful registration  
 
 Signal Analyzer
-----------------
+---------------
 
-The Signal Analyzer application in WSDR.io allows users to analyze digital and analog signals, supporting multiple modulation types and advanced visualization features. It can process both live signals and pre-recorded files.
+**Overview**
 
-1. Features
+The Signal Analyzer application provides powerful tools for analyzing both digital and analog I/Q signals. It supports multiple modulation types, decoding formats, and visualization modes for signal analysis and protocol inspection.
 
-WSDR currently supports FM, GMSK, and FSK modulation, with ongoing development for additional modulations.
+**Key Features**
 
-**Multiple Signal Views:**
+- Analyze live or recorded I/Q data  
+- Supports FM, GMSK, and FSK modulations  
+- Decode BTLE and NRF protocols  
+- View multiple signal representations  
 
-- **IQ View** – In-phase & Quadrature representation  
-- **Analog View** – Time-domain signal visualization  
-- **Power View** – Signal strength over time  
-- **Demodulated View** – Extracted baseband signal  
+**Visualization Modes**
 
-**Current Decoding Options:**
+- **I/Q View** – Phase and amplitude scatter  
+- **Analog View** – Raw waveform (time-domain)  
+- **Power View** – Energy over time  
+- **Demodulated View** – Decoded baseband  
 
-- **BTLE** (Bluetooth Low Energy)  
-- **NRF** (Nordic Semiconductor RF protocol)  
-
-**Recording & File Loading:**
-
-- Record a live signal directly from SDR  
-- Load a pre-recorded file from a PC or Cloud Storage  
-
-2. Getting Started
+**Getting Started**
 
 .. image:: ../_static/wsdr/signal_anlz.jpg
 
-**A. Opening a Signal Source**
+**Step 1: Open the App**
 
-- Go to **Applications** and select **Signal Analyzer**  
-- Choose a signal source:  
-  - **Live Signal** – Direct from SDR device  
-  - **Pre-Recorded File** – Load from PC or Cloud Storage  
+- Go to **Applications → Signal Analyzer**  
+- Click **+** to start a new session  
 
-**B. Configuring Signal Parameters**
+**Step 2: Choose a Signal Source**
 
-- Set the Rate (e.g., 100 kHz)  
-- Select Modulation Type (FM, GMSK, or FSK)  
-- Adjust Signal Processing Options:  
-  - **Samples/Symbol** – Defines signal resolution  
-  - **Modulation Index** – Adjusts signal characteristics  
-  - **Threshold & Error Settings** – Useful for decoding  
+- **Live Stream** – Direct from SDR  
+- **Pre-Recorded File** – From PC or Cloud Storage  
+- **Shared Stream** – From another application  
 
-Choose the Signal View:
+**Step 3: Configure Signal Parameters**
+
+- **Sample Rate** – e.g., 100 kHz  
+- **Modulation Type** – FM, GMSK, FSK  
+- **Samples per Symbol** – e.g., 10  
+- **Threshold / Error Settings** – Set decoding tolerance  
+- **Modulation Index** – Adjust demodulator behavior  
+
+**Step 4: Select a View Mode**
 
 - IQ View  
 - Analog View  
 - Power View  
 - Demodulated View  
 
-**C. Decoding and Analyzing the Signal**
+**Step 5: Decode & Analyze**
 
-- Enable **Vector Diagram** to visualize the constellation  
-- Select **Data Format**: Bits or Symbols  
-- Choose Decoder:  
-  - BTLE  
-  - NRF  
-- Specify the Channel (e.g., 37 for Bluetooth)  
-- View the decoded bits in the bottom section  
+- Enable **Vector Diagram**  
+- Choose **Data Format**: Bits or Symbols  
+- Select Decoder:  
+  - **BTLE**  
+  - **NRF**  
+- Set channel (e.g., 37 for Bluetooth)  
+- View decoded output in the bottom section  
 
-**D. Recording and Saving Data**
+**Step 6: Save or Export**
 
-- Click **Record Signal** to start recording live data  
-- To load a file, select from PC or Cloud Storage  
-- Store analyzed signals in Cloud Storage for later use 
+- Click **Record Signal** to capture live data  
+- Load or save files from Cloud Storage  
+- Create new signals from selected portions  
 
+**Additional Notes**
 
-
-3. Additional Notes
-
-- Ensure the correct modulation type is selected for accurate decoding  
-- The vector diagram helps visualize signal integrity  
-- Cloud Storage Integration allows seamless access across WSDR.io applications  
-
+- Always match modulation type with source content  
+- Vector diagrams help identify distortions or drift  
+- Saved files can be reloaded into other WSDR applications  
