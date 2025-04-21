@@ -22,11 +22,21 @@ Step 1: Create a New Project
 - Click **Create Project** and enter a name.
 - Switch to **Edit Mode** (for block configuration).
 
+.. image:: ../_static/wsdr/edit_mode.jpg
+   :alt: edit mode
+
+
 **Understanding the Grid System**
+
+.. image:: ../_static/wsdr/grid.jpg
 
 - The **Grid block** is the main canvas of your application.
 - By default, it consists of **10 columns × 10 rows** (modifiable in the Layout tab).
 - Click **Save** to apply any changes.
+
+.. image:: ../_static/wsdr/save.jpg
+
+
 
 Step 2: Add a Signal Source
 ---------------------------
@@ -38,6 +48,8 @@ Step 2: Add a Signal Source
 
 - Assign a caption.
 - Enable **USB (usbs)** to activate the USB device.
+
+.. image:: ../_static/wsdr/drag.jpg
 
 **Open the Layout Tab:**
 
@@ -52,12 +64,14 @@ Step 3: Establish Connections
 
 To ensure the SDR device is recognized:
 
-- Connect **Device (WebUSBSource)** → **Device (Grid)**.
+- Connect **Device (WebUSBSource)** → **Device (SourceSelect)**.
 
 **Set up SDR Start/Stop Control:**
 
 - Connect **Started (Grid)** → **Disable (Source Select)**.
 - Connect **Source Selected (Source Select)** → **Enable Control (Grid)**.
+
+.. image:: ../_static/wsdr/establish.jpg
 
 Step 4: Add Input Controls
 --------------------------
@@ -71,9 +85,11 @@ To allow frequency control via UI:
 
 - **Value (Input_Frequency)** → **Frequency (WebUSBSource)**.
 - **Min/Max** parameters → **WebUSBSource**.
-- **Control Source Select** → **Enable (Input_Frequency)**.
+- **Control_Source_Select (SourceSelect)** → **Disable (Input_Frequency)**.
 
 - Open the **Layout Tab**, drag it to position, and click **Save**.
+
+.. image:: ../_static/wsdr/add_input.jpg
 
 🔹 Repeat these steps for any additional input controls.
 
@@ -93,11 +109,15 @@ To visualize SDR output:
 
 - Link **Canvas (WaterfallSink)** → **Canvas (UI Canvas Block)**.
 
+.. image:: ../_static/wsdr/waterfall.jpg
+
 **Layout Tab:**
 
 - Position **WaterfallSink** below the control menu.
 - Resize it for display.
 - Click **Save**.
+
+.. image:: ../_static/wsdr/wf_s_lay.jpg
 
 Step 6: Test the Application
 ----------------------------
@@ -106,7 +126,7 @@ Step 6: Test the Application
 - Select the Source.
 - Click **Play**.
 
-Your uSDR will now receive a signal at **100 MHz**, displayed in the waterfall.
+.. image:: ../_static/wsdr/app_b_final.jpg
 
 - Use **mouse scroll** to change the frequency dynamically.
 
