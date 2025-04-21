@@ -1,4 +1,4 @@
-Editing Applications: Edit Mode & Play Mode
+Editing Applications: Edit & Play Mode
 ===========================================
 
 - **Edit Mode:** Used for configuring function blocks and customizing the application.
