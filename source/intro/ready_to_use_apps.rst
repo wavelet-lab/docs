@@ -83,6 +83,14 @@ The FM Receiver application on WSDR.io allows users to tune into FM radio statio
 - Scroll to adjust frequency  
 - Monitor signals in real time  
 
+.. image:: https://img.youtube.com/vi/LFCa-HCUnZI/0.jpg
+   :target: https://youtu.be/LFCa-HCUnZI?si=-Yhi9LhrpvB1JkFE
+   :alt: Watch on YouTube
+   :align: center
+
+🎥 `Watch the video on YouTube <https://youtu.be/LFCa-HCUnZI?si=-Yhi9LhrpvB1JkFE>`__
+
+
 Cellular Network
 ----------------
 
@@ -131,6 +139,22 @@ The Cellular Network application enables deployment and control of a **2G GSM ne
   `Settings → Connections → Mobile networks → Network operators → Scan networks`  
 - Select **901-70**  
 - Dial `*#100#` to confirm successful registration  
+
+.. image:: https://img.youtube.com/vi/vkWeyYTcMkM/0.jpg
+   :target: https://youtu.be/vkWeyYTcMkM?si=eikVXCVtRua4Cy9I
+   :alt: Cellular Network – Part 1
+   :align: center
+
+🎥 `Watch Cellular Network – Part 1 <https://youtu.be/vkWeyYTcMkM?si=eikVXCVtRua4Cy9I>`__
+
+---
+
+.. image:: https://img.youtube.com/vi/Dtk9X13h_4Y/0.jpg
+   :target: https://youtu.be/Dtk9X13h_4Y?si=9I9V5UyJ9hAhJBM1
+   :alt: Cellular Network – Part 2
+   :align: center
+
+🎥 `Watch Cellular Network – Part 2 <https://youtu.be/Dtk9X13h_4Y?si=9I9V5UyJ9hAhJBM1>`__
 
 Signal Analyzer
 ---------------
@@ -204,3 +228,10 @@ The Signal Analyzer application provides powerful tools for analyzing both digit
 - Always match modulation type with source content  
 - Vector diagrams help identify distortions or drift  
 - Saved files can be reloaded into other WSDR applications  
+
+.. image:: https://img.youtube.com/vi/rQdlLAFh41I/0.jpg
+   :target: https://youtu.be/rQdlLAFh41I?si=CSHWftkV5inXVZNa
+   :alt: Signal Analyzer Tutorial
+   :align: center
+
+🎥 `Watch the Signal Analyzer tutorial <https://youtu.be/rQdlLAFh41I?si=CSHWftkV5inXVZNa>`__
