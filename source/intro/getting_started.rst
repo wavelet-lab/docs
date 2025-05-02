@@ -65,3 +65,7 @@ The WebSDR platform enables global collaboration and signal sharing, making SDR 
 ✅ **Device Sharing & Multitasking:** Multiple users can run separate applications on the same SDR.
 
 ✅ **Universal App Execution:** Access applications from device, host, or cloud.
+
+🎥 See video tutorials at:
+`YouTube Playlist <https://youtube.com/playlist?list=PLAJOd9pfRFHOexvsp1v19DZOx2lMnUWhY&si=pOEH1GYgStspr_nN>`__
+
