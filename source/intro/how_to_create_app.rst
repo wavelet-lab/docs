@@ -136,3 +136,6 @@ Step 6: Test the Application
    - Check the ready-to-use apps in **Edit Mode**.
    - See which blocks were used.
    - Copy parts into your own app.
+
+
+🎥 `Watch the full Custom Application YouTube playlist <https://youtube.com/playlist?list=PLAJOd9pfRFHMexBS8ZfiCh3C9xRGbmqnA&si=HUZWnHCw-VphFOaX>`__
