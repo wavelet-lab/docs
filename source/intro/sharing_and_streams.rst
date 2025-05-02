@@ -121,4 +121,11 @@ Store and share **IQ samples** in the WSDR.io platform.
 .. image:: ../_static/wsdr/storage_enb.jpg
 .. image:: ../_static/wsdr/storage_added.jpg
 
+.. image:: https://img.youtube.com/vi/fN7Hi8tCTd8/0.jpg
+   :target: https://youtu.be/fN7Hi8tCTd8?si=0muutlIL74juImH5
+   :alt: Sharing and Managing SDR Streams
+   :align: center
+
+🎥 `Watch Sharing and Managing SDR Streams <https://youtu.be/fN7Hi8tCTd8?si=0muutlIL74juImH5>`__
+
 

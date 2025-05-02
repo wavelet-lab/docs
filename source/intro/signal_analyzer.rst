@@ -77,3 +77,10 @@ Choose the Signal View:
 - Ensure the correct modulation type is selected for accurate decoding  
 - The vector diagram helps visualize signal integrity  
 - Cloud Storage Integration allows seamless access across WSDR.io applications  
+
+.. image:: https://img.youtube.com/vi/rQdlLAFh41I/0.jpg
+   :target: https://youtu.be/rQdlLAFh41I?si=65RUfWrDmYRZYpTX
+   :alt: Signal Analyzer
+   :align: center
+
+🎥 `Watch Signal Analyzer Tutorial <https://youtu.be/rQdlLAFh41I?si=65RUfWrDmYRZYpTX>`__
