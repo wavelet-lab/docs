@@ -55,3 +55,6 @@ All applications start with pre-configured default parameters.
 .. image:: ../_static/wsdr/run.jpg
    :alt: Run
 
+🎥 See video tutorials at:
+`YouTube Playlist <https://youtube.com/playlist?list=PLAJOd9pfRFHOexvsp1v19DZOx2lMnUWhY&si=pOEH1GYgStspr_nN>`__
+
