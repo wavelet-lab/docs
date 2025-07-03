@@ -79,5 +79,5 @@ Install package
 
 .. code-block:: sh
 
-    sudo apt install libusb-1.0-0 libsoapysdr0.8 dkms
     sudo dpkg -i *.deb
+    sudo apt-get install -f
