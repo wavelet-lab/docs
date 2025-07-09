@@ -79,5 +79,5 @@ Install package
 
 .. code-block:: sh
 
-    sudo dpkg -i *.deb
+    sudo dpkg -i --force-reinstall *.deb
     sudo apt-get install -f
