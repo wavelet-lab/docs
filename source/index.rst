@@ -62,6 +62,7 @@ If you have any questions or need further assistance, please don’t hesitate to
    :hidden:
    :caption: Applications
 
+   /applications/srsran4g
    /applications/cubicsdr
    /applications/gqrx
    /applications/gnuradio
