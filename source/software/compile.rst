@@ -45,8 +45,8 @@ Ubuntu 20.04, 22.04, 24.04, Debian 12, Raspberry Pi OS, Raspberry Pi OS Lite
 
 .. code-block:: sh
 
-    sudo apt install build-essential cmake python3 python3-venv python3-yaml dwarves -y
-    sudo apt install libsoapysdr-dev libusb-1.0-0-dev check dkms -y
+    sudo apt install -y build-essential cmake python3 python3-venv python3-yaml dwarves
+    sudo apt install -y libsoapysdr-dev libusb-1.0-0-dev check dkms
 
 Build
 -----
