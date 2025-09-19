@@ -56,7 +56,7 @@ Build
     mkdir build
     cd build
     cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ../src
-    make
+    make -j`nproc`
 
 .. note::
    | If you want to install the library to ``/usr/local``, you can skip the ``-DCMAKE_INSTALL_PREFIX:PATH=/usr`` option.
@@ -70,7 +70,7 @@ Debug build
     mkdir build
     cd build
     cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_BUILD_TYPE=Debug ../src
-    make
+    make -j`nproc`
 
 Enroll the MOK key
 ------------------
