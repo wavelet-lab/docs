@@ -1,17 +1,20 @@
 
-====
+===========
 sSDR module
-====
+===========
 
 A compact M.2 software-defined radio (SDR) with 2 RX/TX channels, single-sided components, and an extended frequency range.
 
-.. image:: ../_static/ssdr.jpg
-   :alt: dSDR module
+.. image:: ../_static/ssdr.png
+   :alt: sSDR module
 
 Introduction
 ============
 
-The sSDR is a compact M.2 software-defined radio card with an expansive RF range from 30 MHz to 8.5 GHz, covering **5G (7.125 GHz)**, the latest **WiFi**, radio links, and many more applications. Paired with **wsdr.io** and various host devices, it enables the rapid development of custom RF solutions.
+The sSDR is a compact M.2 software-defined radio card with an expansive RF range from 30 MHz to 9 GHz,
+covering **5G (7.125 GHz)**, the latest **WiFi**, radio links, and many more applications.
+
+Paired with **wsdr.io** and various host devices, it enables the rapid development of custom RF solutions.
 
 General Specifications
 ======================
@@ -42,10 +45,10 @@ RF Specifications
   - Integrated high-pass and low-pass filters for Hi / Lo RX bands  
 
 **Frequency Range**  
-  - 30 MHz to 8.5 GHz  
+  - 30 MHz to 9 GHz
 
 **Sample Rate**  
-  - 0.1 MSps - 100 MSps  
+  - 4 MSps - 100 MSps
 
 **Channel Bandwidth**  
   - 0.5 MHz - 90 MHz  
@@ -54,7 +57,7 @@ Target Applications
 ===================
 
 **Cellular Communication**  
-  - Establish dedicated wireless networks by implementing **eNodeB** or **gNodeB** systems via open-source solutions like **srsRAN** or **Amarisoft**  
+  - Establish dedicated wireless networks by implementing **eNodeB** or **gNodeB** systems via open-source solutions like **srsRAN** or **Amarisoft**
   - Build a dedicated high-frequency radio link  
 
 **Embedded Applications**  
@@ -63,13 +66,7 @@ Target Applications
 **Data Link**  
   - Build a communication channel between points worldwide via a web platform  
 
-Legacy Software Support
-=======================
+Software Support
+================
 
 - **GNU Radio**, **srsRAN**, and many more through **SoapySDR**.
-
-Contact
-=======
-
-- **Website:** `Wavelet Lab <https://wavelet-lab.com>`_  
-- **Email:** `contact@wavelet-lab.com <mailto:contact@wavelet-lab.com>`_
