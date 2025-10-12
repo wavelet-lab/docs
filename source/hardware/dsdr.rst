@@ -70,14 +70,7 @@ Driver and Host Libraries
 - It operates primarily in user space with the ability to bypass kernel access.  
 - **GPUDirect support** is in progress.  
 
-Legacy Software Support
-=======================
+Software Support
+================
 
 - GNU Radio, srsRAN, and many more through SoapySDR.
-
-Contact
-=======
-
-- **Website:** `Wavelet Lab <https://wavelet-lab.com>`_  
-- **Email:** `contact@wavelet-lab.com <mailto:contact@wavelet-lab.com>`_
-
