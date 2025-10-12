@@ -2,7 +2,8 @@
 USB Adapter
 ===========
 
-We designed our USB adapter so that it’s capable of supporting USB 3.0, should we manage to implement that before entering production (or perhaps for a future revision of uSDR). with an RX-TX optional loopback path for advanced calibration, and many other features, including:
+The USB adapter is a small board made easy to connect the uSDR via USB
+as well as some additional features:
 
 * Six GPIOs exposed to an FPC cable, along with 1.8 V
 * TX harmonic-reduction filter for 2.3 - 3.7 GHz
@@ -13,3 +14,10 @@ We designed our USB adapter so that it’s capable of supporting USB 3.0, should
 
 .. image:: ../_static/hw_usbadapter_1.jpg
    :alt: USB Adapter
+
+Connections
+-----------
+
+* J7 - Harmonic Filter(2.3 - 3.7 GHz) - TX SMA
+* J6 - Low Pass Filter(3.5 GHz) - RX SMA
+* Central connector - direct to SMA: Usable to connect uSDR HF RX
