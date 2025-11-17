@@ -77,7 +77,7 @@ Several options are available for the reference clock source:
 
   * Development Board Rev 1.0 reference clock generator runs at 25 MHz;
   * The dev board's reference frequency can be slightly adjusted using the voltage-controlled oscillator settings (the ``dac_`` option, see below);
-  * You must configure uSDR to use the reference clock from the DevBoard. For instructions, refer to the section below or `usdr_dm_create utility docs <../software/usdr_dm_create.rst>`_.
+  * You must configure uSDR to use the reference clock from the DevBoard. For instructions, refer to the section below or :doc:`usdr_dm_create utility docs </software/usdr_dm_create>`.
 
 * Connection to an external clock generator. 
 
@@ -91,7 +91,7 @@ Additional settings
 
 Development Board includes a set of "hidden" options that allow for fine-tuning and optimization, enabling you to get the most out of your device.
 
-The most common way to access these options is by using the ``-D`` option of the `usdr_dm_create utility <../software/usdr_dm_create.rst>`_. The key lies in the ``fe`` (front-end) variable settings, such as:
+The most common way to access these options is by using the ``-D`` option of the :doc:`usdr_dm_create utility </software/usdr_dm_create>`. The key lies in the ``fe`` (front-end) variable settings, such as:
 
 .. code-block:: bash
 
