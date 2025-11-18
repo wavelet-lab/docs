@@ -133,7 +133,7 @@ center frequency at 1700 MHz, using all 8 RX channels:
 
 .. code-block:: bash
 
-   usdr_dm_create -r10e6 -l3 -e1700e6 -c -1 -f output.raw
+   usdr_dm_create -D bus=pci/dev/usdr0:/dev/usdr1:/dev/usdr2:/dev/usdr3 -r10e6 -l3 -e1700e6 -c -1 -f output.raw
 
 The software stack supports SoapySDR interface, so you can use any compatible application.
 
