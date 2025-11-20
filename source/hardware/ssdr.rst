@@ -5,7 +5,7 @@ sSDR module
 
 A compact M.2 software-defined radio (SDR) with 2 RX/TX channels, single-sided components, and an extended frequency range.
 
-.. image:: ../_static/ssdr.png
+.. image:: ../_static/ssdr.jpg
    :alt: sSDR module
 
 Introduction
