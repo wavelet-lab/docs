@@ -101,7 +101,7 @@ Back side
 .. image:: ../_static/xmass_back_lg.png
    :alt: xmass sdr
 
-.. image:: ../_static/xmass_back_zoom.png
+.. image:: ../_static/xmass_back_zoom.jpg
    :alt: xmass sdr
 
 PCI bracket panel
