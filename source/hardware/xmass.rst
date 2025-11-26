@@ -209,4 +209,6 @@ The following example creates a raw IQ data file with a sample rate of 10 MSampl
 
    usdr_dm_create -D bus=pci/dev/usdr0:/dev/usdr1:/dev/usdr2:/dev/usdr3 -r10e6 -l3 -e1700e6 -c -1 -f output.raw
 
+The first device in the list(usdr0 in this example) should be the master xMASS SDR board(slot A).
+
 The software stack supports the **SoapySDR** interface, so you can use any compatible application.
