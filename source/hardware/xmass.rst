@@ -31,8 +31,7 @@ General Specifications
   - PCIe x4 (2 PCIe lanes used)  
 
 **Power Consumption**  
-  - 1.9W Typical
-  - 3W Max
+  - 20W Typical
 
 **Extended Power Supply Range**  
   - 2.85 - 5.5 V  
