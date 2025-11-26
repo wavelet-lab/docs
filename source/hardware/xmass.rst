@@ -98,7 +98,7 @@ The MHF4 connector of each xSDR module should be connected as shown in the pictu
 Back side
 ---------
 
-.. image:: ../_static/xmass_back_zoom.jpg
+.. image:: ../_static/xmass_back_zoom_light.jpg
    :alt: xmass sdr
 
 PCI bracket panel
