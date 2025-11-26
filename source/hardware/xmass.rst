@@ -81,7 +81,7 @@ Front side
 
 The xMASS SDR has 4 slots for M.2 xSDR modules. Slot A is the master module and is required for the xMASS to control the AF part of the board.
 
-.. image:: ../_static/xmass_front_connect.png
+.. image:: ../_static/xmass/xmass_wiring.png
    :alt: xmass sdr
 
 The MHF4 connector of each xSDR module should be connected as shown in the picture above. Please note that the cables should be connected crosswise.
