@@ -85,6 +85,10 @@ Connections
 Front side
 ----------
 
+.. note::
+   | USB-C is connected to the xSDR A and is intended solely for use in manufacturing test facilities.
+   | It is not used during normal operation.
+
 The xMASS SDR has 4 slots for M.2 xSDR modules. Slot A is the master module and is required for the xMASS to control the AF part of the board.
 
 .. image:: ../_static/xmass/xmass_wiring.png
