@@ -95,13 +95,13 @@ The MHF4 connector of each xSDR module should be connected as shown in the pictu
 Back side
 ---------
 
-.. image:: ../_static/xmass_back.jpg
+.. image:: ../_static/xmass_back_lg.png
    :alt: xmass sdr
 
-Back panel
+PCI bracket panel
 ----------
 
-The back panel of the xMASS SDR has 16 external MMCX connectors for RF signals. The top 8 connectors are RX channels, and the bottom 8 connectors are TX channels.
+The bracket panel of the xMASS SDR has 16 external MMCX connectors for RF signals. The top 8 connectors are RX channels, and the bottom 8 connectors are TX channels.
 
 
 Clocks and synchronization
