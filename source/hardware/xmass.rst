@@ -98,9 +98,6 @@ The MHF4 connector of each xSDR module should be connected as shown in the pictu
 Back side
 ---------
 
-.. image:: ../_static/xmass_back_lg.png
-   :alt: xmass sdr
-
 .. image:: ../_static/xmass_back_zoom.jpg
    :alt: xmass sdr
 
