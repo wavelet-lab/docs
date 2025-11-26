@@ -190,7 +190,8 @@ The possible RF paths are:
 * Calibration path: NOISE or CAL signal to xSDR module for RX calibration.
 * Loopback path: TX from xSDR module to RX of the same channel for loopback testing.
 
-In addition, the NOISE/CAL signal can be routed to the first channel of each xSDR module directly through the M.2 socket. This avoids using the RF frontend, resulting in more accurate calibration.
+In addition, the NOISE/CAL signal can be routed to the first channel(LNAL_A) of each xSDR module directly through the M.2 socket.
+This avoids using the RF frontend, resulting in more accurate calibration.
 
 
 Software
