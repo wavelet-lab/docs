@@ -4,7 +4,7 @@ xMASS SDR
 
 A modular, high-performance **8×8 MIMO transceiver** designed for **4G/5G applications** and other use cases.
 
-.. image:: ../_static/xmass-front-lg.pnp
+.. image:: ../_static/xmass-front-lg.png
    :alt: xmass sdr
 
 Overview
@@ -12,7 +12,7 @@ Overview
 
 The xMASS SDR is a modular, high-performance **MIMO transceiver** featuring **8 RX and 8 TX channels** which can be synchronized. Its modular design allows for easy maintenance and enables the construction of high-order MIMO systems using the same building blocks.
 
-.. image:: ../_static/xmass-iso-open-lg.pnp
+.. image:: ../_static/xmass-iso-open-lg.png
    :alt: xmass sdr
 
 General Specifications
@@ -79,7 +79,7 @@ Target Applications
 Connections
 ===========
 
-.. image:: ../_static/xmass_fron_open.pnp
+.. image:: ../_static/xmass_fron_open.png
    :alt: xmass sdr
 
 Front side
