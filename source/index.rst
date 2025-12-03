@@ -32,6 +32,7 @@ If you have any questions or need further assistance, please don’t hesitate to
    /hardware/dsdr
    /hardware/ssdr
    /hardware/xmass
+   /hardware/fe
    /hardware/inspectrf
    /hardware/devboard
    /hardware/usbadapter
