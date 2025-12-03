@@ -5,13 +5,13 @@ sSDR module
 
 A compact M.2 software-defined radio (SDR) with 2 RX/TX channels, single-sided components, and an extended frequency range.
 
-.. image:: ../_static/ssdr.png
+.. image:: ../_static/ssdr_rev1.png
    :alt: sSDR module
 
 Introduction
 ============
 
-The sSDR is a compact M.2 software-defined radio card with an expansive RF range from 30 MHz to 9 GHz,
+The sSDR is a compact M.2 software-defined radio card with an expansive RF range from 30 MHz to 11 GHz,
 covering **5G (7.125 GHz)**, the latest **WiFi**, radio links, and many more applications.
 
 Paired with **wsdr.io** and various host devices, it enables the rapid development of custom RF solutions.
@@ -28,8 +28,7 @@ General Specifications
   - 5.5W Max  
 
 **Interface**  
-  - M.2 2242 M key (PCIe 3.0 x4 + USB2.0)
-  - M.2 2242 B+M key (PCIe 2.0 x2 + USB 2.0) - Lite ver 
+  - M.2 2242 B+M key (PCIe 2.0 x2 + USB 2.0)
 
 **Extended Power Supply Range**  
   - 2.85 - 5.5 V  
