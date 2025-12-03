@@ -20,8 +20,7 @@ General Specifications
 ======================
 
 **FPGA**  
-  - AMD Artix UltraScale+ XCAU7P Ability to offload IQ processing (60-70% resources available)
-  - AMD XC7A35T  (Lite version)
+  - AMD XC7A35T
 
 **Power Consumption**  
   - 2.9W Typical  
