@@ -5,7 +5,7 @@ sSDR module
 
 A compact M.2 software-defined radio (SDR) with 2 RX/TX channels, single-sided components, and an extended frequency range.
 
-.. image:: ../_static/ssdr.jpg
+.. image:: ../_static/ssdr.png
    :alt: sSDR module
 
 Introduction
@@ -20,14 +20,16 @@ General Specifications
 ======================
 
 **FPGA**  
-  - AMD XC7A35T  
+  - AMD Artix UltraScale+ XCAU7P Ability to offload IQ processing (60-70% resources available)
+  - AMD XC7A35T  (Lite version)
 
 **Power Consumption**  
   - 2.9W Typical  
-  - 4.5W Max  
+  - 5.5W Max  
 
 **Interface**  
-  - M.2 2242 B+M key (USB 2.0 & PCIe 2.0 x2)  
+  - M.2 2242 M key (PCIe 3.0 x4 + USB2.0)
+  - M.2 2242 B+M key (PCIe 2.0 x2 + USB 2.0) - Lite ver 
 
 **Extended Power Supply Range**  
   - 2.85 - 5.5 V  
@@ -45,26 +47,32 @@ RF Specifications
   - Integrated high-pass and low-pass filters for Hi / Lo RX bands  
 
 **Frequency Range**  
-  - 30 MHz to 9 GHz
+  - 30 MHz to 11 GHz
 
 **Sample Rate**  
-  - 4 MSps - 100 MSps
+  - 4 MSps - 86 MSps
 
 **Channel Bandwidth**  
-  - 0.5 MHz - 90 MHz  
+  - 0.5 MHz - 120 MHz  (MIMO)
+  - 122.88MSps (SISO)
 
 Target Applications
 ===================
 
-**Cellular Communication**  
-  - Establish dedicated wireless networks by implementing **eNodeB** or **gNodeB** systems via open-source solutions like **srsRAN** or **Amarisoft**
-  - Build a dedicated high-frequency radio link  
+**Cellular Communication**
+  - Establish dedicated wireless networks by implementing **eNodeB** or **gNodeB** systems via open-source solutions like **srsRAN (4G/5G)** or **Amarisoft**
+  - Build dedicated high-frequency radio links
 
-**Embedded Applications**  
-  - Develop compact and high-performance frequency analysis devices  
+**X-Band**
+  - X-band around **10.5 GHz** occupies a “sweet spot” in the RF spectrum where multiple physical and practical advantages align
+  - Widely used in **radar**, **remote sensing**, **communications**, **instrumentation**, and **advanced radiolocation** systems due to its high resolution
 
-**Data Link**  
-  - Build a communication channel between points worldwide via a web platform  
+**Embedded**
+  - Develop compact and high-performance **frequency-analysis** devices
+
+**Data Link**
+  - Build communication channels between points worldwide through a **web-enabled platform**
+
 
 Software Support
 ================
