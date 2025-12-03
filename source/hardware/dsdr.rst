@@ -5,7 +5,7 @@ dSDR module
 An M.2 advanced direct-sampling SDR with phase-coherent 6 RX and 4 TX channels. The direct sampling architecture eliminates RX/TX LO leakage and RX/TX IQ imbalance issues, providing better overall linearity, superior phase noise, a more compact design, and greater flexibility.
 
 
-.. image:: ../_static/dsdr.jpg
+.. image:: ../_static/dsdr.png
    :alt: dSDR module
 
 
@@ -15,14 +15,17 @@ General Specifications
 ======================
 
 **FPGA**  
-  - AMD Artix UltraScale+ XCAU15P  
+  - AMD Artix UltraScale+ XCAU15P
+  - AMD Kintex UltraScale+ XCKU5P  
+
 
 **Power Consumption**  
   - 6-15W Typical (depending on the number of active channels and bandwidth)  
   - 20W Max  
 
 **Interface**  
-  - M.2 2280 M key PCIe 4.0 x4 (with debug USB2 interface)  
+  - M.2 2280 M key PCIe 4.0 x4 (with debug USB2 interface)
+  - 100GbE option (for XCKU5P only)
 
 **Extended Power Supply Range**  
   - 2.85 - 5.5 V  
@@ -37,9 +40,21 @@ RF Specifications
   - AFE7900 / AFE7901 / AFE7950  
 
 **Frequency Range**  
-  - **Model A:** 0.4 GHz to 3.5 GHz  
-  - **Model B:** 2.1 GHz to 7.2 GHz  
-  - **Model C:** 3.5 GHz to 12 GHz  
+ 
++--------+-------+----------+-------------+-----------+-------+----+----+
+| Model  | AFE   | FPGA     | Frequencies | 100GbE    | PCIe  | RX | TX |
++========+=======+==========+=============+===========+=======+====+====+
+| 1B03   | 7903  | XCAU10P  | 10-7400     | no        | 4.0   | 2  | 2  |
++--------+-------+----------+-------------+-----------+-------+----+----+
+| 1A01   | 7901  | XCAU15P  | 10-7400     | no        | 4.0   | 4  | 4  |
++--------+-------+----------+-------------+-----------+-------+----+----+
+| 1A00   | 7900  | XCAU15P  | 10-7400     | no        | 4.0   | 6  | 4  |
++--------+-------+----------+-------------+-----------+-------+----+----+
+| 1A50   | 7950  | XCAU15P  | 600-12000   | no        | 4.0   | 6  | 4  |
++--------+-------+----------+-------------+-----------+-------+----+----+
+| 1K50   | 7950  | XCKU5P   | 600-12000   | yes       | 3.0   | 6  | 4  |
++--------+-------+----------+-------------+-----------+-------+----+----+
+
 
 **Sample Rate**  
   - 0.1 MSps - 500 MSps (up to 1 GSps on request)  
