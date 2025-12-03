@@ -1,4 +1,4 @@
-Welcome to WSDR’s documentation source repository!
+Welcome to the Wavelet Lab documentation source repository!
 ==================================================
 
 Please follow: `https://docs.wsdr.io/` to view the documentation.
