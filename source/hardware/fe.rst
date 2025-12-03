@@ -1,31 +1,31 @@
 ==================
-FE and FE BREAKOUT
+Front End (FE) and Breakout Board
 ==================
 
-A modular adapter board for sSDR and dSDR modules with integrated high-performance RF front-end.
+A modular adapter board for sSDR and dSDR modules with an integrated high-performance RF front-end.
 
 Overview
 ========
 
-.. image:: ../_static/fe/fe_front.jpg
+.. image:: ../_static/fe/fe_front.png
    :alt: fe sdr
 
 
-.. image:: ../_static/fe/fe_back.jpg
+.. image:: ../_static/fe/fe_back.png
    :alt: fe sdr
 
-The FE is a modular, high-performance adapter board featuring **4 RX and 4 TX channels** which can be synchronized.
+The Front End (FE) is a modular, high-performance adapter board featuring **4 RX and 4 TX channels** which can be synchronized.
 In addition, the board includes fast TX/RX switches for each channel, making it usable for **TDD** applications.
 
 The board can be used with our **dSDR** or **sSDR** transceiver modules.
 
-FE BREAKOUT
+Breakout board
 -----------
 
-The **FE BREAKOUT** is the light version of the FE board without the RF front-end components.
+The **Breakout board** is the light version of the FE board without the RF front-end components.
 It is intended for users who want to design their own RF front-end or use the board in a lab environment.
 
-.. image:: ../_static/fe/fe_breakout_front.jpg
+.. image:: ../_static/fe/fe_breakout_front.png
    :alt: fe breakout sdr
 
 General Specifications
@@ -99,14 +99,14 @@ Target Applications
   - Determines the **direction of arrival (DoA)** of incoming radio signals, enabling **precise localization** of transmitters
 
 **Beamforming**
-  - Focuses signal transmission and reception in specific directions
+  - Focuses on signal transmission and reception in specific directions
   - Enhances range, improves signal quality, and reduces interference in multi-user environments
 
 Connections
 ===========
 
 .. note::
-   | USB-C is is intended solely for use in manufacturing test facilities.
+   | USB-C is intended solely for use in manufacturing test facilities.
    | It is not used during normal operation.
 
 Front side
