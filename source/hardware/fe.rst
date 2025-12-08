@@ -177,7 +177,7 @@ For sSDR, the RF distribution should be connected as follows:
 * ``RXA`` to ``sSDR RX A``.
 * ``RXB`` to ``sSDR RX B``.
 * ``TXA`` to ``sSDR TX A``.
-* ``TXB`` to ``sSDR RX B``.
+* ``TXB`` to ``sSDR TX B``.
 
 For dSDR, the RF distribution should be connected as follows:
 
@@ -186,9 +186,9 @@ For dSDR, the RF distribution should be connected as follows:
 * ``RXC`` to ``dSDR RX C``.
 * ``RXD`` to ``dSDR RX D``.
 * ``TXA`` to ``dSDR TX A``.
-* ``TXB`` to ``dSDR RX B``.
-* ``TXC`` to ``dSDR RX C``.
-* ``TXD`` to ``dSDR RX D``.
+* ``TXB`` to ``dSDR TX B``.
+* ``TXC`` to ``dSDR TX C``.
+* ``TXD`` to ``dSDR TX D``.
 
 Calibration
 -----------
