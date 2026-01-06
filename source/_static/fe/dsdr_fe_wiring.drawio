@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.0.3 Chrome/140.0.7339.249 Electron/38.7.0 Safari/537.36" version="29.0.3">
   <diagram name="Page-1" id="uLgSNfr8mGfaswhNDyOC">
-    <mxGraphModel dx="782" dy="830" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="413" pageHeight="583" math="0" shadow="0">
+    <mxGraphModel dx="2398" dy="1912" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="413" pageHeight="583" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -45,7 +45,7 @@
         <mxCell id="FDxVnnPNL3tk9j9iVV6S-238" style="edgeStyle=entityRelationEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#B3B3B3;elbow=vertical;strokeWidth=2;" parent="FDxVnnPNL3tk9j9iVV6S-254" source="FDxVnnPNL3tk9j9iVV6S-123" target="FDxVnnPNL3tk9j9iVV6S-185" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="FDxVnnPNL3tk9j9iVV6S-341" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;b&gt;FE + DSDR&lt;/b&gt;&lt;/font&gt;&lt;div&gt;RF wiring diagram&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=right;verticalAlign=top;rounded=0;fontSize=15;" parent="FDxVnnPNL3tk9j9iVV6S-254" vertex="1">
+        <mxCell id="FDxVnnPNL3tk9j9iVV6S-341" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;b&gt;FE + d&lt;/b&gt;&lt;/font&gt;&lt;b style=&quot;font-size: 18px; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;SDR&lt;/b&gt;&lt;div&gt;&lt;div&gt;RF wiring diagram&lt;/div&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=right;verticalAlign=top;rounded=0;fontSize=15;" parent="FDxVnnPNL3tk9j9iVV6S-254" vertex="1">
           <mxGeometry x="558.5" y="10" width="220" height="50" as="geometry" />
         </mxCell>
         <mxCell id="FDxVnnPNL3tk9j9iVV6S-343" value="" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#C3C6C7;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.cpu;" parent="FDxVnnPNL3tk9j9iVV6S-254" vertex="1">
