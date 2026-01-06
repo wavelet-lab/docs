@@ -1,6 +1,6 @@
-==================
+=================================
 Front End (FE) and Breakout Board
-==================
+=================================
 
 A modular adapter board for sSDR and dSDR modules with an integrated high-performance RF front-end.
 
@@ -20,7 +20,7 @@ In addition, the board includes fast TX/RX switches for each channel, making it 
 The board can be used with our **dSDR** or **sSDR** transceiver modules.
 
 Breakout board
------------
+--------------
 
 The **Breakout board** is the light version of the FE board without the RF front-end components.
 It is intended for users who want to design their own RF front-end or use the board in a lab environment.
@@ -113,13 +113,13 @@ Front side
 The front side of the board contains the M.2 socket for the sSDR or sSDR module and 4 MHF7 connectors for RX signals.
 
 Back side
-----------
+---------
 
 The front side of the board contains 4 MHF7 connectors for TX signals.
 
 
 PCI bracket panel
-----------
+-----------------
 
 The bracket panel of the FE has 8 external SMA connectors for TX/RX/TRX signals.
 
@@ -150,6 +150,7 @@ The following diagram shows the clock and synchronization wiring when using the 
 .. image:: ../_static/fe/fe_sync_ssdr.png
    :alt: fe ssdr clocks and synchronization block diagram
 
+
 dSDR wiring
 -----------
 
@@ -172,12 +173,25 @@ RF distribution
    | The diagram above shows the RF distribution for one pair of RX/TX channels.
    | The rest of the channels are connected in the same way.
 
+
+sSDR module
+-----------
+
 For sSDR, the RF distribution should be connected as follows:
 
 * ``RXA`` to ``sSDR RX A``.
 * ``RXB`` to ``sSDR RX B``.
 * ``TXA`` to ``sSDR TX A``.
 * ``TXB`` to ``sSDR TX B``.
+
+
+dSDR module
+-----------
+
+
+.. image:: ../_static/fe/dsdr_fe_wiring.png
+   :alt: fe dsdr rf connection diagram
+
 
 For dSDR, the RF distribution should be connected as follows:
 
@@ -189,6 +203,7 @@ For dSDR, the RF distribution should be connected as follows:
 * ``TXB`` to ``dSDR TX B``.
 * ``TXC`` to ``dSDR TX C``.
 * ``TXD`` to ``dSDR TX D``.
+
 
 Calibration
 -----------
