@@ -54,6 +54,14 @@ RF Specifications
   - 0.5 MHz - 120 MHz  (MIMO)
   - 122.88MSps (SISO)
 
+Pinout
+======
+
+
+.. image:: ../_static/ssdr/ssdr_schema.png
+   :alt: dSDR pinout schema
+
+
 Target Applications
 ===================
 

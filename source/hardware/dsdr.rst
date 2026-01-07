@@ -60,7 +60,15 @@ RF Specifications
   - 0.1 MSps - 500 MSps (up to 1 GSps on request)  
 
 **Channel Bandwidth**  
-  - 0.5 MHz - 500 MHz (up to 1 GHz on request)  
+  - 0.5 MHz - 500 MHz (up to 1 GHz on request)
+
+Pinout
+======
+
+
+.. image:: ../_static/dsdr/dsdr_schema.png
+   :alt: dSDR pinout schema
+
 
 Target Applications
 ===================
