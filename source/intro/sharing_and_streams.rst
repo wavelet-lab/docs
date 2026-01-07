@@ -95,20 +95,29 @@ Store and share **IQ samples** in the WSDR.io platform.
 .. image:: ../_static/wsdr/share_file.jpg
 
 - Click **+** to create a share link.
+
+
 .. image:: ../_static/wsdr/share_file_2.jpg
 
 - Send the link to another user.
 - They added the link to their shared container in cloud storage.
+
+
 .. image:: ../_static/wsdr/shared_file_link.jpg
+
 
 **To Revoke Access:**
 
 - Disable the shared link.
 
+
 **Open Files in Applications:**
 
 - Use **Source Selection** in any app.
+
+
 .. image:: ../_static/wsdr/shared_file_stream.jpg
+
 
 - If storage isn't visible:
 

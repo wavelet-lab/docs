@@ -102,7 +102,7 @@ Back side
    :alt: xmass sdr
 
 PCI bracket panel
-----------
+-----------------
 
 The bracket panel of the xMASS SDR has 16 external MMCX connectors for RF signals. The top 8 connectors are RX channels, and the bottom 8 connectors are TX channels.
 
