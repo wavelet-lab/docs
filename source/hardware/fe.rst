@@ -151,6 +151,7 @@ The following diagram shows the clock and synchronization wiring when using the 
    :alt: fe ssdr clocks and synchronization block diagram
 
 
+
 dSDR wiring
 -----------
 
@@ -177,12 +178,21 @@ RF distribution
 sSDR module
 -----------
 
+
+.. image:: ../_static/fe/ssdr_fe_wiring.png
+   :alt: fe ssdr rf connection diagram
+
+
 For sSDR, the RF distribution should be connected as follows:
 
 * ``RXA`` to ``sSDR RX A``.
 * ``RXB`` to ``sSDR RX B``.
 * ``TXA`` to ``sSDR TX A``.
 * ``TXB`` to ``sSDR TX B``.
+
+
+.. note::
+   | sSDR only has 2 RX and 2 TX channels, so only the first two pairs are used.
 
 
 dSDR module
