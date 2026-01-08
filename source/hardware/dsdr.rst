@@ -1,6 +1,6 @@
-====
+===========
 dSDR module
-====
+===========
 
 An M.2 advanced direct-sampling SDR with phase-coherent 6 RX and 4 TX channels. The direct sampling architecture eliminates RX/TX LO leakage and RX/TX IQ imbalance issues, providing better overall linearity, superior phase noise, a more compact design, and greater flexibility.
 
@@ -60,7 +60,15 @@ RF Specifications
   - 0.1 MSps - 500 MSps (up to 1 GSps on request)  
 
 **Channel Bandwidth**  
-  - 0.5 MHz - 500 MHz (up to 1 GHz on request)  
+  - 0.5 MHz - 500 MHz (up to 1 GHz on request)
+
+Pinout
+======
+
+
+.. image:: ../_static/dsdr/dsdr_schema.png
+   :alt: dSDR pinout schema
+
 
 Target Applications
 ===================

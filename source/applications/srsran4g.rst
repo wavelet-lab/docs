@@ -21,7 +21,7 @@ So we’ll need to build from sources.
 .. note::
 
    This will fail on Ubuntu 24.04, so you need to use gcc-11 instead of the default compiler.
-   More details are available in `this GitHub issue <https://github.com/srsran/srsRAN_4G/issues/1339>`_.
+   More details are available in `this GitHub issue <https://github.com/srsran/srsRAN_4G/issues/1339>`__.
 
 .. code-block:: bash
 
@@ -48,11 +48,11 @@ SIM Cards
 To operate even a test network, you need dedicated SIM cards.
 The easiest way is to buy preprogrammed SIM cards for test/private networks.
 
-We recommend using `sysmoISIM-S17 <https://shop.sysmocom.de/sysmoISIM-SJA5-S17-SIM-USIM-ISIM-Card-10-pack-with-ADM-keys-S17-chip-for-SUCI-in-USIM/sysmoISIM-SJA5-S17-10p-adm>`_. cards.
+We recommend using `sysmoISIM-S17 <https://shop.sysmocom.de/sysmoISIM-SJA5-S17-SIM-USIM-ISIM-Card-10-pack-with-ADM-keys-S17-chip-for-SUCI-in-USIM/sysmoISIM-SJA5-S17-10p-adm>`__. cards.
 You’ll get the secret key via email.
 
 Alternatively, you can use programmable SIM cards and create a profile by yourself.
-Here’s are `detailed instructions <https://www.quantulum.co.uk/blog/private-lte-with-limesdr-and-srsran-part-3-sim-cards/>`_.
+Here’s are `detailed instructions <https://www.quantulum.co.uk/blog/private-lte-with-limesdr-and-srsran-part-3-sim-cards/>`__.
 
 Both ways work fine, so you can use whichever is more convenient.
 
@@ -66,7 +66,7 @@ Then, you need to append SIM secrets to ``user_db.csv`` file. E.g., in our case 
 
    ue0,mil,901704356421622,aae018af78cb0fc5276138ef1254d7f0,opc,b0414d943ea6f14889ae04dae16c67e0,8000,00000000239b,7,dynamic
 
-`Detailed instructions <https://docs.srsran.com/projects/4g/en/latest/usermanuals/source/srsenb/source/2_enb_getstarted.html>`_.
+`Detailed instructions <https://docs.srsran.com/projects/4g/en/latest/usermanuals/source/srsenb/source/2_enb_getstarted.html>`__.
 
 Frequency bands
 ---------------
@@ -76,7 +76,7 @@ In big cities, it’s hard to find a free band, so, you can use our :doc:`web pl
 
 Better to use bands with both downlink and uplink frequencies are not used by any operator in your area, but you can also try bands with only downlink frequency free.
 
-Please refer to `this table <https://www.sqimway.com/lte_band.php>`_ for the list of EARFCN codes and their corresponding frequencies.
+Please refer to `this table <https://www.sqimway.com/lte_band.php>`__ for the list of EARFCN codes and their corresponding frequencies.
 
 Configuring eNB
 ---------------
@@ -248,6 +248,6 @@ and where ``path_band7`` reflects using the duplexer for Band Seven. E.g., here�
 References
 ----------
 
-* `srsRAN Project <https://www.srsran.com>`_
-* `srsRAN 4G Repository <https://github.com/srsran/srsRAN_4G>`_
-* `srsRAN 4G Documentation <https://docs.srsran.com/projects/4g/en/latest/>`_
+* `srsRAN Project <https://www.srsran.com>`__
+* `srsRAN 4G Repository <https://github.com/srsran/srsRAN_4G>`__
+* `srsRAN 4G Documentation <https://docs.srsran.com/projects/4g/en/latest/>`__

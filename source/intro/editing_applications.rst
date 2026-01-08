@@ -39,6 +39,7 @@ Blocks are categorized by their function:
 --------------------------------
 
 - **Parameters Tab:** Set the default parameters for each block.
+
 .. image:: ../_static/wsdr/param_bl.jpg
    :alt: Param
 

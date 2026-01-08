@@ -47,7 +47,7 @@ Install the development package
     sudo apt install libusdr-dev
 
 Ubuntu 18.04, Debian 12, Raspberry Pi OS, Raspberry Pi OS Lite
------------------------
+--------------------------------------------------------------
 
 Download
 ^^^^^^^^

@@ -77,9 +77,10 @@ Data blocks are processed sequentially based on the data format and block size s
 For example:
 - Suppose you are using the ``ci16`` format, with a data block size of 4096 samples. The physical size of a block is calculated as ``2 * 2 * 4096 = 16384`` bytes. 
 - If your file size is 100,000 bytes, the utility will transmit:
-  - Four full blocks of 16,384 bytes each (4096 samples per block).
-  - One partial block of 1696 bytes (424 samples).
-  
+
+   - Four full blocks of 16,384 bytes each (4096 samples per block).
+   - One partial block of 1696 bytes (424 samples).
+
 Now consider a file size of 99,999 bytes:
 - The last chunk of data would be 1695 bytes. Since a single sample in ``ci16`` format requires 4 bytes (``2 * 2``), the last block will contain 423 samples (1692 bytes), with the remaining 3 bytes ignored.
 - To avoid data loss, ensure your file size is a multiple of the sample size.
@@ -278,7 +279,7 @@ Also, you can get the actual extclock value (in Hz):
 where ``uint64_t *pfref`` is a pointer to your local var.
 
 Configuring the utility to obtain an external reference clock from the Development Board
---------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
 
 .. code-block:: bash
 

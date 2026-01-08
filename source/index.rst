@@ -1,5 +1,5 @@
 Welcome to Wavelet Lab documentation!
-================================
+=====================================
 
 Welcome to the official documentation for Wavelet Lab's projects! Here, you'll find everything you need to get started, understand our technology, and maximize the benefits of our products. Whether you're a developer, an advanced user, or simply curious about what we offer, this documentation will guide you through every aspect of our solutions.
 
@@ -47,6 +47,7 @@ If you have any questions or need further assistance, please don’t hesitate to
    /software/install
    /software/compile
    /software/usdr_dm_create
+   /software/usdr_registers
    /guides/firmware
 
 .. toctree::
