@@ -47,6 +47,7 @@ If you have any questions or need further assistance, please don’t hesitate to
    /software/install
    /software/compile
    /software/usdr_dm_create
+   /software/usdr_registers
    /guides/firmware
 
 .. toctree::
