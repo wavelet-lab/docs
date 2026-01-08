@@ -17,8 +17,7 @@ The example image below shows the page of LMS6 chip registers control.
 Each control of the page corresponds to a specific register of the chip.
 
 
-.. note::
-   | **WARNING!!!**
+.. warning::
    | The tool exposes low-level hardware controls.
    | Improper use may lead to unexpected behavior or damage to your hardware.
    | Use with caution and refer to the hardware documentation when necessary.
@@ -55,4 +54,3 @@ Now you should open the second terminal window at the same directory when the ap
    usdr_registers
 
 The ``usdr_registers`` tool will connect to the running application via the named pipe and display the control window.
-
