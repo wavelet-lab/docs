@@ -2,9 +2,6 @@
 Wavelet Lab documentation
 =========================
 
-
-TEST
-
 Welcome to the official documentation for Wavelet Lab's projects! Here, you'll find everything you need to get started, understand our technology, and maximize the benefits of our products. Whether you're a developer, an advanced user, or simply curious about what we offer, this documentation will guide you through every aspect of our solutions.
 
 We regularly update our documentation to provide the latest information and improvements. Be sure to check back often for new guides, updates, and additional resources.
