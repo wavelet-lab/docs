@@ -1,0 +1,30 @@
+version: '3'
+
+vars:
+  SPHINXOPTS: ''
+  SPHINXBUILD: 'sphinx-build'
+  SOURCEDIR: 'source'
+  BUILDDIR: 'build'
+  MARKER_FILE: '.build_running_marker'
+
+tasks:
+  help:
+    desc: Display Sphinx help
+    cmds:
+      - |
+        '{{.SPHINXBUILD}} -M help "{{.SOURCEDIR}}" "{{.BUILDDIR}}" {{.SPHINXOPTS}}
+
+  '*':
+    desc: Build the documentation in the specified format (e.g., html, latex)
+    method: timestamp
+    sources:
+      - '{{.SOURCEDIR}}/**/*'
+    cmds:
+      - sleep 0.$((RANDOM % 100))s
+      - if [ -f {{.MARKER_FILE}} ]; then echo "Build already in progress. Skipping..."; exit 1; fi;
+      - |
+        touch {{.MARKER_FILE}}
+      - |
+        {{.SPHINXBUILD}} -M {{index .MATCH 0}} "{{.SOURCEDIR}}" "{{.BUILDDIR}}" {{.SPHINXOPTS}}
+      - defer: |
+          rm {{.MARKER_FILE}} || true
