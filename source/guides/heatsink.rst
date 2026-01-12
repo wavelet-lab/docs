@@ -27,9 +27,9 @@ Assemble items in the order shown in the picture:
    :alt: Heatsink installation: USDR and MHF4 cables
 
 * Peel off the cover shield from the thick thermal interface (2.0mm) and apply it on top of the USDR.
-* Apply the heatsink.
+* Apply the heatsink (Gently push the heatsink pins through the adapter holes until firmly seated).
 
-This is how the assembly should look like:
+This is how the assembly should look (reference image showing the heatsink pins not fully seated, for visualizing the full stack).
 
 .. image:: ../_static/hw_heatsink_4.jpg
    :alt: Heatsink installation: assembly view
