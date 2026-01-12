@@ -179,6 +179,7 @@ In multiboard mode, the RF distribution should be connected as follows:
    | Bold blue dotted lines in the picture above show connections for standalone mode.
    | Bold green dotted lines in the picture above show connections for multiboard mode.
 
+
 Calibration network
 -------------------
 
@@ -197,12 +198,59 @@ In addition, the NOISE/CAL signal can be routed to the first channel(LNAL_A) of 
 This avoids using the RF frontend, resulting in more accurate calibration.
 
 
+Frontend control
+================
+
+
+xmass_ctrl
+----------
+
+
+.. image:: ../_static/xmass/xmass_control_xmass.png
+   :alt: xmass sdr frontend control screenshot
+
+
+.. list-table::
+   :header-rows: 1
+
+   * - Parameter
+     - Description
+   * - BDISTRIB
+     - Enable OUT_REF_B and OUT_SYSREF_B for 4 sync boards
+   * - BLOCAL
+     - Enable local PPS and REF distribution
+   * - RF_CAL_DST_SEL
+     - 0 - RF_CAL_EXT (general RX port) / 1 - RF_CAL_INT (LNA3 port)
+   * - RF_CAL_SRC_SEL
+     - 0 - RF_LO_SRC (from LMK) / 1 - RF_NOISE_SRC (from NOISE GEN)
+   * - GPS_PWREN
+     - Enable GPS module and DC-bias
+   * - LMK_SYNCN
+     - Set LMK05318B SYNC_N port
+   * - SYSREF_1PPS_SEL
+     - 0 - LMK_1PPS / 1 - From SDR_A
+   * - EN_LMX
+     - Enable LMK05318B
+   * - RF_EN
+     - Enables Power Amplifiers
+   * - RF_CAL_SW
+     - 0 - Use RF cal source as FB / 1 - Use XSDR TX as FB
+   * - RF_LB_SW
+     - 0 - Normal operation / 1 - use loopback path to XSDR RX
+   * - RF_NOISE_EN
+     - Enable 14V generator for Zener noise source
+   * - SYSREF_GPSRX_SEL
+     - 0 - TX_SYREF_MUX demultiplexing to CLK_SYSREF_OUT / 1 - TX_SYREF_MUX to GPS_RX
+   * - RTS
+     - Interboard sync logic
+
+
 Software
 ========
 
 .. note::
    | You must install the required software and driver packages first.
-   | Please refer to the :doc:`/software/install`.
+| Please refer to the :doc:`/software/install`.
 
 In order to use xMASS SDR, you can use the **usdr_dm_create** utility to receive or transmit data.
 
@@ -210,7 +258,7 @@ The following example creates a raw IQ data file with a sample rate of 10 MSampl
 
 .. code-block:: bash
 
-   usdr_dm_create -D bus=pci/dev/usdr0:/dev/usdr1:/dev/usdr2:/dev/usdr3 -r10e6 -l3 -e1700e6 -c -1 -f output.raw
+   usdr_dm_create -D bus=pci/dev/usdr0:/dev/usdr1:/dev/usdr2:/dev/usdr3 -r10e6 -l3 -e1700e6 -c -f output.raw
 
 The first device in the list(usdr0 in this example) should be the master xMASS SDR board(slot A).
 
