@@ -213,35 +213,50 @@ xmass_ctrl
 .. list-table::
    :header-rows: 1
 
-   * - Parameter
+   * - Register
+     - Field
      - Description
-   * - BDISTRIB
+   * - P0
+     - BDISTRIB
      - Enable OUT_REF_B and OUT_SYSREF_B for 4 sync boards
-   * - BLOCAL
+   * - P0
+     - BLOCAL
      - Enable local PPS and REF distribution
-   * - RF_CAL_DST_SEL
+   * - P0
+     - RF_CAL_DST_SEL
      - 0 - RF_CAL_EXT (general RX port) / 1 - RF_CAL_INT (LNA3 port)
-   * - RF_CAL_SRC_SEL
+   * - P0
+     - RF_CAL_SRC_SEL
      - 0 - RF_LO_SRC (from LMK) / 1 - RF_NOISE_SRC (from NOISE GEN)
-   * - GPS_PWREN
+   * - P0
+     - GPS_PWREN
      - Enable GPS module and DC-bias
-   * - LMK_SYNCN
+   * - P0
+     - LMK_SYNCN
      - Set LMK05318B SYNC_N port
-   * - SYSREF_1PPS_SEL
+   * - P0
+     - SYSREF_1PPS_SEL
      - 0 - LMK_1PPS / 1 - From SDR_A
-   * - EN_LMX
+   * - P0
+     - EN_LMX
      - Enable LMK05318B
-   * - RF_EN
+   * - P1
+     - RF_EN
      - Enables Power Amplifiers
-   * - RF_CAL_SW
+   * - P1
+     - RF_CAL_SW
      - 0 - Use RF cal source as FB / 1 - Use XSDR TX as FB
-   * - RF_LB_SW
+   * - P1
+     - RF_LB_SW
      - 0 - Normal operation / 1 - use loopback path to XSDR RX
-   * - RF_NOISE_EN
+   * - P1
+     - RF_NOISE_EN
      - Enable 14V generator for Zener noise source
-   * - SYSREF_GPSRX_SEL
+   * - P1
+     - SYSREF_GPSRX_SEL
      - 0 - TX_SYREF_MUX demultiplexing to CLK_SYSREF_OUT / 1 - TX_SYREF_MUX to GPS_RX
-   * - RTS
+   * - P1
+     - RTS
      - Interboard sync logic
 
 
