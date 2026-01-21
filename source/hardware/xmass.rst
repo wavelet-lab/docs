@@ -206,10 +206,6 @@ Frontend control
    | Please refer to the :doc:`/software/usdr_registers`.
 
 
-Frontend control registers map
-==============================
-
-
 GENERAL
 -------
 
@@ -221,269 +217,19 @@ GENERAL
      - Values/Range
      - Unit
      - Description
-   * - /dm/sdr/0/usbclk
-     - TODO
-     - TODO
-     - TODO
-     - USB/PHY clock setting
-   * - /dm/sdr/0/calibrate
-     - bool/command
-     - TODO
-     - TODO
-     - calibration trigger
-   * - /dm/sdr/0/vio
-     - TODO
-     - TODO
-     - TODO
-     - TODO
-   * - /dm/sdr/0/tx/phase_ovr
-     - TODO
-     - TODO
-     - TODO
-     - TODO
-   * - /dm/sdr/0/tx/phase_ovr_ia
-     - TODO
-     - TODO
-     - TODO
-     - TODO
-   * - /dm/sdr/0/tx/phase_ovr_rc
-     - TODO
-     - TODO
-     - TODO
-     - TODO
-   * - /dm/sdr/0/rx/phase_ovr
-     - TODO
-     - TODO
-     - TODO
-     - TODO
-   * - /dm/sdr/0/rx/dccorr
-     - TODO
-     - TODO
-     - TODO
-     - RX DC correction (I/Q offsets)
-   * - /dm/sdr/0/tx/dccorr
-     - TODO
-     - TODO
-     - TODO
-     - TX DC correction (I/Q offsets)
-   * - /dm/sdr/0/rx/phgaincorr
-     - TODO
-     - TODO
-     - TODO
-     - TODO
-   * - /dm/sdr/0/tx/phgaincorr
-     - TODO
-     - TODO
-     - TODO
-     - TODO
-   * - /dm/sdr/0/rx/freqency/bb
-     - TODO
-     - TODO
-     - TODO
-     - TODO
-   * - /dm/sdr/0/tx/freqency/bb
-     - TODO
-     - TODO
-     - TODO
-     - TODO
-   * - /dm/sdr/0/rx/freqency
-     - ==TODO
-     - ==TODO
-     - ==TODO
-     - RX LO frequency
-   * - /dm/sdr/0/tx/freqency
-     - TODO
-     - TODO
-     - TODO
-     - TX LO frequency
-   * - /dm/sdr/0/tx/gain
-     - ==TODO
-     - ==TODO
-     - ==TODO
-     - Total TX gain
-   * - /dm/sdr/0/tx/gain/lb
-     - ==TODO
-     - ==TODO
-     - ==TODO
-     - TX loopback gain
-   * - /dm/sdr/0/tx/gain/vga1
-     - ==TODO
-     - ==TODO
-     - ==TODO
-     - TX VGA1 gain
-   * - /dm/sdr/0/rx/gain
-     - ==TODO
-     - ==TODO
-     - ==TODO
-     - Total RX gain
-   * - /dm/sdr/0/rx/gain/pga
-     - ==TODO
-     - ==TODO
-     - ==TODO
-     - RX PGA gain
-   * - /dm/sdr/0/rx/gain/vga
-     - ==TODO
-     - ==TODO
-     - ==TODO
-     - RX VGA gain
-   * - /dm/sdr/0/rx/gain/lna
-     - ==TODO
-     - ==TODO
-     - ==TODO
-     - RX LNA gain
-   * - /dm/sdr/0/rx/gain/lb
-     - ==TODO
-     - ==TODO
-     - ==TODO
-     - RX loopback gain
-   * - /dm/sdr/0/rx/rfic_path
-     - TODO
-     - TODO
-     - TODO
-     - TODO
-   * - /dm/sdr/0/tx/rfic_path
-     - TODO
-     - TODO
-     - TODO
-     - TODO
-   * - /dm/sdr/0/rx/path
-     - enum
-     - - 0 - AUTO
-       - 1 - LNAL
-       - 2 - LNAW
-       - 3 - LNAH
-       - 4 - ADC
-       - 5 - LNAL_LB
-       - 6 - LNAW_LB
-       - 7 - LNAH_LB
+   * - /dm/sdr/refclk/path
+     - enum(str)
+     -  - internal - Internal clock source/Single board operation
+        - external - External clock source/Multi board operation
      -
-     - RX path / antenna selection
-   * - /dm/sdr/0/tx/path
-     - enum
-     - - 0 - AUTO
-       - 1 - B1: TXH/TXW
-       - 2 - B2: TXL
-       - 3 - W: 0-2.5G
-       - 4 - H: 2.5G-3.9G
-     -
-     - TX path / antenna selection
-   * - /dm/sdr/0/rx/dccorrmode
-     - TODO
-     - TODO
-     - TODO
-     - TODO
-   * - /dm/sdr/0/rx/bandwidth
-     - float
-     - TODO
+     - Reference clock source selection
+   * - /dm/sdr/refclk/frequency
+     - int
+     - ??????? 10 - 40000000
      - Hz
-     - RX LPF/BW
-   * - /dm/sdr/0/tx/bandwidth
-     - float
-     - TODO
-     - Hz
-     - TX LPF/BW
-   * - /dm/sdr/0/rxdsp/swapab
-     - TODO
-     - TODO
-     - TODO
-     - TODO
-   * - /dm/sdr/0/tdd/freqency
-     - TODO
-     - TODO
-     - TODO
-     - TODO
-   * - /dm/sdr/0/tfe/antcfg
-     - TODO
-     - TODO
-     - TODO
-     - TODO
-   * - /dm/sdr/0/tfe/generator/enable
-     - TODO
-     - TODO
-     - TODO
-     - TODO
-   * - /dm/sdr/0/tfe/generator/const
-     - TODO
-     - TODO
-     - TODO
-     - TODO
-   * - /dm/sdr/0/tfe/generator/tone
-     - TODO
-     - TODO
-     - TODO
-     - TODO
-   * - /dm/sdr/0/tfe/nco/enable
-     - TODO
-     - TODO
-     - TODO
-     - TODO
-   * - /dm/sdr/0/tfe/nco/freqency
-     - TODO
-     - TODO
-     - TODO
-     - TODO
-   * - /dm/sdr/0/rfe/throttle
-     - TODO
-     - TODO
-     - TODO
-     - TODO
-   * - /dm/sdr/0/rfe/nco/enable
-     - TODO
-     - TODO
-     - TODO
-     - TODO
-   * - /dm/sdr/0/rfe/nco/freqency
-     - TODO
-     - TODO
-     - TODO
-     - TODO
-   * - /dm/sdr/0/rfe/prdc
-     - TODO
-     - TODO
-     - TODO
-     - TODO
-   * - /dm/sdr/0/core/atcrbs/reg
-     - TODO
-     - TODO
-     - TODO
-     - TODO
-   * - /dm/sdr/0/dac_vctcxo
-     - TODO
-     - TODO
-     - TODO
-     - TODO
-   * - /dm/sdr/0/phy_rx_dly
-     - TODO
-     - TODO
-     - TODO
-     - TODO
-   * - /dm/sdr/0/phy_rx_fsr
-     - TODO
-     - TODO
-     - TODO
-     - TODO
-   * - /dm/sdr/0/phy_tx_fsr
-     - TODO
-     - TODO
-     - TODO
-     - TODO
-   * - /dm/sdr/0/phy_tx_iqsel
-     - TODO
-     - TODO
-     - TODO
-     - TODO
-   * - /dm/sdr/0/phyrx/ml
-     - TODO
-     - TODO
-     - TODO
-     - TODO
-   * - /dm/sdr/0/sync/cal/freq
-     - float
-     - ??? 1000000.0 -- 499000000.99
-     - Hz
-     - LO calibration frequency
+     - Reference clock frequency
    * - /dm/sdr/0/sync/cal/path
-     - enum
+     - enum(int)
      -  - 0 - Normal operation
         - 1 - LO
         - 2 - NOISE
@@ -491,14 +237,22 @@ GENERAL
         - 4 - NOISE_LNA3
      -
      - Calibration path selection
+   * - /dm/sdr/0/sync/cal/freq
+     - int
+     - ??????? 1000000 -- 499000000
+     - Hz
+     - LO calibration frequency
 
 
-xmass_ctrl
-----------
+SYSREF
+------
 
+In order to enable sysref mode, you have to pass one of the following values to the ``usdr_dms_sync`` api call.
 
-TODO: description of the low level controls register map.
-
-.. image:: ../_static/xmass/xmass_control_xmass.png
-   :alt: xmass sdr frontend control screenshot
-
+- ``all`` - enable all supported sync sources (sysref, stream-based, external PPS, etc.).
+- ``1pps`` - explicit sysref via an external 1PPS pulse (external PPS/sysref).
+- ``rx`` - use the RX stream as the synchronization source.
+- ``tx`` - use the TX stream as the synchronization source.
+- ``any`` - accept any available sync source (choose the best/first available).
+- ``none`` - disable synchronization (no automatic sync).
+- ``off`` - turn sync off / explicitly stop syncing (used in code before starting streams).
