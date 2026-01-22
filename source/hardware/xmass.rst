@@ -250,9 +250,97 @@ SYSREF
 In order to enable sysref mode, you have to pass one of the following values to the ``usdr_dms_sync`` api call.
 
 - ``all`` - enable all supported sync sources (sysref, stream-based, external PPS, etc.).
-- ``1pps`` - explicit sysref via an external 1PPS pulse (external PPS/sysref).
+- ``1pps`` or ``sysref`` - explicit sysref via an external 1PPS pulse (external PPS/sysref).
+- ``sysref+gen`` - explicit sysref via internal source (using onboard LMK05318B).
 - ``rx`` - use the RX stream as the synchronization source.
 - ``tx`` - use the TX stream as the synchronization source.
 - ``any`` - accept any available sync source (choose the best/first available).
 - ``none`` - disable synchronization (no automatic sync).
 - ``off`` - turn sync off / explicitly stop syncing (used in code before starting streams).
+
+
+xmass_ctrl
+----------
+
+This section describes the low level control of the board.
+
+
+.. image:: ../_static/xmass/xmass_control_xmass.png
+   :alt: xmass sdr frontend control screenshot
+
+
+.. list-table::
+   :header-rows: 1
+
+   * - Register
+     - Field
+     - Description
+   * - P0
+     - BDISTRIB
+     - Enable OUT_REF_B and OUT_SYSREF_B for 4 sync boards
+   * - P0
+     - BLOCAL
+     - Enable local PPS and REF distribution
+   * - P0
+     - RF_CAL_DST_SEL
+     - 0 - RF_CAL_EXT (general RX port) / 1 - RF_CAL_INT (LNA3 port)
+   * - P0
+     - RF_CAL_SRC_SEL
+     - 0 - RF_LO_SRC (from LMK) / 1 - RF_NOISE_SRC (from NOISE GEN)
+   * - P0
+     - GPS_PWREN
+     - Enable GPS module and DC-bias
+   * - P0
+     - LMK_SYNCN
+     - Set LMK05318B SYNC_N port
+   * - P0
+     - SYSREF_1PPS_SEL
+     - 0 - LMK_1PPS / 1 - From SDR_A
+   * - P0
+     - EN_LMX
+     - Enable LMK05318B
+   * - P1
+     - RF_EN
+     - Enables Power Amplifiers
+   * - P1
+     - RF_CAL_SW
+     - 0 - Use RF cal source as FB / 1 - Use XSDR TX as FB
+   * - P1
+     - RF_LB_SW
+     - 0 - Normal operation / 1 - use loopback path to XSDR RX
+   * - P1
+     - RF_NOISE_EN
+     - Enable 14V generator for Zener noise source
+   * - P1
+     - SYSREF_GPSRX_SEL
+     - 0 - TX_SYREF_MUX demultiplexing to CLK_SYSREF_OUT / 1 - TX_SYREF_MUX to GPS_RX
+   * - P1
+     - RTS
+     - Interboard sync logic(Not used)
+
+
+Software
+========
+
+.. note::
+   | You must install the required software and driver packages first.
+   | Please refer to the :doc:`/software/install`.
+
+
+.. note::
+   | Please refer to :doc:`/software/usdr_dm_create` for detailed information about using the **usdr_dm_create** utility.
+
+
+In order to use xMASS SDR, you can use the **usdr_dm_create** utility to receive or transmit data.
+B
+The following example creates a raw IQ data file with a sample rate of 10 MSamples per second per channel, a center frequency of 1700 MHz, using all 8 RX channels:
+
+
+.. code-block:: bash
+
+   usdr_dm_create -D bus=pci/dev/usdr0:/dev/usdr1:/dev/usdr2:/dev/usdr3 -r10e6 -l3 -e1700e6 -c -f output.raw
+
+
+The first device in the list(usdr0 in this example) should be the master xMASS SDR board(slot A).
+
+The software stack supports the **SoapySDR** interface, so you can use any compatible application.
