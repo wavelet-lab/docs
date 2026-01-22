@@ -209,39 +209,36 @@ Frontend control
 GENERAL
 -------
 
+This section describes the general control of the board.
+
+
+.. image:: ../_static/xmass/xmass_control_general.png
+   :alt: xmass sdr frontend control screenshot
+
+
 .. list-table::
    :header-rows: 1
 
    * - Register
      - Type
-     - Values/Range
-     - Unit
      - Description
    * - /dm/sdr/refclk/path
-     - enum(str)
      -  - internal - Internal clock source/Single board operation
         - external - External clock source/Multi board operation
-     -
      - Reference clock source selection
    * - /dm/sdr/refclk/frequency
      - int
-     - ??????? 10 - 40000000
-     - Hz
-     - Reference clock frequency
+     - Reference clock frequency in Hz
    * - /dm/sdr/0/sync/cal/path
-     - enum(int)
      -  - 0 - Normal operation
         - 1 - LO
         - 2 - NOISE
         - 3 - LO_LNA3
         - 4 - NOISE_LNA3
-     -
      - Calibration path selection
    * - /dm/sdr/0/sync/cal/freq
      - int
-     - ??????? 1000000 -- 499000000
-     - Hz
-     - LO calibration frequency
+     - LO calibration frequency in Hz
 
 
 SYSREF
@@ -266,7 +263,7 @@ This section describes the low level control of the board.
 
 
 .. image:: ../_static/xmass/xmass_control_xmass.png
-   :alt: xmass sdr frontend control screenshot
+   :alt: xmass sdr lowlevel control screenshot
 
 
 .. list-table::
