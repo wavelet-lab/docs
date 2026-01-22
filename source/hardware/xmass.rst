@@ -98,6 +98,8 @@ The MHF4 connector of each xSDR module should be connected as shown in the pictu
 Back side
 ---------
 
+The back side of the xMASS SDR contains the clocking and synchronization circuitry, RF distribution network and calibration sources.
+
 .. image:: ../_static/xmass_back_zoom_light.jpg
    :alt: xmass sdr
 
