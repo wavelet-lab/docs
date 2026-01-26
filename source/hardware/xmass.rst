@@ -204,10 +204,14 @@ Multiboard mode
 THe multiboard mode provides calibration and routing scheme for multiple synchronized xMASS boards so that calibration signals and RF paths are common across the array, enabling coherent multi-board MIMO and consistent calibration measurements.
 
 **Signal flow (master / slave)**
+
   - Master board:
+
     - ``RF_CAL_OUT`` -> ``RF_B_IN`` (feeds the distributed calibration bus that other boards listen to).
     - ``RF_0`` -> ``RF_CAL_IN`` (local calibration loop using the master board's RF path).
+
   - Slave boards:
+
     - ``RF_1``, ``RF_2``, ``RF_3`` -> ``RF_CAL_IN`` on each additional (slave) board, respectively (receive the calibration reference from the master).
 
 
