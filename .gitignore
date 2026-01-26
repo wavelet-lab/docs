@@ -1,6 +1,7 @@
 .idea/
 .task/
 *.bkp
+.build_running_marker
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
