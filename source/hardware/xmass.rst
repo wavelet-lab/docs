@@ -49,7 +49,26 @@ RF Specifications
   - 0.1 MSps - 100 MSps  
 
 **Channel Bandwidth**  
-  - 0.5 MHz - 90 MHz  
+  - 0.5 MHz - 90 MHz
+
+
+Target Applications
+-------------------
+
+**Spectrum Monitoring**
+  - **4× M.2 2230 Key A+E xSDR** for comprehensive frequency analysis and monitoring
+
+**Cellular Communication**
+  - Enables next-generation **4G/5G wireless networks** with high-order **massive MIMO**
+  - Fully compatible with **Amarisoft** and **srsRAN**
+
+**Directional Finding**
+  - Determines the **direction of arrival (DoA)** of incoming radio signals, enabling **precise localization** of transmitters
+
+**Beamforming**
+  - Focuses signal transmission and reception in specific directions
+  - Enhances range, improves signal quality, and reduces interference in multi-user environments
+
 
 Bifurcation Modes
 -----------------
@@ -67,31 +86,14 @@ Available bifurcation modes are:
 
 - **2 independent 4×4 MIMO systems**
 
-  - Description: The 8×8 array is split into two independent 4×4 logical devices. Each group has its own stream context and can be controlled separately while still retaining 4×4 MIMO capability within the group.
+  - The 8×8 array is split into two independent 4×4 logical devices. Each group has its own stream context and can be controlled separately while still retaining 4×4 MIMO capability within the group.
   - When to use: deploying two separate 4×4 systems (for example, two co-located base stations or one monitoring system plus one comms system), or when slightly reduced MIMO order still meets spatial processing requirements but host/throughput constraints dictate partitioning.
 
 - **4 independent 2×2 MIMO systems**
 
-  - Description: The array is split into four independent 2×2 logical devices, each suitable for small-scale MIMO links or parallel monitoring tasks.
+  - The array is split into four independent 2×2 logical devices, each suitable for small-scale MIMO links or parallel monitoring tasks.
   - When to use: scenarios requiring multiple independent narrow-band links or many small testbeds.
 
-
-Target Applications
--------------------
-
-**Spectrum Monitoring**  
-  - **4× M.2 2230 Key A+E xSDR** for comprehensive frequency analysis and monitoring  
-
-**Cellular Communication**  
-  - Enables next-generation **4G/5G wireless networks** with high-order **massive MIMO**  
-  - Fully compatible with **Amarisoft** and **srsRAN**  
-
-**Directional Finding**  
-  - Determines the **direction of arrival (DoA)** of incoming radio signals, enabling **precise localization** of transmitters  
-
-**Beamforming**  
-  - Focuses signal transmission and reception in specific directions  
-  - Enhances range, improves signal quality, and reduces interference in multi-user environments
 
 Connections
 ===========
