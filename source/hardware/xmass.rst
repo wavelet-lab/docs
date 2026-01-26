@@ -32,7 +32,7 @@ General Specifications
   - 20W Typical
 
 **Extended Power Supply Range**  
-  - 2.85 - 5.5 V  
+  - 2.85 - 5.5 V
 
 RF Specifications
 -----------------
