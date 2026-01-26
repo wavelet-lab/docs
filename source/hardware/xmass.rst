@@ -2,15 +2,13 @@
 xMASS SDR
 =========
 
-A modular, high-performance **8×8 MIMO transceiver** designed for **4G/5G applications** and other use cases.
+A modular, high-performance 8×8 MIMO transceiver optimized for **4G/5G application**, research, beamforming, direction finding and wideband spectrum monitoring. The xMASS provides eight synchronized RX and eight synchronized TX channels with flexible clocking, calibration and host I/O for coherent multi-channel acquisition and transmission. Its modular design allows for easy maintenance and enables the construction of high-order MIMO systems using the same building blocks.
 
 .. image:: ../_static/xmass-front-lg.png
    :alt: xmass sdr
 
 Overview
 ========
-
-The xMASS SDR is a modular, high-performance **MIMO transceiver** featuring **8 RX and 8 TX channels** which can be synchronized. Its modular design allows for easy maintenance and enables the construction of high-order MIMO systems using the same building blocks.
 
 .. image:: ../_static/xmass-iso-open-lg.png
    :alt: xmass sdr
