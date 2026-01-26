@@ -186,15 +186,30 @@ RF distribution
    | The diagram above shows the RF distribution for one pair of RX/TX channels.
    | The rest of the channels are connected in the same way.
 
-In standalone mode, the RF distribution should be connected as follows:
 
-* ``RF_CAL_OUT`` to ``RF_CAL_IN``.
+Standalone mode
+---------------
 
-In multiboard mode, the RF distribution should be connected as follows:
+The standalone mode provides a closed-loop calibration path and a local RF calibration reference when a single xMASS board is used.
 
-* ``RF_CAL_OUT`` to ``RF_B_IN`` on the same (master) board.
-* ``RF_0`` to ``RF_CAL_IN`` on the same (master) board.
-* ``RF_1``, ``RF_2`` and ``RF_3`` to ``RF_CAL_IN`` on each additional (slave) board, respectively.
+Signal flow
+  - ``RF_CAL_OUT`` -> ``RF_CAL_IN`` (local calibration loop through the frontend on the same board).
+  - Calibration source (``NOISE`` or ``CAL``) is switched into LNA/TX paths under software control when required.
+
+
+
+Multiboard mode
+---------------
+
+THe multiboard mode provides calibration and routing scheme for multiple synchronized xMASS boards so that calibration signals and RF paths are common across the array, enabling coherent multi-board MIMO and consistent calibration measurements.
+
+**Signal flow (master / slave)**
+  - Master board:
+    - ``RF_CAL_OUT`` -> ``RF_B_IN`` (feeds the distributed calibration bus that other boards listen to).
+    - ``RF_0`` -> ``RF_CAL_IN`` (local calibration loop using the master board's RF path).
+  - Slave boards:
+    - ``RF_1``, ``RF_2``, ``RF_3`` -> ``RF_CAL_IN`` on each additional (slave) board, respectively (receive the calibration reference from the master).
+
 
 .. note::
    | Bold blue dotted lines in the picture above show connections for standalone mode.
@@ -215,7 +230,7 @@ The possible RF paths are:
 * Calibration path: NOISE or CAL signal to xSDR module for RX calibration.
 * Loopback path: TX from xSDR module to RX of the same channel for loopback testing.
 
-In addition, the NOISE/CAL signal can be routed to the first channel(LNAL_A) of each xSDR module directly through the M.2 socket.
+In addition, the ``NOISE``/``CAL`` signal can be routed to the first channel(LNAL_A) of each xSDR module directly through the M.2 socket.
 This avoids using the RF frontend, resulting in more accurate calibration.
 
 
@@ -357,6 +372,13 @@ The following example creates a raw IQ data file with a sample rate of 10 MSampl
 .. code-block:: bash
 
    usdr_dm_create -D bus=pci/dev/usdr0:/dev/usdr1:/dev/usdr2:/dev/usdr3 -r10e6 -l3 -e1700e6 -c -f output.raw
+
+
+If you want to enable synchronization using SYSREF, you can add the ``-s sysref`` option to the command line:
+
+.. code-block:: bash
+
+   usdr_dm_create -D bus=pci/dev/usdr0:/dev/usdr1:/dev/usdr2:/dev/usdr3 -s sysref -r10e6 -l3 -e1700e6 -c -f output.raw
 
 
 The first device in the list(usdr0 in this example) should be the master xMASS SDR board(slot A).
