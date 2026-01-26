@@ -49,8 +49,16 @@ The code below shows how to do this with ``usdr_dm_create`` utility.
 The ``usdr_dm_create`` utility should start normally. Debug mode instructs the uSDR library to create the ``usdr_debug_pipe`` named pipe for communication with the ``usdr_registers`` tool.
 Now you should open the second terminal window at the same directory when the application was started and run the ``usdr_registers`` tool.
 
+
 .. code-block:: bash
 
-   usdr_registers
+   usdr_dm_create
+
+Alternatively, you can specify the named pipe path directly using the ``--pipe`` option of the ``usdr_registers`` tool.
+
+
+.. code-block:: bash
+
+   usdr_registers --pipe /path/to/usdr_debug_pipe
 
 The ``usdr_registers`` tool will connect to the running application via the named pipe and display the control window.
