@@ -278,35 +278,33 @@ This section describes the general control of the board.
    :alt: xmass sdr frontend control screenshot
 
 
-.. list-table::
-   :header-rows: 1
 
-   * - Register
-     - Type
-     - Description
-   * - /dm/sdr/refclk/path
-     -  - internal - Internal clock source/Single board operation
+* - ``/dm/sdr/refclk/path`` - Reference clock source selection
+
+    - Options:
+
+        - internal - Internal clock source/Single board operation
         - external - External clock source/Multi board operation
-     - Reference clock source selection
-   * - /dm/sdr/refclk/frequency
-     - int
-     - Reference clock frequency in Hz
-   * - /dm/sdr/0/sync/cal/path
-     -  - 0 - Normal operation
+
+* - ``/dm/sdr/refclk/frequency`` - Reference clock frequency in Hz
+
+* - ``/dm/sdr/0/sync/cal/path`` - Calibration path selection
+
+    - Options:
+
+        - 0 - Normal operation
         - 1 - LO
         - 2 - NOISE
         - 3 - LO_LNA3
         - 4 - NOISE_LNA3
-     - Calibration path selection
-   * - /dm/sdr/0/sync/cal/freq
-     - int
-     - LO calibration frequency in Hz
+
+* - ``/dm/sdr/0/sync/cal/freq`` - LO calibration frequency in Hz
 
 
 SYSREF
 ------
 
-In order to enable sysref mode, you have to pass one of the following values to the ``usdr_dms_sync`` api call.
+In order to select synchronization mode, you have to pass one of the following values to the ``usdr_dms_sync`` api call.
 
 - ``all`` - enable all supported sync sources (sysref, stream-based, external PPS, etc.).
 - ``1pps`` or ``sysref`` - explicit sysref via an external 1PPS pulse (external PPS/sysref).
