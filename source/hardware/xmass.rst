@@ -99,6 +99,7 @@ Back side
 ---------
 
 The back side of the xMASS SDR contains the clocking and synchronization circuitry, RF distribution network and calibration sources.
+The picture below shows the standard standalone configuration with one xMASS SDR board.
 
 .. image:: ../_static/xmass_back_zoom_light.jpg
    :alt: xmass sdr
