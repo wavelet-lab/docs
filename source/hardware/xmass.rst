@@ -54,9 +54,27 @@ RF Specifications
 Bifurcation Modes
 -----------------
 
-- **Full 8×8 MIMO**  
-- **2 independent 4×4 MIMO systems**  
-- **4 independent 2×2 MIMO systems**  
+The xMASS supports configurable bifurcation modes that partition the physical 8 RX / 8 TX channel array into one or more independent logical streams.
+Bifurcation determines how RF channels, FPGA resources, and host I/O are grouped and advertised to the host.
+Selecting a bifurcation mode affects aggregate throughput, per-device sample-rate limits, synchronization behaviour, calibration routing, and the available MIMO processing scope.
+
+Available bifurcation modes are:
+
+- **Full 8×8 MIMO**
+
+  - All 8 RX and 8 TX channels are presented as a single logical device with full cross-channel synchronization and shared calibration paths. This mode enables true 8×8 spatial processing (beamforming, full-array DoA, high-order MIMO benchmarks).
+  - When to use: research/measurement requiring maximum antenna aperture, advanced beamforming or direction-finding, or when coherent processing across all channels is required.
+
+- **2 independent 4×4 MIMO systems**
+
+  - Description: The 8×8 array is split into two independent 4×4 logical devices. Each group has its own stream context and can be controlled separately while still retaining 4×4 MIMO capability within the group.
+  - When to use: deploying two separate 4×4 systems (for example, two co-located base stations or one monitoring system plus one comms system), or when slightly reduced MIMO order still meets spatial processing requirements but host/throughput constraints dictate partitioning.
+
+- **4 independent 2×2 MIMO systems**
+
+  - Description: The array is split into four independent 2×2 logical devices, each suitable for small-scale MIMO links or parallel monitoring tasks.
+  - When to use: scenarios requiring multiple independent narrow-band links or many small testbeds.
+
 
 Target Applications
 -------------------
