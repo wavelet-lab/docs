@@ -151,30 +151,51 @@ The IC produces the following output signals:
 * SYSREF output to all xSDR modules.
 * Calibrated reference clock output for the RF calibration loop.
 
+.. note::
+   | Bold blue dotted lines in the picture above show the connections for standalone mode.
+   | Bold green dotted lines in the picture above show the connections for multiboard mode.
+
+
 Standalone mode
 ---------------
 
-Standalone mode is used when only one xMASS SDR is present. In this mode most distribution schemes can be avoided, and synchronization buses should be connected as follows:
+The standalone mode provides a self-contained clock and event synchronization scheme for a single xMASS board.
 
-* ``REF_OUT_A`` to ``REF_IN``.
-* ``SYSREF_OUT`` to ``SYSREF_IN``.
+**Signal flow**
 
-.. note::
-   | Bold blue dotted lines in the picture above show the connections for standalone mode.
+Physical connections:
+
+  - ``REF_OUT_A`` -> ``REF_IN`` (local reference routing to module A).
+  - ``SYSREF_OUT`` -> ``SYSREF_IN`` (local SYSREF distribution).
+
+**Logical behaviour:**
+
+  - LMK05318B drives local REFCLK and SYSREF to all onboard xSDR modules.
+  - An optionally-attached external source or GPS may be selected as the REFCLK input.
+
 
 Multiboard mode
 ---------------
 
-If you need to use multiple xMASS SDR boards synchronized together, you can use the following connection scheme:
+The multiboard mode provides a distributed clock and event synchronization architecture for multiple xMASS boards so that REFCLK and SYSREF are common and phase-aligned across the whole array.
 
-* ``OUT_REF_B0`` to ``REF_IN`` on the same (master) board.
-* ``OUT_REF_B1``, ``OUT_REF_B2`` and ``OUT_REF_B3`` to ``REF_IN`` on each additional (slave) board, respectively.
-* ``SYSREF_OUT`` to ``SYSREF_B_IN`` on the same (master) board.
-* ``SYSREF_B_0`` to ``SYSREF_IN`` on the same (master) board.
-* ``SYSREF_B_1``, ``SYSREF_B_2`` and ``SYSREF_B_3`` to ``SYSREF_IN`` on each additional (slave) board, respectively.
+**Signal flow (master / slave)**
 
-.. note::
-   | Bold green dotted lines in the picture above show the connections for multiboard mode.
+  - Master board:
+
+    - ``OUT_REF_B0`` -> ``REF_IN`` on master (primary reference distribution output).
+    - ``SYSREF_OUT`` -> ``SYSREF_B_IN`` on master (SYSREF distribution input/output routing).
+
+  - Slave boards:
+
+    - ``OUT_REF_B1``, ``OUT_REF_B2``, ``OUT_REF_B3`` -> ``REF_IN`` on each slave board as required.
+    - ``SYSREF_B_1``, ``SYSREF_B_2``, ``SYSREF_B_3`` -> ``SYSREF_IN`` on each slave board respectively.
+
+**Logical behaviour**
+
+  - One board acts as the master reference source; other boards lock to that source for both REFCLK and SYSREF.
+  - LMK05318B on the master can be driven by GPS or an external disciplined source to provide absolute time/frequency across the entire array.
+
 
 RF distribution
 ===============
@@ -192,16 +213,17 @@ Standalone mode
 
 The standalone mode provides a closed-loop calibration path and a local RF calibration reference when a single xMASS board is used.
 
-Signal flow
+**Signal flow**
+
   - ``RF_CAL_OUT`` -> ``RF_CAL_IN`` (local calibration loop through the frontend on the same board).
-  - Calibration source (``NOISE`` or ``CAL``) is switched into LNA/TX paths under software control when required.
+  - Calibration source (``NOISE`` or ``CAL``) is switched into LNA/RX paths under software control when required.
 
 
 
 Multiboard mode
 ---------------
 
-THe multiboard mode provides calibration and routing scheme for multiple synchronized xMASS boards so that calibration signals and RF paths are common across the array, enabling coherent multi-board MIMO and consistent calibration measurements.
+The multiboard mode provides calibration and routing scheme for multiple synchronized xMASS boards so that calibration signals and RF paths are common across the array, enabling coherent multi-board MIMO and consistent calibration measurements.
 
 **Signal flow (master / slave)**
 
