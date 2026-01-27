@@ -388,7 +388,6 @@ Software
 
 
 In order to use xMASS SDR, you can use the **usdr_dm_create** utility to receive or transmit data.
-B
 The following example creates a raw IQ data file with a sample rate of 10 MSamples per second per channel, a center frequency of 1700 MHz, using all 8 RX channels:
 
 
