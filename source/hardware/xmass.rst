@@ -136,8 +136,8 @@ Clocks and synchronization
 
 There are two clock domains on the xMASS SDR:
 
-* **REFCLK**: Reference clock used for phase synchronization and RF frequency calibration.
-* **SYSREF**: Event synchronization: start, stop, and other control signals.
+* **REFCLK**: The continuous reference frequency distributed to the xMASS board and all attached xSDR modules. It provides the master frequency reference used to lock local PLLs, generate sampling clocks and to perform RF frequency calibration across channels.
+* **SYSREF**: A timing/event synchronization pulse distributed to all xSDR modules. It defines deterministic frame boundaries and is used to align converters, FIFOs and JESD-like datastream boundaries so that samples across multiple channels/boards have known, repeatable timing.
 
 The **LMK05318B** serves as the central clocking IC on the xMASS SDR and can use different clock sources:
 
