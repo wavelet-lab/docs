@@ -219,7 +219,6 @@ The standalone mode provides a closed-loop calibration path and a local RF calib
   - Calibration source (``NOISE`` or ``CAL``) is switched into LNA/RX paths under software control when required.
 
 
-
 Multiboard mode
 ---------------
 
