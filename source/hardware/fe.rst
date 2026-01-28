@@ -221,6 +221,309 @@ Calibration
 The loopback mode is possible for each TX/RX pair for calibration purposes.
 
 
+RF frontend control
+===================
+
+
+.. note::
+   | In order to control the frontend from software, you need to use the ``usdr_registers`` tool.
+   | Please refer to the :doc:`/software/usdr_registers`.
+
+
+exfe10_4ch_usr
+--------------
+
+This section describes the main register map for controlling the FE front-end.
+Using controls on this page, you can switch filters, set attenuators, select antenna paths, and enable/disable channels.
+
+
+.. image:: ../_static/fe/fe_control_usr.png
+   :alt: fe control registers
+
+
+* - ``RX_FILTER_BANK``/``A`` - RX filter bank selector for channel A
+  - ``/debug/hw/exfe10_4ch_usr/0/reg/0x50/A``
+  - Options:
+
+        - FILT_400_1000M - RX filter 400-1000 MHz
+        - FILT_1000_2000M - RX filter 1000-2000 MHz
+        - FILT_2000_3500M - RX filter 2000-3500 MHz
+        - FILT_2500_5000M - RX filter 2500-5000 MHz
+        - FILT_3500_7100M - RX filter 3500-7100 MHz
+        - AUTO_400_1000M - **======================TODO**
+        - AUTO_1000_2000M - **======================TODO**
+        - AUTO_2000_3500M - **======================TODO**
+        - AUTO_2500_5000M - **======================TODO**
+        - AUTO_3500_7100M - **======================TODO**
+
+* - ``RX_FILTER_BANK``/``B`` - RX filter bank selector for channel B
+  - ``/debug/hw/exfe10_4ch_usr/0/reg/0x50/B``
+  - Options: same as channel A
+
+* - ``RX_FILTER_BANK``/``C`` - RX filter bank selector for channel C
+  - ``/debug/hw/exfe10_4ch_usr/0/reg/0x50/C``
+  - Options: same as channel A
+
+* - ``RX_FILTER_BANK``/``D`` - RX filter bank selector for channel D
+  - ``/debug/hw/exfe10_4ch_usr/0/reg/0x50/D``
+  - Options: same as channel A
+
+* - ``RX_ATTN``/``A`` - RX attenuator setting (dB) for channel A
+  - ``/debug/hw/exfe10_4ch_usr/0/reg/0x51/A``
+
+* - ``RX_ATTN``/``B`` - RX attenuator setting (dB) for channel B
+  - ``/debug/hw/exfe10_4ch_usr/0/reg/0x51/B``
+
+* - ``RX_ATTN``/``C`` - RX attenuator setting (dB) for channel C
+  - ``/debug/hw/exfe10_4ch_usr/0/reg/0x51/C``
+
+* - ``RX_ATTN``/``D`` - RX attenuator setting (dB) for channel D
+  - ``/debug/hw/exfe10_4ch_usr/0/reg/0x51/D``
+
+* - ``ANT_SEL``/``A`` - Antenna path selector for channel A
+  - ``/debug/hw/exfe10_4ch_usr/0/reg/0x52/A``
+  - Options:
+
+        - RX_TO_RX_AND_TX_TO_TRX - RX to RX path and TX to TRX path
+        - RX_TO_TRX_AND_TX_TERM - RX to TRX path and TX terminated
+        - RX_TO_RX_AND_TX_TERM - RX to RX path and TX terminated
+        - RX_TX_LOOPBACK - RX to TX loopback
+        - TDD_DRIVEN_AUTO - **======================TODO**
+
+* - ``ANT_SEL``/``B`` - Antenna path selector for channel B
+  - ``/debug/hw/exfe10_4ch_usr/0/reg/0x52/B``
+  - Options: same as channel A
+
+* - ``ANT_SEL``/``C`` - Antenna path selector for channel C
+  - ``/debug/hw/exfe10_4ch_usr/0/reg/0x52/C``
+  - Options: same as channel A
+
+* - ``ANT_SEL``/``D`` - Antenna path selector for channel D
+  - ``/debug/hw/exfe10_4ch_usr/0/reg/0x52/D``
+  - Options: same as channel A
+
+* - ``RX_CHEN``/``A`` - Enable RX channel A
+  - ``/debug/hw/exfe10_4ch_usr/0/reg/0x53/A``
+
+* - ``RX_CHEN``/``B`` - Enable RX channel B
+  - ``/debug/hw/exfe10_4ch_usr/0/reg/0x53/B``
+
+* - ``RX_CHEN``/``C`` - Enable RX channel C
+  - ``/debug/hw/exfe10_4ch_usr/0/reg/0x53/C``
+
+* - ``RX_CHEN``/``D`` - Enable RX channel D
+  - ``/debug/hw/exfe10_4ch_usr/0/reg/0x53/D``
+
+* - ``TX_CHEN``/``A`` - Enable TX channel A
+  - ``/debug/hw/exfe10_4ch_usr/0/reg/0x54/A``
+
+* - ``TX_CHEN``/``B`` - Enable TX channel B
+  - ``/debug/hw/exfe10_4ch_usr/0/reg/0x54/B``
+
+* - ``TX_CHEN``/``C`` - Enable TX channel C
+  - ``/debug/hw/exfe10_4ch_usr/0/reg/0x54/C``
+
+* - ``TX_CHEN``/``D`` - Enable TX channel D
+  - ``/debug/hw/exfe10_4ch_usr/0/reg/0x54/D``
+
+* - ``TX_2STAGE``/``A`` - Enable TX 2nd stage for channel A
+  - ``/debug/hw/exfe10_4ch_usr/0/reg/0x55/A``
+
+* - ``TX_2STAGE``/``B`` - Enable TX 2nd stage for channel B
+  - ``/debug/hw/exfe10_4ch_usr/0/reg/0x55/B``
+
+* - ``TX_2STAGE``/``C`` - Enable TX 2nd stage for channel C
+  - ``/debug/hw/exfe10_4ch_usr/0/reg/0x55/C``
+
+* - ``TX_2STAGE``/``D`` - Enable TX 2nd stage for channel D
+  - ``/debug/hw/exfe10_4ch_usr/0/reg/0x55/D``
+
+
+
+exfe10_4ch_exp
+--------------
+
+This section describes the low level control register map for the FE front-end.
+Using this page, you can control each hardware component directly.
+
+.. warning::
+   | The page exposes the low-level hardware controls.
+   | Improper use may lead to unexpected behavior or damage to your hardware.
+
+.. image:: ../_static/fe/fe_control_exp.png
+   :alt: fe control lowlevel registers
+
+
+* - ``SW_RX_FILTER``/``IN_CHA`` - RX IN filters switch for Channel A
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x30/IN_CHA``
+  - Options:
+
+        - MUTE0 - **======================TODO**
+        - 400_1000M - Input filter bank switch to filter 400-1000 MHz
+        - 1000_2000M - Input filter bank switch to filter 1000-2000 MHz
+        - 2000_3500M - Input filter bank switch to filter 2000-3500 MHz
+        - 2500_5000M - Input filter bank switch to filter 2500-5000 MHz
+        - 3500_7100M - Input filter bank switch to filter 3500-7100 MHz
+        - MUTE1 - **======================TODO**
+        - MUTE2 - **======================TODO**
+
+* - ``SW_RX_FILTER``/``OUT_CHA`` - RX OUT filters switch for Channel A
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x30/OUT_CHA``
+  - Options:
+
+        - MUTE0 - **======================TODO**
+        - 400_1000M - Output filter bank switch to filter 400-1000 MHz
+        - 1000_2000M - Output filter bank switch to filter 1000-2000 MHz
+        - 2000_3500M - Output filter bank switch to filter 2000-3500 MHz
+        - 2500_5000M - Output filter bank switch to filter 2500-5000 MHz
+        - 3500_7100M - Output filter bank switch to filter 3500-7100 MHz
+        - MUTE1 - **======================TODO**
+        - MUTE2 - **======================TODO**
+
+* - ``SW_RX_FILTER``/``IN_CHB`` - RX IN filters switch for Channel B
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x30/IN_CHB``
+  - Options: same as Channel A
+
+* - ``SW_RX_FILTER``/``OUT_CHB`` - RX OUT filters switch for Channel B
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x30/OUT_CHB``
+  - Options: same as Channel A
+
+* - ``SW_RX_FILTER``/``IN_CHC`` - RX IN filters switch for Channel C
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x30/IN_CHC``
+  - Options: same as Channel A
+
+* - ``SW_RX_FILTER``/``OUT_CHC`` - RX OUT filters switch for Channel C
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x30/OUT_CHC``
+  - Options: same as Channel A
+
+* - ``SW_RX_FILTER``/``IN_CHD`` - RX IN filters switch for Channel D
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x30/IN_CHD``
+  - Options: same as Channel A
+
+* - ``SW_RX_FILTER``/``OUT_CHD`` - RX OUT filters switch for Channel D
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x30/OUT_CHD``
+  - Options: same as Channel A
+
+* - ``ENABLE``/``IF_VBYP`` - IF bypass control
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x31/IF_VBYP``
+
+* - ``ENABLE``/``REF_GPS`` - Enable GPS module
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x31/REF_GPS``
+
+* - ``ENABLE``/``P8V_TX`` - Enable +8V power supply for TX amps
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x31/P8V_TX``
+
+* - ``ENABLE``/``P6V_RX`` - Enable +6V power supply for RX amps
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x31/P6V_RX``
+
+* - ``ENABLE``/``PA_BYPASS_CHD`` - Stage-2 PA bypass, channel D
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x31/PA_BYPASS_CHD``
+
+* - ``ENABLE``/``PA_BYPASS_CHC`` - Stage-2 PA bypass, channel C
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x31/PA_BYPASS_CHC``
+
+* - ``ENABLE``/``PA_BYPASS_CHB`` - Stage-2 PA bypass, channel B
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x31/PA_BYPASS_CHB``
+
+* - ``ENABLE``/``PA_BYPASS_CHA`` - Stage-2 PA bypass, channel A
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x31/PA_BYPASS_CHA``
+
+* - ``LED_TRX_CTRL``/``LED_CHA`` - LED TX/RX control for Channel A
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x32/LED_CHA``
+
+* - ``LED_TRX_CTRL``/``LED_CHB`` - LED TX/RX control for Channel B
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x32/LED_CHB``
+
+* - ``LED_TRX_CTRL``/``LED_CHC`` - LED TX/RX control for Channel C
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x32/LED_CHC``
+
+* - ``LED_TRX_CTRL``/``LED_CHD`` - LED TX/RX control for Channel D
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x32/LED_CHD``
+
+* - ``LEDRX_CH_CTRL``/``EN_CHA`` - Enable LED CHA
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x33/EN_CHA``
+
+* - ``LEDRX_CH_CTRL``/``EN_CHB`` - Enable LED CHB
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x33/EN_CHB``
+
+* - ``LEDRX_CH_CTRL``/``EN_CHC`` - Enable LED CHC
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x33/EN_CHC``
+
+* - ``LEDRX_CH_CTRL``/``EN_CHD`` - Enable LED CHD
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x33/EN_CHD``
+
+* - ``LEDRX_CH_CTRL``/``LED_CHA`` - LED CHA indicator
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x33/LED_CHA``
+
+* - ``LEDRX_CH_CTRL``/``LED_CHB`` - LED CHB indicator
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x33/LED_CHB``
+
+* - ``LEDRX_CH_CTRL``/``LED_CHC`` - LED CHC indicator
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x33/LED_CHC``
+
+* - ``LEDRX_CH_CTRL``/``LED_CHD`` - LED CHD indicator
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x33/LED_CHD``
+
+* - ``P_A_EN_AB``/``B`` - Enable CHB (PA enable AB)
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x34/B``
+
+* - ``P_A_EN_AB``/``A`` - Enable CHA (PA enable AB)
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x34/A``
+
+* - ``ATTN_RX_CH_AB``/``B`` - Attenuator CHB
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x35/B``
+
+* - ``ATTN_RX_CH_AB``/``A`` - Attenuator CHA
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x35/A``
+
+* - ``SW_AB``/``TDDFDD_A`` - TDD/FDD control bits (A)
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x36/TDDFDD_A``
+
+* - ``SW_AB``/``TDDFDD_B`` - TDD/FDD control bits (B)
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x36/TDDFDD_B``
+
+* - ``SW_AB``/``PA_ON_A`` - PA on control for A
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x36/PA_ON_A``
+
+* - ``SW_AB``/``PA_ON_B`` - PA on control for B
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x36/PA_ON_B``
+
+* - ``SW_AB``/``RXTX_A`` - RX/TX switch control for A
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x36/RXTX_A``
+
+* - ``SW_AB``/``RXTX_B`` - RX/TX switch control for B
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x36/RXTX_B``
+
+* - ``P_A_EN_CD``/``D`` - Enable CHD (PA enable CD)
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x37/D``
+
+* - ``P_A_EN_CD``/``C`` - Enable CHC (PA enable CD)
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x37/C``
+
+* - ``ATTN_RX_CH_CD``/``D`` - Attenuator CHD
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x38/D``
+
+* - ``ATTN_RX_CH_CD``/``C`` - Attenuator CHC
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x38/C``
+
+* - ``SW_CD``/``TDDFDD_C`` - TDD/FDD control bits (C)
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x39/TDDFDD_C``
+
+* - ``SW_CD``/``TDDFDD_D`` - TDD/FDD control bits (D)
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x39/TDDFDD_D``
+
+* - ``SW_CD``/``PA_ON_C`` - PA on control for C
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x39/PA_ON_C``
+
+* - ``SW_CD``/``PA_ON_D`` - PA on control for D
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x39/PA_ON_D``
+
+* - ``SW_CD``/``RXTX_C`` - RX/TX switch control for C
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x39/RXTX_C``
+
+* - ``SW_CD``/``RXTX_D`` - RX/TX switch control for D
+  - ``/debug/hw/exfe10_4ch_exp/0/reg/0x39/RXTX_D``
+
 Software
 ========
 
