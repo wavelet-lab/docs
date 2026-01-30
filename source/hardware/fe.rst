@@ -196,10 +196,6 @@ sSDR module
 -----------
 
 
-.. image:: ../_static/fe/ssdr_fe_wiring.png
-   :alt: fe ssdr rf connection diagram
-
-
 For sSDR, the RF distribution should be connected as follows:
 
 * ``RXA`` to ``sSDR RX A``.
@@ -254,8 +250,10 @@ This section describes the main register map for controlling the FE front-end.
 Using controls on this page, you can switch filters, set attenuators, select antenna paths, and enable/disable channels.
 
 
-.. image:: ../_static/fe/fe_control_usr.png
+.. figure:: ../_static/fe/fe_control_usr.png
    :alt: fe control registers
+
+   FE control registers
 
 
 * - ``RX_FILTER_BANK``/``A`` - RX filter bank selector for channel A
@@ -343,8 +341,11 @@ Using this page, you can control each hardware component directly.
    | The page exposes the low-level hardware controls.
    | Improper use may lead to unexpected behavior or damage to your hardware.
 
-.. image:: ../_static/fe/fe_control_exp.png
+
+.. figure:: ../_static/fe/fe_control_exp.png
    :alt: fe control lowlevel registers
+
+   FE control lowlevel registers
 
 
 * - ``SW_RX_FILTER``/``IN_CHA`` - RX IN filters switch for Channel A
@@ -468,6 +469,72 @@ Using this page, you can control each hardware component directly.
 * - ``SW_CD``/``RXTX_C`` - RX/TX switch control for C
 
 * - ``SW_CD``/``RXTX_D`` - RX/TX switch control for D
+
+
+Measurements
+============
+
+This section contains measurements for the RF paths on the FE board.
+
+.. figure:: ../_static/fe/graphs/RX_400_1000MHz_0dB.png
+   :alt: rx 400-1000mhz, 0db measurement
+
+   Parameters of RX path with 400-1000MHz filter at 0dB attenuation
+
+.. figure:: ../_static/fe/graphs/RX_400_1000MHz_1dB.png
+   :alt: rx 400-1000mhz, 1db measurement
+
+   Parameters of RX path with 400-1000MHz filter at 1dB attenuation
+
+.. figure:: ../_static/fe/graphs/RX_400_1000MHz_2dB.png
+   :alt: rx 400-1000mhz, 2db measurement
+
+   Parameters of RX path with 400-1000MHz filter at 2dB attenuation
+
+.. figure:: ../_static/fe/graphs/RX_400_1000MHz_4dB.png
+   :alt: rx 400-1000mhz, 4db measurement
+
+   Parameters of RX path with 400-1000MHz filter at 4dB attenuation
+
+.. figure:: ../_static/fe/graphs/RX_400_1000MHz_8dB.png
+   :alt: rx 400-1000mhz, 8db measurement
+
+   Parameters of RX path with 400-1000MHz filter at 8dB attenuation
+
+.. figure:: ../_static/fe/graphs/RX_400_1000MHz_15dB.png
+   :alt: rx 400-1000mhz, 15db measurement
+
+   Parameters of RX path with 400-1000MHz filter at 15dB attenuation
+
+.. figure:: ../_static/fe/graphs/RX_1000_2000MHz_15dB.png
+   :alt: rx 1000-2000mhz, 15db measurement
+
+   Parameters of RX path with 1000-2000MHz filter at 15dB attenuation
+
+.. figure:: ../_static/fe/graphs/RX_2000_3500MHz_15dB.png
+   :alt: rx 2000-3500mhz, 15db measurement
+
+   Parameters of RX path with 2000-3500MHz filter at 15dB attenuation
+
+.. figure:: ../_static/fe/graphs/RX_2500_5000MHz_15dB.png
+   :alt: rx 2500-5000mhz, 15db measurement
+
+   Parameters of RX path with 2500-5000MHz filter at 15dB attenuation
+
+.. figure:: ../_static/fe/graphs/RX_3500_7100MHz_15dB.png
+   :alt: rx 3500-7100mhz, 15db measurement
+
+   Parameters of RX path with 3500-7100MHz filter at 15dB attenuation
+
+.. figure:: ../_static/fe/graphs/TRX.png
+   :alt: trx measurement
+
+   Parameters of TRX path
+
+.. figure:: ../_static/fe/graphs/TRX_2STAGE.png
+   :alt: trx 2stage measurement
+
+   Parameters of TRX path with 2-stage PA
 
 
 Software
