@@ -511,6 +511,26 @@ This section contains measurements for the RF paths on the FE board.
 
    Parameters of RX path with 1000-2000MHz filter at 15dB attenuation
 
+.. figure:: ../_static/fe/graphs/ATTENUATION_RXA_400_1000MHz.png
+   :alt: attenuation rxa 400-1000mhz
+
+   Attenuation characteristics for RX channel A with 400-1000MHz filter
+
+.. figure:: ../_static/fe/graphs/ATTENUATION_RXB_400_1000MHz.png
+   :alt: attenuation rxb 400-1000mhz
+
+   Attenuation characteristics for RX channel B with 400-1000MHz filter
+
+.. figure:: ../_static/fe/graphs/ATTENUATION_RXC_400_1000MHz.png
+   :alt: attenuation rxc 400-1000mhz
+
+   Attenuation characteristics for RX channel C with 400-1000MHz filter
+
+.. figure:: ../_static/fe/graphs/ATTENUATION_RXD_400_1000MHz.png
+   :alt: attenuation rxd 400-1000mhz
+
+   Attenuation characteristics for RX channel D with 400-1000MHz filter
+
 .. figure:: ../_static/fe/graphs/RX_2000_3500MHz_15dB.png
    :alt: rx 2000-3500mhz, 15db measurement
 
