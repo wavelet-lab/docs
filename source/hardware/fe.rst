@@ -142,6 +142,16 @@ The following schematic diagram shows the connections between the FE board and t
    :alt: fe dsdr connection diagram
 
 
+Breakout board connections
+--------------------------
+
+The following schematic diagram shows the connections between the BreakOut board and the dSDR module.
+
+.. image:: ../_static/fe/breakout_wiring.png
+   :alt: breakout board dsdr connection diagram
+
+
+
 Clocks and synchronization
 ==========================
 
