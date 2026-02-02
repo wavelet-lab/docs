@@ -64,9 +64,9 @@ Integrated high-performance RF front-end with low-noise amplifiers, power amplif
 
 **Frequency Range**
   - with sSDR module:
-     - 30 MHz to 11 GHz
+     - 30 MHz to 11 GHz  (Depends on the sSDR module variant)
   - with dSDR module:
-     - Model XXXX: 10 MHz to 12 GHz (See the dSDR module page for reference)
+     - 10 MHz to 12 GHz (Depends on the dSDR module variant)
 
 **Sample Rate**
   - with sSDR module:
