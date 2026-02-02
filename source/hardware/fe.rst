@@ -362,7 +362,7 @@ Using this page, you can control each hardware component directly.
   - Options:
 
         - ``MUTE0`` - Mute / Disconnected
-        - ``400_1000M`` - Input filter bank switch to filter 400-1000 MHz
+        - ``50_1000M`` - Input filter bank switch to filter 50-1000 MHz
         - ``1000_2000M`` - Input filter bank switch to filter 1000-2000 MHz
         - ``2000_3500M`` - Input filter bank switch to filter 2000-3500 MHz
         - ``2500_5000M`` - Input filter bank switch to filter 2500-5000 MHz
@@ -374,7 +374,7 @@ Using this page, you can control each hardware component directly.
   - Options:
 
         - ``MUTE0`` - Mute / Disconnected
-        - ``400_1000M`` - Output filter bank switch to filter 400-1000 MHz
+        - ``50_1000M`` - Output filter bank switch to filter 50-1000 MHz
         - ``1000_2000M`` - Output filter bank switch to filter 1000-2000 MHz
         - ``2000_3500M`` - Output filter bank switch to filter 2000-3500 MHz
         - ``2500_5000M`` - Output filter bank switch to filter 2500-5000 MHz
@@ -481,90 +481,93 @@ Using this page, you can control each hardware component directly.
 * - ``SW_CD``/``RXTX_D`` - RX/TX switch control for D
 
 
-Measurements
-============
 
-This section contains measurements for the RF paths on the FE board.
+.. Commented out
 
-.. figure:: ../_static/fe/graphs/RX_400_1000MHz_0dB.png
-   :alt: rx 400-1000mhz, 0db measurement
+    Measurements
+    ============
 
-   Parameters of RX path with 400-1000MHz filter at 0dB attenuation
+    This section contains measurements for the RF paths on the FE board.
 
-.. figure:: ../_static/fe/graphs/RX_400_1000MHz_1dB.png
-   :alt: rx 400-1000mhz, 1db measurement
+    .. figure:: ../_static/fe/graphs/RX_400_1000MHz_0dB.png
+       :alt: rx 400-1000mhz, 0db measurement
 
-   Parameters of RX path with 400-1000MHz filter at 1dB attenuation
+       Parameters of RX path with 400-1000MHz filter at 0dB attenuation
 
-.. figure:: ../_static/fe/graphs/RX_400_1000MHz_2dB.png
-   :alt: rx 400-1000mhz, 2db measurement
+    .. figure:: ../_static/fe/graphs/RX_400_1000MHz_1dB.png
+       :alt: rx 400-1000mhz, 1db measurement
 
-   Parameters of RX path with 400-1000MHz filter at 2dB attenuation
+       Parameters of RX path with 400-1000MHz filter at 1dB attenuation
 
-.. figure:: ../_static/fe/graphs/RX_400_1000MHz_4dB.png
-   :alt: rx 400-1000mhz, 4db measurement
+    .. figure:: ../_static/fe/graphs/RX_400_1000MHz_2dB.png
+       :alt: rx 400-1000mhz, 2db measurement
 
-   Parameters of RX path with 400-1000MHz filter at 4dB attenuation
+       Parameters of RX path with 400-1000MHz filter at 2dB attenuation
 
-.. figure:: ../_static/fe/graphs/RX_400_1000MHz_8dB.png
-   :alt: rx 400-1000mhz, 8db measurement
+    .. figure:: ../_static/fe/graphs/RX_400_1000MHz_4dB.png
+       :alt: rx 400-1000mhz, 4db measurement
 
-   Parameters of RX path with 400-1000MHz filter at 8dB attenuation
+       Parameters of RX path with 400-1000MHz filter at 4dB attenuation
 
-.. figure:: ../_static/fe/graphs/RX_400_1000MHz_15dB.png
-   :alt: rx 400-1000mhz, 15db measurement
+    .. figure:: ../_static/fe/graphs/RX_400_1000MHz_8dB.png
+       :alt: rx 400-1000mhz, 8db measurement
 
-   Parameters of RX path with 400-1000MHz filter at 15dB attenuation
+       Parameters of RX path with 400-1000MHz filter at 8dB attenuation
 
-.. figure:: ../_static/fe/graphs/RX_1000_2000MHz_15dB.png
-   :alt: rx 1000-2000mhz, 15db measurement
+    .. figure:: ../_static/fe/graphs/RX_400_1000MHz_15dB.png
+       :alt: rx 400-1000mhz, 15db measurement
 
-   Parameters of RX path with 1000-2000MHz filter at 15dB attenuation
+       Parameters of RX path with 400-1000MHz filter at 15dB attenuation
 
-.. figure:: ../_static/fe/graphs/ATTENUATION_RXA_400_1000MHz.png
-   :alt: attenuation rxa 400-1000mhz
+    .. figure:: ../_static/fe/graphs/RX_1000_2000MHz_15dB.png
+       :alt: rx 1000-2000mhz, 15db measurement
 
-   Attenuation characteristics for RX channel A with 400-1000MHz filter
+       Parameters of RX path with 1000-2000MHz filter at 15dB attenuation
 
-.. figure:: ../_static/fe/graphs/ATTENUATION_RXB_400_1000MHz.png
-   :alt: attenuation rxb 400-1000mhz
+    .. figure:: ../_static/fe/graphs/ATTENUATION_RXA_400_1000MHz.png
+       :alt: attenuation rxa 400-1000mhz
 
-   Attenuation characteristics for RX channel B with 400-1000MHz filter
+       Attenuation characteristics for RX channel A with 400-1000MHz filter
 
-.. figure:: ../_static/fe/graphs/ATTENUATION_RXC_400_1000MHz.png
-   :alt: attenuation rxc 400-1000mhz
+    .. figure:: ../_static/fe/graphs/ATTENUATION_RXB_400_1000MHz.png
+       :alt: attenuation rxb 400-1000mhz
 
-   Attenuation characteristics for RX channel C with 400-1000MHz filter
+       Attenuation characteristics for RX channel B with 400-1000MHz filter
 
-.. figure:: ../_static/fe/graphs/ATTENUATION_RXD_400_1000MHz.png
-   :alt: attenuation rxd 400-1000mhz
+    .. figure:: ../_static/fe/graphs/ATTENUATION_RXC_400_1000MHz.png
+       :alt: attenuation rxc 400-1000mhz
 
-   Attenuation characteristics for RX channel D with 400-1000MHz filter
+       Attenuation characteristics for RX channel C with 400-1000MHz filter
 
-.. figure:: ../_static/fe/graphs/RX_2000_3500MHz_15dB.png
-   :alt: rx 2000-3500mhz, 15db measurement
+    .. figure:: ../_static/fe/graphs/ATTENUATION_RXD_400_1000MHz.png
+       :alt: attenuation rxd 400-1000mhz
 
-   Parameters of RX path with 2000-3500MHz filter at 15dB attenuation
+       Attenuation characteristics for RX channel D with 400-1000MHz filter
 
-.. figure:: ../_static/fe/graphs/RX_2500_5000MHz_15dB.png
-   :alt: rx 2500-5000mhz, 15db measurement
+    .. figure:: ../_static/fe/graphs/RX_2000_3500MHz_15dB.png
+       :alt: rx 2000-3500mhz, 15db measurement
 
-   Parameters of RX path with 2500-5000MHz filter at 15dB attenuation
+       Parameters of RX path with 2000-3500MHz filter at 15dB attenuation
 
-.. figure:: ../_static/fe/graphs/RX_3500_7100MHz_15dB.png
-   :alt: rx 3500-7100mhz, 15db measurement
+    .. figure:: ../_static/fe/graphs/RX_2500_5000MHz_15dB.png
+       :alt: rx 2500-5000mhz, 15db measurement
 
-   Parameters of RX path with 3500-7100MHz filter at 15dB attenuation
+       Parameters of RX path with 2500-5000MHz filter at 15dB attenuation
 
-.. figure:: ../_static/fe/graphs/TRX.png
-   :alt: trx measurement
+    .. figure:: ../_static/fe/graphs/RX_3500_7100MHz_15dB.png
+       :alt: rx 3500-7100mhz, 15db measurement
 
-   Parameters of TRX path
+       Parameters of RX path with 3500-7100MHz filter at 15dB attenuation
 
-.. figure:: ../_static/fe/graphs/TRX_2STAGE.png
-   :alt: trx 2stage measurement
+    .. figure:: ../_static/fe/graphs/TRX.png
+       :alt: trx measurement
 
-   Parameters of TRX path with 2-stage PA
+       Parameters of TRX path
+
+    .. figure:: ../_static/fe/graphs/TRX_2STAGE.png
+       :alt: trx 2stage measurement
+
+       Parameters of TRX path with 2-stage PA
 
 
 Software
