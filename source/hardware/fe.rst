@@ -52,7 +52,7 @@ RF Specifications
 Integrated high-performance RF front-end with low-noise amplifiers, power amplifiers, filters, and switches.
 
 **RF frontend frequency range**
-  - 400 MHz to 12 GHz
+  - 50 MHz to 7.2 GHz
 
 **RFIC**
   - with sSDR module:
@@ -61,12 +61,6 @@ Integrated high-performance RF front-end with low-noise amplifiers, power amplif
   - with dSDR module:
      - AFE7900/AFE7901/AFE7950
      - 6 RX / 4 TX channels
-
-**Frequency Range**
-  - with sSDR module:
-     - 30 MHz to 11 GHz  (Depends on the sSDR module variant)
-  - with dSDR module:
-     - 10 MHz to 12 GHz (Depends on the dSDR module variant)
 
 **Sample Rate**
   - with sSDR module:
