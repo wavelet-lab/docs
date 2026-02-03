@@ -24,7 +24,6 @@ Paired with **wsdr.io** and various host devices, it enables the rapid developme
    | - Once everything is installed, open any SoapySDR-compatible app like CubicSDR select the SDR device, keep parameters as it is, only make sure that the sample rate is not less than 8MHz, and you can begin tuning frequencies and viewing the RF spectrum. Or you can test with our internal tools :doc:`/software/usdr_dm_create` tool.
 
 
-
 General Specifications
 ======================
 
