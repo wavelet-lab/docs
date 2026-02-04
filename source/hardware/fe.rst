@@ -43,11 +43,13 @@ General Specifications
 RF Specifications
 -----------------
 
+
 .. note::
    | The full specification of sSDR module :doc:`/hardware/ssdr`.
 
 .. note::
    | The full specification of dSDR module :doc:`/hardware/dsdr`.
+
 
 Integrated high-performance RF front-end with low-noise amplifiers, power amplifiers, filters, and switches.
 
@@ -214,10 +216,6 @@ For sSDR, the RF distribution should be connected as follows:
 
 dSDR module
 -----------
-
-
-.. image:: ../_static/fe/dsdr_fe_wiring.png
-   :alt: fe dsdr rf connection diagram
 
 
 For dSDR, the RF distribution should be connected as follows:
