@@ -147,6 +147,28 @@ The following schematic diagram shows the connections between the BreakOut board
    :alt: breakout board dsdr connection diagram
 
 
+JTAG programming
+================
+
+An installed module(sSDR or dSDR) can be programmed via JTAG using the dedicated 6-pin JTAG header on the FE or BREAKOUT boards.
+
+You can use **Digilent HS1** or **Digilent HS2** adapters among with ``openFPGALoader`` tool for JTAG programming.
+Compatible adapters might work, please refer to their documentation for pinout details.
+
+The following image shows how to connect the JTAG adapter to the board properly.
+
+.. image:: ../_static/fe/jtag.png
+   :alt: JTAG connection
+
+The pinout of the JTAG header is as follows(from left to right):
+
+- 1 - ``TMS``
+- 2 - ``TDI``
+- 3 - ``TDO``
+- 4 - ``TCK``
+- 5 - ``GND``
+- 6 - ``VDD``
+
 
 Clocks and synchronization
 ==========================
