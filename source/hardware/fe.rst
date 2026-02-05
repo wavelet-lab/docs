@@ -567,9 +567,19 @@ Using this page, you can control each hardware component directly.
 Software
 ========
 
-.. note::
-   | You must install the required software and driver packages first.
-   | Please refer to the :doc:`/software/install`.
+..
+    .. note::
+       | You must install the required software and driver packages first.
+       | Please refer to the :doc:`/software/install`.
+
+
+.. caution::
+   | A newer version of software is required!
+   |
+   | - :doc:`Build the software from source </software/compile>` using ``feature_pe_sync`` branch.
+   | - Install the SoapySDR plugin.
+   | - Once everything is installed, open any SoapySDR-compatible app like CubicSDR select the SDR device, keep parameters as it is, only make sure that the sample rate is not less than 8MHz, and you can begin tuning frequencies and viewing the RF spectrum. Or you can test with :doc:`/software/usdr_dm_create`.
+
 
 In order to use FE, you can use the **usdr_dm_create** utility to receive or transmit data.
 
