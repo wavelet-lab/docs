@@ -43,7 +43,6 @@ General Specifications
 RF Specifications
 -----------------
 
-
 .. note::
    | The full specification of sSDR module :doc:`/hardware/ssdr`.
 
