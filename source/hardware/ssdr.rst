@@ -15,6 +15,15 @@ covering **5G (7.125 GHz)**, the latest **WiFi**, radio links, and many more app
 
 Paired with **wsdr.io** and various host devices, it enables the rapid development of custom RF solutions.
 
+
+.. caution::
+   | For the sSDR module to work correctly, a newer version of software is required.
+   |
+   | - :doc:`Build the software from source </software/compile>` using ``feature_pe_sync`` branch.
+   | - Install the SoapySDR plugin.
+   | - Once everything is installed, open any SoapySDR-compatible app like CubicSDR select the SDR device, keep parameters as it is, only make sure that the sample rate is not less than 8MHz, and you can begin tuning frequencies and viewing the RF spectrum. Or you can test with :doc:`/software/usdr_dm_create`.
+
+
 General Specifications
 ======================
 
@@ -47,7 +56,7 @@ RF Specifications
   - 30 MHz to 11 GHz
 
 **Sample Rate**  
-  - 4 MSps - 86 MSps
+  - 8 MSps - 86 MSps
 
 **Channel Bandwidth**  
   - 0.5 MHz - 120 MHz  (MIMO)
