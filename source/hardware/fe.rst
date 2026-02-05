@@ -138,6 +138,7 @@ The following schematic diagram shows the connections between the FE board and t
    :alt: fe dsdr connection diagram
 
 
+
 Breakout board connections
 --------------------------
 
@@ -180,6 +181,7 @@ dSDR wiring
 
 * ``REF+`` to ``REFCLK_SE``.
 * ``1PPS_OUT`` to ``1PPS_SYN``.
+* Connect FPC connector on the FE board(marked as ``IO`` on the schema above) to the FPC connector on the dSDR module.
 
 The following diagram shows the clock and synchronization wiring when using the dSDR module.
 
