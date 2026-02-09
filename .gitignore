@@ -1,6 +1,7 @@
 .idea/
 .task/
 *.bkp
+.DS_Store
 .build_running_marker
 
 # Byte-compiled / optimized / DLL files
