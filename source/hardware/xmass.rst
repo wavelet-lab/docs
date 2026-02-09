@@ -300,21 +300,6 @@ This section describes the general control of the board.
 * - ``/dm/sdr/0/sync/cal/freq`` - LO calibration frequency in Hz
 
 
-SYSREF
-------
-
-In order to select synchronization mode, you have to pass one of the following values to the ``usdr_dms_sync`` api call.
-
-- ``all`` - enable all supported sync sources (sysref, stream-based, external PPS, etc.).
-- ``1pps`` or ``sysref`` - explicit sysref via an external 1PPS pulse (external PPS/sysref).
-- ``sysref+gen`` - explicit sysref via internal source (using onboard LMK05318B).
-- ``rx`` - use the RX stream as the synchronization source.
-- ``tx`` - use the TX stream as the synchronization source.
-- ``any`` - accept any available sync source (choose the best/first available).
-- ``none`` - disable synchronization (no automatic sync).
-- ``off`` - turn sync off / explicitly stop syncing (used in code before starting streams).
-
-
 xmass_ctrl
 ----------
 
@@ -385,6 +370,27 @@ Software
 
 .. note::
    | Please refer to :doc:`/software/usdr_dm_create` for detailed information about using the **usdr_dm_create** utility.
+
+
+
+SYSREF
+------
+
+In order to select synchronization mode, you have to pass one of the following values to the ``usdr_dms_sync`` api call.
+The **usdr_dm_create** utility also supports the same options for the ``-s`` command line argument.
+
+- ``all`` - enable all supported sync sources (sysref, stream-based, external PPS, etc.).
+- ``1pps`` or ``sysref`` - explicit sysref via an external 1PPS pulse (external PPS/sysref).
+- ``sysref+gen`` - explicit sysref via internal source (using onboard LMK05318B).
+- ``rx`` - use the RX stream as the synchronization source.
+- ``tx`` - use the TX stream as the synchronization source.
+- ``any`` - accept any available sync source (choose the best/first available).
+- ``none`` - disable synchronization (no automatic sync).
+- ``off`` - turn sync off / explicitly stop syncing (used in code before starting streams).
+
+
+Examples
+--------
 
 
 In order to use xMASS SDR, you can use the **usdr_dm_create** utility to receive or transmit data.
