@@ -2,15 +2,13 @@
 xMASS SDR
 =========
 
-A modular, high-performance **8×8 MIMO transceiver** designed for **4G/5G applications** and other use cases.
+A modular, high-performance 8×8 MIMO transceiver optimized for **4G/5G application**, research, beamforming, direction finding and wideband spectrum monitoring. The xMASS provides eight synchronized RX and eight synchronized TX channels with flexible clocking, calibration and host I/O for coherent multi-channel acquisition and transmission. Its modular design allows for easy maintenance and enables the construction of high-order MIMO systems using the same building blocks.
 
 .. image:: ../_static/xmass-front-lg.png
    :alt: xmass sdr
 
 Overview
 ========
-
-The xMASS SDR is a modular, high-performance **MIMO transceiver** featuring **8 RX and 8 TX channels** which can be synchronized. Its modular design allows for easy maintenance and enables the construction of high-order MIMO systems using the same building blocks.
 
 .. image:: ../_static/xmass-iso-open-lg.png
    :alt: xmass sdr
@@ -34,7 +32,7 @@ General Specifications
   - 20W Typical
 
 **Extended Power Supply Range**  
-  - 2.85 - 5.5 V  
+  - 2.85 - 5.5 V
 
 RF Specifications
 -----------------
@@ -49,31 +47,51 @@ RF Specifications
   - 0.1 MSps - 100 MSps  
 
 **Channel Bandwidth**  
-  - 0.5 MHz - 90 MHz  
+  - 0.5 MHz - 90 MHz
 
-Bifurcation Modes
------------------
-
-- **Full 8×8 MIMO**  
-- **2 independent 4×4 MIMO systems**  
-- **4 independent 2×2 MIMO systems**  
 
 Target Applications
 -------------------
 
-**Spectrum Monitoring**  
-  - **4× M.2 2230 Key A+E xSDR** for comprehensive frequency analysis and monitoring  
+**Spectrum Monitoring**
+  - **4× M.2 2230 Key A+E xSDR** for comprehensive frequency analysis and monitoring
 
-**Cellular Communication**  
-  - Enables next-generation **4G/5G wireless networks** with high-order **massive MIMO**  
-  - Fully compatible with **Amarisoft** and **srsRAN**  
+**Cellular Communication**
+  - Enables next-generation **4G/5G wireless networks** with high-order **massive MIMO**
+  - Fully compatible with **Amarisoft** and **srsRAN**
 
-**Directional Finding**  
-  - Determines the **direction of arrival (DoA)** of incoming radio signals, enabling **precise localization** of transmitters  
+**Directional Finding**
+  - Determines the **direction of arrival (DoA)** of incoming radio signals, enabling **precise localization** of transmitters
 
-**Beamforming**  
-  - Focuses signal transmission and reception in specific directions  
+**Beamforming**
+  - Focuses signal transmission and reception in specific directions
   - Enhances range, improves signal quality, and reduces interference in multi-user environments
+
+
+Bifurcation Modes
+-----------------
+
+The xMASS supports configurable bifurcation modes that partition the physical 8 RX / 8 TX channel array into one or more independent logical streams.
+Bifurcation determines how RF channels, FPGA resources, and host I/O are grouped and advertised to the host.
+Selecting a bifurcation mode affects aggregate throughput, per-device sample-rate limits, synchronization behaviour, calibration routing, and the available MIMO processing scope.
+
+Available bifurcation modes are:
+
+- **Full 8×8 MIMO**
+
+  - All 8 RX and 8 TX channels are presented as a single logical device with full cross-channel synchronization and shared calibration paths. This mode enables true 8×8 spatial processing (beamforming, full-array DoA, high-order MIMO benchmarks).
+  - When to use: research/measurement requiring maximum antenna aperture, advanced beamforming or direction-finding, or when coherent processing across all channels is required.
+
+- **2 independent 4×4 MIMO systems**
+
+  - The 8×8 array is split into two independent 4×4 logical devices. Each group has its own stream context and can be controlled separately while still retaining 4×4 MIMO capability within the group.
+  - When to use: deploying two separate 4×4 systems (for example, two co-located base stations or one monitoring system plus one comms system), or when slightly reduced MIMO order still meets spatial processing requirements but host/throughput constraints dictate partitioning.
+
+- **4 independent 2×2 MIMO systems**
+
+  - The array is split into four independent 2×2 logical devices, each suitable for small-scale MIMO links or parallel monitoring tasks.
+  - When to use: scenarios requiring multiple independent narrow-band links or many small testbeds.
+
 
 Connections
 ===========
@@ -98,6 +116,9 @@ The MHF4 connector of each xSDR module should be connected as shown in the pictu
 Back side
 ---------
 
+The back side of the xMASS SDR contains the clocking and synchronization circuitry, RF distribution network and calibration sources.
+The picture below shows the standard standalone configuration with one xMASS SDR board.
+
 .. image:: ../_static/xmass_back_zoom_light.jpg
    :alt: xmass sdr
 
@@ -115,8 +136,8 @@ Clocks and synchronization
 
 There are two clock domains on the xMASS SDR:
 
-* **REFCLK**: Reference clock used for phase synchronization and RF frequency calibration.
-* **SYSREF**: Event synchronization: start, stop, and other control signals.
+* **REFCLK**: The continuous reference frequency distributed to the xMASS board and all attached xSDR modules.
+* **SYSREF**: A timing/event synchronization pulse distributed to all xSDR modules.
 
 The **LMK05318B** serves as the central clocking IC on the xMASS SDR and can use different clock sources:
 
@@ -130,30 +151,51 @@ The IC produces the following output signals:
 * SYSREF output to all xSDR modules.
 * Calibrated reference clock output for the RF calibration loop.
 
+.. note::
+   | Bold blue dotted lines in the picture above show the connections for standalone mode.
+   | Bold green dotted lines in the picture above show the connections for multiboard mode.
+
+
 Standalone mode
 ---------------
 
-Standalone mode is used when only one xMASS SDR is present. In this mode most distribution schemes can be avoided, and synchronization buses should be connected as follows:
+The standalone mode provides a self-contained clock and event synchronization scheme for a single xMASS board.
 
-* ``REF_OUT_A`` to ``REF_IN``.
-* ``SYSREF_OUT`` to ``SYSREF_IN``.
+**Signal flow**
 
-.. note::
-   | Bold blue dotted lines in the picture above show the connections for standalone mode.
+Physical connections:
+
+  - ``REF_OUT_A`` -> ``REF_IN`` (local reference routing to module A).
+  - ``SYSREF_OUT`` -> ``SYSREF_IN`` (local SYSREF distribution).
+
+**Logical behaviour:**
+
+  - LMK05318B drives local REFCLK and SYSREF to all onboard xSDR modules.
+  - An optionally-attached external source or GPS may be selected as the REFCLK input.
+
 
 Multiboard mode
 ---------------
 
-If you need to use multiple xMASS SDR boards synchronized together, you can use the following connection scheme:
+The multiboard mode provides a distributed clock and event synchronization architecture for multiple xMASS boards so that REFCLK and SYSREF are common and phase-aligned across the whole array.
 
-* ``OUT_REF_B0`` to ``REF_IN`` on the same (master) board.
-* ``OUT_REF_B1``, ``OUT_REF_B2`` and ``OUT_REF_B3`` to ``REF_IN`` on each additional (slave) board, respectively.
-* ``SYSREF_OUT`` to ``SYSREF_B_IN`` on the same (master) board.
-* ``SYSREF_B_0`` to ``SYSREF_IN`` on the same (master) board.
-* ``SYSREF_B_1``, ``SYSREF_B_2`` and ``SYSREF_B_3`` to ``SYSREF_IN`` on each additional (slave) board, respectively.
+**Signal flow (master / slave)**
 
-.. note::
-   | Bold green dotted lines in the picture above show the connections for multiboard mode.
+  - Master board:
+
+    - ``OUT_REF_B0`` -> ``REF_IN`` on master (primary reference distribution output).
+    - ``SYSREF_OUT`` -> ``SYSREF_B_IN`` on master (SYSREF distribution input/output routing).
+
+  - Slave boards:
+
+    - ``OUT_REF_B1``, ``OUT_REF_B2``, ``OUT_REF_B3`` -> ``REF_IN`` on each slave board as required.
+    - ``SYSREF_B_1``, ``SYSREF_B_2``, ``SYSREF_B_3`` -> ``SYSREF_IN`` on each slave board respectively.
+
+**Logical behaviour**
+
+  - One board acts as the master reference source; other boards lock to that source for both REFCLK and SYSREF.
+  - LMK05318B on the master can be driven by GPS or an external disciplined source to provide absolute time/frequency across the entire array.
+
 
 RF distribution
 ===============
@@ -165,15 +207,34 @@ RF distribution
    | The diagram above shows the RF distribution for one pair of RX/TX channels.
    | The rest of the channels are connected in the same way.
 
-In standalone mode, the RF distribution should be connected as follows:
 
-* ``RF_CAL_OUT`` to ``RF_CAL_IN``.
+Standalone mode
+---------------
 
-In multiboard mode, the RF distribution should be connected as follows:
+The standalone mode provides a closed-loop calibration path and a local RF calibration reference when a single xMASS board is used.
 
-* ``RF_CAL_OUT`` to ``RF_B_IN`` on the same (master) board.
-* ``RF_0`` to ``RF_CAL_IN`` on the same (master) board.
-* ``RF_1``, ``RF_2`` and ``RF_3`` to ``RF_CAL_IN`` on each additional (slave) board, respectively.
+**Signal flow**
+
+  - ``RF_CAL_OUT`` -> ``RF_CAL_IN`` (local calibration loop through the frontend on the same board).
+  - Calibration source (``NOISE`` or ``CAL``) is switched into LNA/RX paths under software control when required.
+
+
+Multiboard mode
+---------------
+
+The multiboard mode provides calibration and routing scheme for multiple synchronized xMASS boards so that calibration signals and RF paths are common across the array, enabling coherent multi-board MIMO and consistent calibration measurements.
+
+**Signal flow (master / slave)**
+
+  - Master board:
+
+    - ``RF_CAL_OUT`` -> ``RF_B_IN`` (feeds the distributed calibration bus that other boards listen to).
+    - ``RF_0`` -> ``RF_CAL_IN`` (local calibration loop using the master board's RF path).
+
+  - Slave boards:
+
+    - ``RF_1``, ``RF_2``, ``RF_3`` -> ``RF_CAL_IN`` on each additional (slave) board, respectively (receive the calibration reference from the master).
+
 
 .. note::
    | Bold blue dotted lines in the picture above show connections for standalone mode.
@@ -194,7 +255,7 @@ The possible RF paths are:
 * Calibration path: NOISE or CAL signal to xSDR module for RX calibration.
 * Loopback path: TX from xSDR module to RX of the same channel for loopback testing.
 
-In addition, the NOISE/CAL signal can be routed to the first channel(LNAL_A) of each xSDR module directly through the M.2 socket.
+In addition, the ``NOISE``/``CAL`` signal can be routed to the first channel(LNAL_A) of each xSDR module directly through the M.2 socket.
 This avoids using the RF frontend, resulting in more accurate calibration.
 
 
@@ -209,44 +270,34 @@ Frontend control
 GENERAL
 -------
 
-.. list-table::
-   :header-rows: 1
+This section describes the general control of the board.
 
-   * - Register
-     - Type
-     - Description
-   * - /dm/sdr/refclk/path
-     -  - internal - Internal clock source/Single board operation
+
+.. image:: ../_static/xmass/xmass_control_general.png
+   :alt: xmass sdr frontend control screenshot
+
+
+
+* - ``/dm/sdr/refclk/path`` - Reference clock source selection
+
+    - Options:
+
+        - internal - Internal clock source/Single board operation
         - external - External clock source/Multi board operation
-     - Reference clock source selection
-   * - /dm/sdr/refclk/frequency
-     - int
-     - Reference clock frequency in Hz
-   * - /dm/sdr/0/sync/cal/path
-     -  - 0 - Normal operation
+
+* - ``/dm/sdr/refclk/frequency`` - Reference clock frequency in Hz
+
+* - ``/dm/sdr/0/sync/cal/path`` - Calibration path selection
+
+    - Options:
+
+        - 0 - Normal operation
         - 1 - LO
         - 2 - NOISE
         - 3 - LO_LNA3
         - 4 - NOISE_LNA3
-     - Calibration path selection
-   * - /dm/sdr/0/sync/cal/freq
-     - int
-     - LO calibration frequency in Hz
 
-
-SYSREF
-------
-
-In order to enable sysref mode, you have to pass one of the following values to the ``usdr_dms_sync`` api call.
-
-- ``all`` - enable all supported sync sources (sysref, stream-based, external PPS, etc.).
-- ``1pps`` or ``sysref`` - explicit sysref via an external 1PPS pulse (external PPS/sysref).
-- ``sysref+gen`` - explicit sysref via internal source (using onboard LMK05318B).
-- ``rx`` - use the RX stream as the synchronization source.
-- ``tx`` - use the TX stream as the synchronization source.
-- ``any`` - accept any available sync source (choose the best/first available).
-- ``none`` - disable synchronization (no automatic sync).
-- ``off`` - turn sync off / explicitly stop syncing (used in code before starting streams).
+* - ``/dm/sdr/0/sync/cal/freq`` - LO calibration frequency in Hz
 
 
 xmass_ctrl
@@ -256,7 +307,7 @@ This section describes the low level control of the board.
 
 
 .. image:: ../_static/xmass/xmass_control_xmass.png
-   :alt: xmass sdr frontend control screenshot
+   :alt: xmass sdr lowlevel control screenshot
 
 
 .. list-table::
@@ -321,14 +372,41 @@ Software
    | Please refer to :doc:`/software/usdr_dm_create` for detailed information about using the **usdr_dm_create** utility.
 
 
+
+SYSREF
+------
+
+In order to select synchronization mode, you have to pass one of the following values to the ``usdr_dms_sync`` api call.
+The **usdr_dm_create** utility also supports the same options for the ``-s`` command line argument.
+
+- ``all`` - enable all supported sync sources (sysref, stream-based, external PPS, etc.).
+- ``1pps`` or ``sysref`` - explicit sysref via an external 1PPS pulse (external PPS/sysref).
+- ``sysref+gen`` - explicit sysref via internal source (using onboard LMK05318B).
+- ``rx`` - use the RX stream as the synchronization source.
+- ``tx`` - use the TX stream as the synchronization source.
+- ``any`` - accept any available sync source (choose the best/first available).
+- ``none`` - disable synchronization (no automatic sync).
+- ``off`` - turn sync off / explicitly stop syncing (used in code before starting streams).
+
+
+Examples
+--------
+
+
 In order to use xMASS SDR, you can use the **usdr_dm_create** utility to receive or transmit data.
-B
 The following example creates a raw IQ data file with a sample rate of 10 MSamples per second per channel, a center frequency of 1700 MHz, using all 8 RX channels:
 
 
 .. code-block:: bash
 
    usdr_dm_create -D bus=pci/dev/usdr0:/dev/usdr1:/dev/usdr2:/dev/usdr3 -r10e6 -l3 -e1700e6 -c -f output.raw
+
+
+If you want to enable synchronization using SYSREF, you can add the ``-s sysref`` option to the command line:
+
+.. code-block:: bash
+
+   usdr_dm_create -D bus=pci/dev/usdr0:/dev/usdr1:/dev/usdr2:/dev/usdr3 -s sysref -r10e6 -l3 -e1700e6 -c -f output.raw
 
 
 The first device in the list(usdr0 in this example) should be the master xMASS SDR board(slot A).
