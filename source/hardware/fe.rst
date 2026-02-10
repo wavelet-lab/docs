@@ -162,12 +162,12 @@ The following image shows how to connect the JTAG adapter to the board properly.
 
 The pinout of the JTAG header is as follows(from left to right):
 
-- 1 - ``TMS``
-- 2 - ``TDI``
-- 3 - ``TDO``
-- 4 - ``TCK``
-- 5 - ``GND``
-- 6 - ``VDD``
+- 1 - ``TMS`` - Test Mode Select
+- 2 - ``TDI`` - Test Data In
+- 3 - ``TDO`` - Test Data Out
+- 4 - ``TCK`` - Test Clock
+- 5 - ``GND`` - Ground
+- 6 - ``VDD`` - Power supply
 
 
 Clocks and synchronization
