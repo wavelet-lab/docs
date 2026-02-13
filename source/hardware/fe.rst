@@ -555,7 +555,7 @@ This section contains measurements for the RF paths on the FE board.
 .. figure:: ../_static/fe/graphs/RX_FILTERS_OVERLAPPING.png
    :alt: filters overlapping
 
-   Filter overlapping characteristics
+   Filters overlapping characteristics
 
 .. figure:: ../_static/fe/graphs/ATTENUATION_RXA_50_1000MHz.png
    :alt: attenuation rxa 50-1000mhz
