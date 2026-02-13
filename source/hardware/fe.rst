@@ -95,6 +95,7 @@ Target Applications
   - Focuses on signal transmission and reception in specific directions
   - Enhances range, improves signal quality, and reduces interference in multi-user environments
 
+
 Connections
 ===========
 
@@ -496,93 +497,95 @@ Using this page, you can control each hardware component directly.
 * - ``SW_CD``/``RXTX_D`` - RX/TX switch control for D
 
 
+Measurements
+============
 
-.. Commented out
+This section contains measurements for the RF paths on the FE board.
 
-    Measurements
-    ============
+.. figure:: ../_static/fe/graphs/RX_50_1000MHz_0dB.png
+   :alt: rx 50-1000mhz, 0db attenuation measurement
 
-    This section contains measurements for the RF paths on the FE board.
+   Parameters of RX path with 50-1000MHz filter at 0dB attenuation
 
-    .. figure:: ../_static/fe/graphs/RX_50_1000MHz_0dB.png
-       :alt: rx 50-1000mhz, 0db measurement
+.. figure:: ../_static/fe/graphs/RX_50_1000MHz_7dB.png
+   :alt: rx 50-1000mhz, 7db attenuation measurement
 
-       Parameters of RX path with 50-1000MHz filter at 0dB attenuation
+   Parameters of RX path with 50-1000MHz filter at 7dB attenuation
 
-    .. figure:: ../_static/fe/graphs/RX_50_1000MHz_1dB.png
-       :alt: rx 50-1000mhz, 1db measurement
+.. figure:: ../_static/fe/graphs/RX_50_1000MHz_11dB.png
+   :alt: rx 50-1000mhz, 11db attenuation measurement
 
-       Parameters of RX path with 50-1000MHz filter at 1dB attenuation
+   Parameters of RX path with 50-1000MHz filter at 11dB attenuation
 
-    .. figure:: ../_static/fe/graphs/RX_50_1000MHz_2dB.png
-       :alt: rx 50-1000mhz, 2db measurement
+.. figure:: ../_static/fe/graphs/RX_50_1000MHz_13dB.png
+   :alt: rx 50-1000mhz, 13db attenuation measurement
 
-       Parameters of RX path with 50-1000MHz filter at 2dB attenuation
+   Parameters of RX path with 50-1000MHz filter at 13dB attenuation
 
-    .. figure:: ../_static/fe/graphs/RX_50_1000MHz_4dB.png
-       :alt: rx 50-1000mhz, 4db measurement
+.. figure:: ../_static/fe/graphs/RX_50_1000MHz_14dB.png
+   :alt: rx 50-1000mhz, 14db attenuation measurement
 
-       Parameters of RX path with 50-1000MHz filter at 4dB attenuation
+   Parameters of RX path with 50-1000MHz filter at 14dB attenuation
 
-    .. figure:: ../_static/fe/graphs/RX_50_1000MHz_8dB.png
-       :alt: rx 50-1000mhz, 8db measurement
+.. figure:: ../_static/fe/graphs/RX_50_1000MHz_15dB.png
+   :alt: rx 50-1000mhz, 15db attenuation measurement
 
-       Parameters of RX path with 50-1000MHz filter at 8dB attenuation
+   Parameters of RX path with 50-1000MHz filter at 15dB attenuation
 
-    .. figure:: ../_static/fe/graphs/RX_50_1000MHz_15dB.png
-       :alt: rx 50-1000mhz, 15db measurement
+.. figure:: ../_static/fe/graphs/RX_1000_2000MHz_0dB.png
+   :alt: rx 1000-2000mhz, 0db attenuation measurement
 
-       Parameters of RX path with 50-1000MHz filter at 15dB attenuation
+   Parameters of RX path with 1000-2000MHz filter
 
-    .. figure:: ../_static/fe/graphs/RX_1000_2000MHz_15dB.png
-       :alt: rx 1000-2000mhz, 15db measurement
+.. figure:: ../_static/fe/graphs/RX_2000_3500MHz_0dB.png
+   :alt: rx 2000-3500mhz
 
-       Parameters of RX path with 1000-2000MHz filter at 15dB attenuation
+   Parameters of RX path with 2000-3500MHz filter
 
-    .. figure:: ../_static/fe/graphs/ATTENUATION_RXA_50_1000MHz.png
-       :alt: attenuation rxa 50-1000mhz
+.. figure:: ../_static/fe/graphs/RX_2500_5000MHz_0dB.png
+   :alt: rx 2500-5000mhz
 
-       Attenuation characteristics for RX channel A with 50-1000MHz filter
+   Parameters of RX path with 2500-5000MHz filter
 
-    .. figure:: ../_static/fe/graphs/ATTENUATION_RXB_50_1000MHz.png
-       :alt: attenuation rxb 50-1000mhz
+.. figure:: ../_static/fe/graphs/RX_3500_7100MHz_0dB.png
+   :alt: rx 3500-7100mhz
 
-       Attenuation characteristics for RX channel B with 50-1000MHz filter
+   Parameters of RX path with 3500-7100MHz filter
 
-    .. figure:: ../_static/fe/graphs/ATTENUATION_RXC_50_1000MHz.png
-       :alt: attenuation rxc 50-1000mhz
+.. figure:: ../_static/fe/graphs/RX_FILTERS_OVERLAPPING.png
+   :alt: filters overlapping
 
-       Attenuation characteristics for RX channel C with 50-1000MHz filter
+   Filters overlapping characteristics
 
-    .. figure:: ../_static/fe/graphs/ATTENUATION_RXD_50_1000MHz.png
-       :alt: attenuation rxd 50-1000mhz
+.. figure:: ../_static/fe/graphs/ATTENUATION_RXA_50_1000MHz.png
+   :alt: attenuation rxa 50-1000mhz
 
-       Attenuation characteristics for RX channel D with 50-1000MHz filter
+   Attenuation characteristics for RX channel A with 50-1000MHz filter
 
-    .. figure:: ../_static/fe/graphs/RX_2000_3500MHz_15dB.png
-       :alt: rx 2000-3500mhz, 15db measurement
+.. figure:: ../_static/fe/graphs/ATTENUATION_RXB_50_1000MHz.png
+   :alt: attenuation rxb 50-1000mhz
 
-       Parameters of RX path with 2000-3500MHz filter at 15dB attenuation
+   Attenuation characteristics for RX channel B with 50-1000MHz filter
 
-    .. figure:: ../_static/fe/graphs/RX_2500_5000MHz_15dB.png
-       :alt: rx 2500-5000mhz, 15db measurement
+.. figure:: ../_static/fe/graphs/ATTENUATION_RXC_50_1000MHz.png
+   :alt: attenuation rxc 50-1000mhz
 
-       Parameters of RX path with 2500-5000MHz filter at 15dB attenuation
+   Attenuation characteristics for RX channel C with 50-1000MHz filter
 
-    .. figure:: ../_static/fe/graphs/RX_3500_7100MHz_15dB.png
-       :alt: rx 3500-7100mhz, 15db measurement
+.. figure:: ../_static/fe/graphs/ATTENUATION_RXD_50_1000MHz.png
+   :alt: attenuation rxd 50-1000mhz
 
-       Parameters of RX path with 3500-7100MHz filter at 15dB attenuation
+   Attenuation characteristics for RX channel D with 50-1000MHz filter
 
-    .. figure:: ../_static/fe/graphs/TRX.png
-       :alt: trx measurement
+.. figure:: ../_static/fe/graphs/TX.png
+   :alt: trx measurement
 
-       Parameters of TRX path
+   Parameters of TX path
 
-    .. figure:: ../_static/fe/graphs/TRX_2STAGE.png
-       :alt: trx 2stage measurement
+.. figure:: ../_static/fe/graphs/TX_2STAGE.png
+   :alt: trx 2stage measurement
 
-       Parameters of TRX path with 2-stage PA
+   Parameters of TX path with 2-stage PA
 
 
 Software
