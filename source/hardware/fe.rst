@@ -510,22 +510,22 @@ This section contains measurements for the RF paths on the FE board.
 .. figure:: ../_static/fe/graphs/RX_50_1000MHz_7dB.png
    :alt: rx 50-1000mhz, 7db attenuation measurement
 
-   Parameters of RX path with 50-1000MHz filter at 1dB attenuation
+   Parameters of RX path with 50-1000MHz filter at 7dB attenuation
 
 .. figure:: ../_static/fe/graphs/RX_50_1000MHz_11dB.png
    :alt: rx 50-1000mhz, 11db attenuation measurement
 
-   Parameters of RX path with 50-1000MHz filter at 2dB attenuation
+   Parameters of RX path with 50-1000MHz filter at 11dB attenuation
 
 .. figure:: ../_static/fe/graphs/RX_50_1000MHz_13dB.png
    :alt: rx 50-1000mhz, 13db attenuation measurement
 
-   Parameters of RX path with 50-1000MHz filter at 4dB attenuation
+   Parameters of RX path with 50-1000MHz filter at 13dB attenuation
 
 .. figure:: ../_static/fe/graphs/RX_50_1000MHz_14dB.png
    :alt: rx 50-1000mhz, 14db attenuation measurement
 
-   Parameters of RX path with 50-1000MHz filter at 8dB attenuation
+   Parameters of RX path with 50-1000MHz filter at 14dB attenuation
 
 .. figure:: ../_static/fe/graphs/RX_50_1000MHz_15dB.png
    :alt: rx 50-1000mhz, 15db attenuation measurement
