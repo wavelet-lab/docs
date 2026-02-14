@@ -1,8 +1,7 @@
 @websdr/vue3-components
 =======================
 
-Vue 3 UI components for the WebSDR ecosystem (Dropdown, virtualized
-List, LogArea, SdrInput) with customizable styling via CSS variables.
+Vue 3 UI components for the WebSDR ecosystem (Dropdown, virtualized List, LogArea, SdrInput) with customizable styling via CSS variables.
 
 Install
 -------
@@ -51,8 +50,7 @@ You can also import per-component CSS:
    import '@websdr/vue3-components/styles/dropdown.css';
    import '@websdr/vue3-components/styles/list.css';
 
-Styling is based on CSS custom properties (variables). Override them in
-your app’s CSS to match your design system.
+Styling is based on CSS custom properties (variables). Override them in your app’s CSS to match your design system.
 
 Components
 ----------
@@ -132,20 +130,15 @@ Dropdown
 List
 ~~~~
 
-A performant, virtualized list component with optional auto-scroll
-behavior. ``List`` renders only visible rows into the DOM and uses a
-spacer + translated window to provide a full scrollable experience even
-for very large datasets.
+A performant, virtualized list component with optional auto-scroll behavior. ``List`` renders only visible rows into the DOM and uses a spacer + translated window to provide a full scrollable experience even for very large datasets.
 
-Key features: - Supports both in-memory arrays (``items``) and on-demand
-access via ``getItem`` + ``totalCount`` for very large lists. - Optional
-fixed ``itemHeight`` or automatic measurement when ``itemHeight`` is
-``0`` (uses ``ResizeObserver`` and averages several visible rows). -
-Virtual buffer above/below the viewport to reduce popping during
-scrolls. - Optional ``autoScroll`` that keeps the view pinned to the
-bottom (useful for logs/chat) and pauses when the user scrolls away. -
-Simple slot-based rendering: the default slot receives
-``{ item, index }`` for each visible row.
+Key features:
+
+-  Supports both in-memory arrays (``items``) and on-demand access via ``getItem`` + ``totalCount`` for very large lists.
+-  Optional fixed ``itemHeight`` or automatic measurement when ``itemHeight`` is ``0`` (uses ``ResizeObserver`` and averages several visible rows).
+-  Virtual buffer above/below the viewport to reduce popping during scrolls.
+-  Optional ``autoScroll`` that keeps the view pinned to the bottom (useful for logs/chat) and pauses when the user scrolls away.
+-  Simple slot-based rendering: the default slot receives ``{ item, index }`` for each visible row.
 
 **Usage (in-memory items):**
 
@@ -189,51 +182,44 @@ Simple slot-based rendering: the default slot receives
    }
    </script>
 
-**Props:** - ``items?: Array<T>`` — optional full array source (when
-present ``getItem`` / ``totalCount`` are ignored). -
-``totalCount?: number`` — optional total count when using ``getItem``
-(required for on-demand access). - ``getItem?: (index: number) => T`` —
-optional synchronous getter used to access items on-demand. -
-``itemHeight?: number`` — height in px of each row. ``0`` means
-auto-measure (component will measure rendered items). If unset or ``0``,
-fallback/initial estimate is 25px until measured. -
-``virtualBuffer?: number`` — rows above/below viewport to render as
-buffer (default: 5). - ``maxHeight?: string`` — maximum height for the
-list (e.g. ``"200px"`` or ``"50%"``) (default: ``"100%"``). -
-``class?: string`` — additional class for the root container. -
-``style?: Record<string, any>`` — additional inline styles for the root
-container. - ``autoScroll?: boolean`` — when ``true``, the list will
-auto-scroll to the bottom when new items are appended (default:
-``false``). Auto-scroll pauses while the user scrolls away from the
-bottom, and resumes when scrolled back.
+**Props:**
 
-**Slot:** - Default slot receives ``{ item, index }`` for each visible
-row. Use this to render each item.
+-  ``items?: Array<T>`` — optional full array source (when present ``getItem`` / ``totalCount`` are ignored).
+-  ``totalCount?: number`` — optional total count when using ``getItem`` (required for on-demand access).
+-  ``getItem?: (index: number) => T`` — optional synchronous getter used to access items on-demand.
+-  ``itemHeight?: number`` — height in px of each row. ``0`` means auto-measure (component will measure rendered items). If unset or ``0``, fallback/initial estimate is 25px until measured.
+-  ``virtualBuffer?: number`` — rows above/below viewport to render as buffer (default: 5).
+-  ``maxHeight?: string`` — maximum height for the list (e.g. ``"200px"`` or ``"50%"``) (default: ``"100%"``).
+-  ``class?: string`` — additional class for the root container.
+-  ``style?: Record<string, any>`` — additional inline styles for the root container.
+-  ``autoScroll?: boolean`` — when ``true``, the list will auto-scroll to the bottom when new items are appended (default: ``false``). Auto-scroll pauses while the user scrolls away from the bottom, and resumes when scrolled back.
 
-**Behavior / Notes:** - The component places a transparent spacer
-element with the full ``totalHeight`` so native scrolling works as if
-all rows are rendered. - Visible rows are rendered inside an
-absolutely-positioned window translated by ``translateY(offset)``. - If
-``itemHeight`` is ``0`` (auto-measure), ``ResizeObserver`` measures
-several visible children (up to 8) and uses the average as the measured
-row height. - When using ``getItem``, provide a correct ``totalCount``
-and a synchronous ``getItem`` function — the component expects immediate
-values, not promises. - ``autoScroll`` will only scroll programmatically
-when new items increase ``totalCount``, and it respects a small bottom
-threshold to avoid jumps. - There are no custom events emitted by the
-component; interaction is done via props/slot and standard DOM scroll
-behavior.
+**Slot:**
+
+-  Default slot receives ``{ item, index }`` for each visible row. Use this to render each item.
+
+**Behavior / Notes:**
+
+-  The component places a transparent spacer element with the full ``totalHeight`` so native scrolling works as if all rows are rendered.
+-  Visible rows are rendered inside an absolutely-positioned window translated by ``translateY(offset)``.
+-  If ``itemHeight`` is ``0`` (auto-measure), ``ResizeObserver`` measures several visible children (up to 8) and uses the average as the measured row height.
+-  When using ``getItem``, provide a correct ``totalCount`` and a synchronous ``getItem`` function — the component expects immediate values, not promises.
+-  ``autoScroll`` will only scroll programmatically when new items increase ``totalCount``, and it respects a small bottom threshold to avoid jumps.
+-  There are no custom events emitted by the component; interaction is done via props/slot and standard DOM scroll behavior.
 
 LogArea
 ~~~~~~~
 
-A log viewer component with filtering capabilities, virtual scrolling,
-and real-time updates.
+A log viewer component with filtering capabilities, virtual scrolling, and real-time updates.
 
-**Features:** - Virtual scrolling for performance with large datasets -
-Filter by log level (fatal, error, warning, info, debug) - Filter by
-subsystem - Search functionality - Clear logs action - Dark theme
-support
+**Features:**
+
+-  Virtual scrolling for performance with large datasets
+-  Filter by log level (fatal, error, warning, info, debug)
+-  Filter by subsystem
+-  Search functionality
+-  Clear logs action
+-  Dark theme support
 
 **Usage:**
 
@@ -267,25 +253,27 @@ support
    }
    </script>
 
-**Props:** - ``logs`` (Array): Array of log objects with ``id``,
-``timestamp``, ``level``, ``subsystem``, ``message`` - ``subsystems``
-(Array): Available subsystems for filtering - ``itemHeight`` (Number):
-Height of each log item in pixels (default: 24) - ``bufferSize``
-(Number): Number of items to render outside visible area (default: 10)
+**Props:**
 
-**Events:** - ``clear-logs``: Emitted when clear button is clicked
+-  ``logs`` (Array): Array of log objects with ``id``, ``timestamp``, ``level``, ``subsystem``, ``message``
+-  ``subsystems`` (Array): Available subsystems for filtering
+-  ``itemHeight`` (Number): Height of each log item in pixels (default: 24)
+-  ``bufferSize`` (Number): Number of items to render outside visible area (default: 10)
+
+**Events:**
+
+-  ``clear-logs``: Emitted when clear button is clicked
 
 SdrInput
 ~~~~~~~~
 
-A lightweight SDR (Software Defined Radio) selector with an input-like
-appearance. The component wraps a ``Dropdown`` trigger and uses the
-WebUSB manager to request/select SDR devices.
+A lightweight SDR (Software Defined Radio) selector with an input-like appearance. The component wraps a ``Dropdown`` trigger and uses the WebUSB manager to request/select SDR devices.
 
-Key points: - Shows the currently selected device name (or a placeholder
-when none is selected). - Opens the WebUSB device picker when the
-dropdown is opened. - Emits an update event with the selected device
-info so the parent can react.
+Key points:
+
+-  Shows the currently selected device name (or a placeholder when none is selected).
+-  Opens the WebUSB device picker when the dropdown is opened.
+-  Emits an update event with the selected device info so the parent can react.
 
 **Usage:**
 
@@ -311,38 +299,36 @@ info so the parent can react.
    // sdrDevice will be updated when the user selects a device in the picker
    </script>
 
-**Props:** - ``device`` (RequestDeviceInfo \| undefined) — Currently
-selected SDR device. Shape:
-``{ devName: string, vendorId: number, productId: number }``. -
-``mode?: 'single' | 'worker'`` — WebUsb manager mode. Defaults to
-``'single'``. - ``placeholder?: string`` — Placeholder text when no
-device is selected. Defaults to ``'Click to select SDR'``. -
-``size?: DropdownProps['size']`` — Visual size of the input (passes
-through to ``Dropdown``). Defaults to ``'medium'``. -
-``disabled?: boolean`` — When true the input is disabled. Defaults to
-``false``.
+**Props:**
 
-**Emits:** - ``update:device`` (RequestDeviceInfo) — Standard Vue event
-for ``v-model:device``.
+-  ``device`` (RequestDeviceInfo \| undefined) — Currently selected SDR device. Shape: ``{ devName: string, vendorId: number, productId: number }``.
+-  ``mode?: 'single' | 'worker'`` — WebUsb manager mode. Defaults to ``'single'``.
+-  ``placeholder?: string`` — Placeholder text when no device is selected. Defaults to ``'Click to select SDR'``.
+-  ``size?: DropdownProps['size']`` — Visual size of the input (passes through to ``Dropdown``). Defaults to ``'medium'``.
+-  ``disabled?: boolean`` — When true the input is disabled. Defaults to ``false``.
 
-**Behavior / Notes:** - When opened the component calls the WebUSB
-manager (``getWebUsbManagerInstance``) to request a device. - If a
-device is returned it becomes the selected device and ``update:device``
-is emitted with the ``RequestDeviceInfo``. - If the picker is cancelled
-the component emits an empty device object (fields set to empty/0) to
-indicate no selection. - The visual status (error/success) is derived
-from whether a device name is present.
+**Emits:**
 
-**Defaults** - ``mode``: ``'single'`` - ``placeholder``:
-``'Click to select SDR'`` - ``disabled``: ``false`` - ``size``:
-``'medium'``
+-  ``update:device`` (RequestDeviceInfo) — Standard Vue event for ``v-model:device``.
+
+**Behavior / Notes:**
+
+-  When opened the component calls the WebUSB manager (``getWebUsbManagerInstance``) to request a device.
+-  If a device is returned it becomes the selected device and ``update:device`` is emitted with the ``RequestDeviceInfo``.
+-  If the picker is cancelled the component emits an empty device object (fields set to empty/0) to indicate no selection.
+-  The visual status (error/success) is derived from whether a device name is present.
+
+**Defaults**
+
+-  ``mode``: ``'single'``
+-  ``placeholder``: ``'Click to select SDR'``
+-  ``disabled``: ``false``
+-  ``size``: ``'medium'``
 
 Styling
 -------
 
-All components are designed for maximum customization using CSS custom
-properties (variables). This allows you to easily integrate them with
-your existing design system or CSS framework.
+All components are designed for maximum customization using CSS custom properties (variables). This allows you to easily integrate them with your existing design system or CSS framework.
 
 Quick Start
 ~~~~~~~~~~~
@@ -353,9 +339,7 @@ Import the compiled CSS entry (recommended for npm consumers):
 
    import '@websdr/vue3-components/styles/index.css';
 
-If you need to customize via CSS variables, define overrides in your
-application stylesheet (no Sass required). The sections below list the
-available variables.
+If you need to customize via CSS variables, define overrides in your application stylesheet (no Sass required). The sections below list the available variables.
 
 Component Customization
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -497,8 +481,7 @@ Core design tokens available for all components:
 Dark Theme Support
 ~~~~~~~~~~~~~~~~~~
 
-Enable dark theme by adding ``data-theme="dark"`` attribute or
-``theme-dark`` class:
+Enable dark theme by adding ``data-theme="dark"`` attribute or ``theme-dark`` class:
 
 .. code:: html
 
@@ -701,8 +684,7 @@ For complete control, you can also override CSS classes:
      }
    }
 
-This approach ensures that your components integrate seamlessly with any
-design system while maintaining consistent behavior and accessibility.
+This approach ensures that your components integrate seamlessly with any design system while maintaining consistent behavior and accessibility.
 
 Development
 -----------
@@ -732,15 +714,12 @@ Test
 Source links
 ------------
 
-This package publishes ``dist/`` to npm. Source is available in the
-GitHub repository: - Entry point:
-https://github.com/wavelet-lab/websdr/blob/main/packages/vue3-components/src/index.ts
-- Components exports:
-https://github.com/wavelet-lab/websdr/blob/main/packages/vue3-components/src/components/index.ts
-- Styles entry (SCSS):
-https://github.com/wavelet-lab/websdr/blob/main/packages/vue3-components/src/styles/index.scss
-- Utils exports:
-https://github.com/wavelet-lab/websdr/blob/main/packages/vue3-components/src/utils/index.ts
+This package publishes ``dist/`` to npm. Source is available in the GitHub repository:
+
+-  Entry point: https://github.com/wavelet-lab/websdr/blob/main/packages/vue3-components/src/index.ts
+-  Components exports: https://github.com/wavelet-lab/websdr/blob/main/packages/vue3-components/src/components/index.ts
+-  Styles entry (SCSS): https://github.com/wavelet-lab/websdr/blob/main/packages/vue3-components/src/styles/index.scss
+-  Utils exports: https://github.com/wavelet-lab/websdr/blob/main/packages/vue3-components/src/utils/index.ts
 
 Package folder (GitHub):
 https://github.com/wavelet-lab/websdr/tree/main/packages/vue3-components

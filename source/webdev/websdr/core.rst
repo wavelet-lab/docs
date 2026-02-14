@@ -1,14 +1,13 @@
 @websdr/core
 ============
 
-Core TypeScript utilities for the WebSDR ecosystem: shared
-types/constants, small runtime helpers, and fast sample format
-conversions.
+Core TypeScript utilities for the WebSDR ecosystem: shared types/constants, small runtime helpers, and fast sample format conversions.
 
-**What’s inside** - **Common:** shared types + size/format constants. -
-**Utils:** circular buffer, timing helpers, logging, promise helper,
-string helpers, journal types. - **Transform:** PCM buffer converters
-used by DSP pipelines.
+**What’s inside**
+
+-  **Common:** shared types + size/format constants.
+-  **Utils:** circular buffer, timing helpers, logging, promise helper, string helpers, journal types.
+-  **Transform:** PCM buffer converters used by DSP pipelines.
 
 Install
 -------
@@ -28,15 +27,13 @@ Install
 Importing
 ---------
 
-This package is published as ESM (see ``type: module``). Most users
-should import from the package root:
+This package is published as ESM (see ``type: module``). Most users should import from the package root:
 
 .. code:: ts
 
    import { CircularBuffer, SimpleLogger, bufferF32ToI16 } from '@websdr/core';
 
-Subpath exports are also available (often better for clarity /
-tree-shaking):
+Subpath exports are also available (often better for clarity / tree-shaking):
 
 .. code:: ts
 
@@ -182,31 +179,24 @@ Journal log items
 Public API (summary)
 --------------------
 
--  **``@websdr/core/common``**: ``DataType``, ``CHUNK_SIZE``,
-   ``FLOAT_SIZE``, ``COMPLEX_FLOAT_SIZE``, ``INT16_SIZE``,
-   ``COMPLEX_INT16_SIZE``.
+-  **``@websdr/core/common``**: ``DataType``, ``CHUNK_SIZE``, ``FLOAT_SIZE``, ``COMPLEX_FLOAT_SIZE``, ``INT16_SIZE``, ``COMPLEX_INT16_SIZE``.
 -  **``@websdr/core/utils``**:
 
    -  ``CircularBuffer``
    -  ``sleep``, ``usleep``, ``now``, ``timestampToTimeString``
    -  ``PromiseHelper``
    -  ``JournalLogLevel``, ``JournalLogLevelKeys``, ``JournalLogItem``
-   -  ``SimpleLogger``, ``LOG_LEVELS``, ``LoggerInterface``,
-      ``LogLevel``
+   -  ``SimpleLogger``, ``LOG_LEVELS``, ``LoggerInterface``, ``LogLevel``
    -  ``stringToBoolean``, ``containsAnySubstr``
 
--  **``@websdr/core/transform``**: ``bufferF32ToI16``,
-   ``bufferI16ToF32``.
--  **``@websdr/core/transform``**: ``bufferF32ToI16``,
-   ``bufferI16ToF32``, ``clipF32Buffer``.
+-  **``@websdr/core/transform``**: ``bufferF32ToI16``, ``bufferI16ToF32``.
+-  **``@websdr/core/transform``**: ``bufferF32ToI16``, ``bufferI16ToF32``, ``clipF32Buffer``.
 
 Compatibility notes
 -------------------
 
 -  **TypeScript:** ships ``*.d.ts`` typings.
--  **Runtime:** uses ``performance.now()`` in ``now()``. In browsers
-   this is always available; in Node.js it depends on your Node version
-   / environment.
+-  **Runtime:** uses ``performance.now()`` in ``now()``. In browsers this is always available; in Node.js it depends on your Node version / environment.
 
 Development
 -----------
@@ -236,15 +226,12 @@ Test
 Source links
 ------------
 
-This package publishes ``dist/`` to npm. Source is available in the
-GitHub repository: - Entry point:
-https://github.com/wavelet-lab/websdr/blob/main/packages/core/src/index.ts
-- Common exports:
-https://github.com/wavelet-lab/websdr/blob/main/packages/core/src/common/index.ts
-- Utils exports:
-https://github.com/wavelet-lab/websdr/blob/main/packages/core/src/utils/index.ts
-- Transform exports:
-https://github.com/wavelet-lab/websdr/blob/main/packages/core/src/transform/index.ts
+This package publishes ``dist/`` to npm. Source is available in the GitHub repository:
+
+-  Entry point: https://github.com/wavelet-lab/websdr/blob/main/packages/core/src/index.ts
+-  Common exports: https://github.com/wavelet-lab/websdr/blob/main/packages/core/src/common/index.ts
+-  Utils exports: https://github.com/wavelet-lab/websdr/blob/main/packages/core/src/utils/index.ts
+-  Transform exports: https://github.com/wavelet-lab/websdr/blob/main/packages/core/src/transform/index.ts
 
 Package folder (GitHub):
 https://github.com/wavelet-lab/websdr/tree/main/packages/core

@@ -3,19 +3,14 @@
 
 Reusable NestJS building blocks for the WebSDR backend.
 
-This package is published as an npm module and is intended to be
-**embedded into your NestJS app** (import modules, reuse
-guards/services), not run as a standalone server by itself.
+This package is published as an npm module and is intended to be **embedded into your NestJS app** (import modules, reuse guards/services), not run as a standalone server by itself.
 
 What’s inside
 -------------
 
--  **Auth** (``/auth``): ``AuthModule``, ``AuthService``,
-   ``JwtAuthGuard``, DTOs and interfaces.
+-  **Auth** (``/auth``): ``AuthModule``, ``AuthService``, ``JwtAuthGuard``, DTOs and interfaces.
 -  **Users** (``/users``): ``UsersModule`` and ``UsersService``.
--  **Common** (``/common``): a small logging helper module
-   (``LoggingModule``, ``createContextLogger``) and
-   ``LoggerLevelService``/``parseLogLevels``.
+-  **Common** (``/common``): a small logging helper module (``LoggingModule``, ``createContextLogger``) and ``LoggerLevelService``/``parseLogLevels``.
 
 Install
 -------
@@ -54,6 +49,8 @@ Or use subpath exports:
 Usage
 -----
 
+.. _1-import-modules-in-your-nest-app:
+
 1) Import modules in your Nest app
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -67,12 +64,16 @@ Usage
    })
    export class AppModule {}
 
+.. _2-protect-controllers-with-jwtauthguard:
+
 2) Protect controllers with ``JwtAuthGuard``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-``JwtAuthGuard`` validates a JWT (Passport strategy) and also checks
-token revocation via ``AuthService.isRevoked()``. It looks for the token
-in either: - ``req.cookies.jwt``, or - ``Authorization: Bearer <token>``
+``JwtAuthGuard`` validates a JWT (Passport strategy) and also checks token revocation via ``AuthService.isRevoked()``.
+It looks for the token in either:
+
+-  ``req.cookies.jwt``, or
+-  ``Authorization: Bearer <token>``
 
 .. code:: ts
 
@@ -105,12 +106,13 @@ Accessing the authenticated user (``req.user``) with proper typing:
      }
    }
 
+.. _3-provide-a-logger-instance-via-loggingmodule:
+
 3) Provide a logger instance via ``LoggingModule``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-``LoggingModule.forRoot()`` registers a logger instance under the
-``LOGGER`` token. ``createContextLogger()`` wraps a base logger and adds
-Nest-like context.
+``LoggingModule.forRoot()`` registers a logger instance under the ``LOGGER`` token.
+``createContextLogger()`` wraps a base logger and adds Nest-like context.
 
 .. code:: ts
 
@@ -143,11 +145,12 @@ Injecting the base logger and creating a context-aware wrapper:
      }
    }
 
+.. _4-configure-log-levels:
+
 4) Configure log levels
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-``parseLogLevels()`` parses strings like ``"debug,warn,error"``, as well
-as ``"all"``/``"on"`` and ``"off"``/``"false"``.
+``parseLogLevels()`` parses strings like ``"debug,warn,error"``, as well as ``"all"``/``"on"`` and ``"off"``/``"false"``.
 
 .. code:: ts
 
@@ -192,8 +195,7 @@ Compatibility notes
 
 -  **NestJS:** built against NestJS v11.
 -  **TypeScript:** ships ``*.d.ts`` typings.
--  **ESM:** package is ESM. If your app is CommonJS, use a
-   bundler/transpiler setup that supports ESM dependencies.
+-  **ESM:** package is ESM. If your app is CommonJS, use a bundler/transpiler setup that supports ESM dependencies.
 
 Development
 -----------
@@ -223,15 +225,12 @@ Test
 Source links
 ------------
 
-This package publishes ``dist/`` to npm. Source is available in the
-GitHub repository: - Entry point:
-https://github.com/wavelet-lab/websdr/blob/main/packages/nestjs-microservice/src/index.ts
-- Auth exports:
-https://github.com/wavelet-lab/websdr/blob/main/packages/nestjs-microservice/src/auth/index.ts
-- Common exports:
-https://github.com/wavelet-lab/websdr/blob/main/packages/nestjs-microservice/src/common/index.ts
-- Users exports:
-https://github.com/wavelet-lab/websdr/blob/main/packages/nestjs-microservice/src/users/index.ts
+This package publishes ``dist/`` to npm. Source is available in the GitHub repository:
+
+-  Entry point: https://github.com/wavelet-lab/websdr/blob/main/packages/nestjs-microservice/src/index.ts
+-  Auth exports: https://github.com/wavelet-lab/websdr/blob/main/packages/nestjs-microservice/src/auth/index.ts
+-  Common exports: https://github.com/wavelet-lab/websdr/blob/main/packages/nestjs-microservice/src/common/index.ts
+-  Users exports: https://github.com/wavelet-lab/websdr/blob/main/packages/nestjs-microservice/src/users/index.ts
 
 Package folder (GitHub):
 https://github.com/wavelet-lab/websdr/tree/main/packages/nestjs-microservice

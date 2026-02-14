@@ -3,10 +3,11 @@
 
 Frontend-focused TypeScript core for the WebSDR ecosystem.
 
-This package provides: - Small **frontend common** helpers (debug flag,
-NNG-over-WebSocket client, WASM errno enum). - Minimal **HTTP API
-helpers** for browser apps. - A **WebUSB control + streaming layer**
-used by WebSDR-compatible devices.
+This package provides:
+
+-  Small **frontend common** helpers (debug flag, NNG-over-WebSocket client, WASM errno enum).
+-  Minimal **HTTP API helpers** for browser apps.
+-  A **WebUSB control + streaming layer** used by WebSDR-compatible devices.
 
 Install
 -------
@@ -48,8 +49,7 @@ Examples
 API helpers
 ~~~~~~~~~~~
 
-``apiFetch()`` builds a URL from the configured base, includes cookies
-(``credentials: 'include'``), and throws on non-OK responses.
+``apiFetch()`` builds a URL from the configured base, includes cookies (``credentials: 'include'``), and throws on non-OK responses.
 
 .. code:: ts
 
@@ -60,8 +60,7 @@ API helpers
    type Profile = { id: string; username: string };
    const profile = await apiFetch<Profile>('/api/auth/profile');
 
-You can also set the API base via a global variable (useful for
-``index.html`` deployments):
+You can also set the API base via a global variable (useful for ``index.html`` deployments):
 
 .. code:: ts
 
@@ -101,8 +100,7 @@ NNG-over-WebSocket (REQ/SUB)
      // handle events emitted by the class
    });
 
-REQ example (request/response). The ``send()`` promise resolves when a
-reply with the same request id arrives:
+REQ example (request/response). The ``send()`` promise resolves when a reply with the same request id arrives:
 
 .. code:: ts
 
@@ -118,13 +116,13 @@ reply with the same request id arrives:
    const reply = await ws.send('ping', 1000);
    console.log('reply:', reply);
 
+.. _webusb-ensure-implementation--request-a-device:
+
 WebUSB: ensure implementation + request a device
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In browsers, ``navigator.usb`` exists when WebUSB is supported. In
-Node.js, you can use a polyfill implementation. ``ensureWebUsb()``
-attempts to provide ``navigator.usb`` (prefers the ``usb`` package,
-falls back to ``webusb``).
+In browsers, ``navigator.usb`` exists when WebUSB is supported. In Node.js, you can use a polyfill implementation.
+``ensureWebUsb()`` attempts to provide ``navigator.usb`` (prefers the ``usb`` package, falls back to ``webusb``).
 
 .. code:: ts
 
@@ -148,12 +146,12 @@ falls back to ``webusb``).
 
    await mgr.close(fd);
 
+.. _webusb-control--streaming-via-controlwebusb:
+
 WebUSB: control + streaming via ``ControlWebUsb``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-``ControlWebUsb`` is a high-level helper built on top of
-``WebUsbManager``. It prepares structured control commands
-(connect/discover/params/stream control).
+``ControlWebUsb`` is a high-level helper built on top of ``WebUsbManager``. It prepares structured control commands (connect/discover/params/stream control).
 
 .. code:: ts
 
@@ -210,8 +208,7 @@ WebUSB: control + streaming via ``ControlWebUsb``
 WebUSB: receive RX packets via ``WebUsbManager``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-``submitRxPacket()`` requests one RX packet worth of IQ samples and
-returns a decoded ``RXBuffer``.
+``submitRxPacket()`` requests one RX packet worth of IQ samples and returns a decoded ``RXBuffer``.
 
 .. code:: ts
 
@@ -259,9 +256,7 @@ returns a decoded ``RXBuffer``.
 WebUSB: transmit TX packets via ``WebUsbManager``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-``sendTxPacket()`` encodes and sends an IQ buffer to the device. In many
-device firmwares TX requires the stream to be started first (for example
-via ``ControlWebUsb`` commands).
+``sendTxPacket()`` encodes and sends an IQ buffer to the device. In many device firmwares TX requires the stream to be started first (for example via ``ControlWebUsb`` commands).
 
 .. code:: ts
 
@@ -319,27 +314,19 @@ Public API (summary)
 -  **``@websdr/frontend-core/webusb``** (high level):
 
    -  ``ensureWebUsb``
-   -  ``ControlWebUsb``, ``WebUsbChannels``,
-      ``ControlWebUsbInitialParams``
-   -  ``WebUsbManager``, ``WebUsbManagerMode``,
-      ``getWebUsbManagerInstance``
-   -  ``registerWebUsbInstance``, ``getWebUsbInstance``,
-      ``SDRDevicesIds``
-   -  WebUSB primitives and types: ``WebUsb``, ``WebUsbEndpoints``,
-      ``DeviceStreamType``, ``DeviceDataType``, etc.
+   -  ``ControlWebUsb``, ``WebUsbChannels``, ``ControlWebUsbInitialParams``
+   -  ``WebUsbManager``, ``WebUsbManagerMode``, ``getWebUsbManagerInstance``
+   -  ``registerWebUsbInstance``, ``getWebUsbInstance``, ``SDRDevicesIds``
+   -  WebUSB primitives and types: ``WebUsb``, ``WebUsbEndpoints``, ``DeviceStreamType``, ``DeviceDataType``, etc.
+
+.. _notes--caveats:
 
 Notes / caveats
 ---------------
 
--  **WebUSB device registrations:** ``@websdr/frontend-core/webusb``
-   auto-imports ``webUsbDevices.autogen``. When building from source
-   inside the monorepo, this is generated by ``scripts/prebuild.js``.
--  **Node vs Browser:** WebUSB is browser-native on supported platforms.
-   For Node usage, ``ensureWebUsb()`` tries to load ``usb`` (preferred)
-   or ``webusb`` dynamically.
--  **User gesture requirement:** ``navigator.usb.requestDevice()`` must
-   be called in response to a user interaction (browser security
-   requirement).
+-  **WebUSB device registrations:** ``@websdr/frontend-core/webusb`` auto-imports ``webUsbDevices.autogen``. When building from source inside the monorepo, this is generated by ``scripts/prebuild.js``.
+-  **Node vs Browser:** WebUSB is browser-native on supported platforms. For Node usage, ``ensureWebUsb()`` tries to load ``usb`` (preferred) or ``webusb`` dynamically.
+-  **User gesture requirement:** ``navigator.usb.requestDevice()`` must be called in response to a user interaction (browser security requirement).
 
 Development
 -----------
@@ -370,15 +357,12 @@ Test
 Source links
 ------------
 
-This package publishes ``dist/`` to npm. Source is available in the
-GitHub repository: - Entry point:
-https://github.com/wavelet-lab/websdr/blob/main/packages/frontend-core/src/index.ts
-- Common exports:
-https://github.com/wavelet-lab/websdr/blob/main/packages/frontend-core/src/common/index.ts
-- Services exports:
-https://github.com/wavelet-lab/websdr/blob/main/packages/frontend-core/src/services/index.ts
-- WebUSB exports:
-https://github.com/wavelet-lab/websdr/blob/main/packages/frontend-core/src/webusb/index.ts
+This package publishes ``dist/`` to npm. Source is available in the GitHub repository:
+
+-  Entry point: https://github.com/wavelet-lab/websdr/blob/main/packages/frontend-core/src/index.ts
+-  Common exports: https://github.com/wavelet-lab/websdr/blob/main/packages/frontend-core/src/common/index.ts
+-  Services exports: https://github.com/wavelet-lab/websdr/blob/main/packages/frontend-core/src/services/index.ts
+-  WebUSB exports: https://github.com/wavelet-lab/websdr/blob/main/packages/frontend-core/src/webusb/index.ts
 
 Package folder (GitHub):
 https://github.com/wavelet-lab/websdr/tree/main/packages/frontend-core
