@@ -727,4 +727,4 @@ https://github.com/wavelet-lab/websdr/tree/main/packages/vue3-components
 License
 -------
 
-MIT — see `LICENSE <LICENSE>`__
+WebSDR is `MIT licensed <https://github.com/wavelet-lab/websdr/blob/main/LICENSE>`__

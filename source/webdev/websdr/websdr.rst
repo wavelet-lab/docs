@@ -32,8 +32,8 @@ Core capabilities include:
 Documentation
 -------------
 
--  Docs index: `https://github.com/wavelet-lab/websdr/tree/main/docs/README.md <https://github.com/wavelet-lab/websdr/tree/main/docs/README.md>`__
--  WebUSB / SDR interaction subsystem: `https://github.com/wavelet-lab/websdr/tree/main/docs/webusb/README.md <https://github.com/wavelet-lab/websdr/tree/main/docs/webusb/README.md>`__
+-  Docs index: `docs/README.md <https://github.com/wavelet-lab/websdr/tree/main/docs/README.md>`__
+-  WebUSB / SDR interaction subsystem: `docs/webusb/README.md <https://github.com/wavelet-lab/websdr/tree/main/docs/webusb/README.md>`__
 
 Repository layout
 -----------------
@@ -47,7 +47,7 @@ Top-level structure (important folders):
    ├─ frontend-core/       # Front-end utilities and WebUSB adapters
    ├─ vue3-components/     # Reusable Vue 3 UI components and styles
    ├─ nestjs-microservice/ # NestJS modules (auth, API helpers, microservice wiring)
-   https://github.com/wavelet-lab/websdr/tree/main/docs/                   # Architecture and subsystem documentation
+   docs/                   # Architecture and subsystem documentation
    test-apps/              # Small example/test applications and scripts
 
 Brief package descriptions:
