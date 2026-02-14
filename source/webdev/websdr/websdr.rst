@@ -65,22 +65,22 @@ This monorepo publishes several packages under the ``@websdr/*`` scope. If you o
 
 -  ``@websdr/core`` — shared types/constants and small utilities.
 
-   -  Docs: `/webdev/websdr/core </webdev/websdr/core>`__
+   -  Docs: `core <core>`__
    -  Install: ``npm install @websdr/core``
 
 -  ``@websdr/frontend-core`` — frontend utilities (API helpers, WebUSB abstraction).
 
-   -  Docs: `/webdev/websdr/frontend-core </webdev/websdr/frontend-core>`__
+   -  Docs: `frontend-core <frontend-core>`__
    -  Install: ``npm install @websdr/frontend-core``
 
 -  ``@websdr/vue3-components`` — Vue 3 UI components + styles.
 
-   -  Docs: `/webdev/websdr/vue3-components </webdev/websdr/vue3-components>`__
+   -  Docs: `vue3-components <vue3-components>`__
    -  Install: ``npm install @websdr/vue3-components``
 
 -  ``@websdr/nestjs-microservice`` — reusable NestJS modules (auth/users/logging).
 
-   -  Docs: `/webdev/websdr/nestjs-microservice </webdev/websdr/nestjs-microservice>`__
+   -  Docs: `nestjs-microservice <nestjs-microservice>`__
    -  Install: ``npm install @websdr/nestjs-microservice``
 
 Quick setup
