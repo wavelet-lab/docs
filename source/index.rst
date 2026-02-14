@@ -21,7 +21,16 @@ If you have any questions or need further assistance, please don’t hesitate to
    /intro/how_to_create_app
    /intro/sharing_and_streams
 
- 
+.. toctree::
+   :maxdepth: 3
+   :hidden:
+   :caption: Web Development
+
+   /webdev/websdr/websdr
+   /webdev/websdr/core
+   /webdev/websdr/frontend-core
+   /webdev/websdr/nestjs-microservice
+   /webdev/websdr/vue3-components
 
 .. toctree::
    :maxdepth: 2
