@@ -587,6 +587,11 @@ This section contains measurements for the RF paths on the FE board.
 
    Parameters of TX path with 2-stage PA
 
+.. figure:: ../_static/fe/graphs/LOOPBACK.png
+   :alt: loopback measurements
+
+   Parameters of LOOPBACK path with different attenuation levels
+
 
 Software
 ========
