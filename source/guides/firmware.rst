@@ -2,9 +2,10 @@
 Flashing firmware
 =================
 
-.. note::
+.. danger::
+   | **ONLY USE THIS UTILITY IF YOU KNOW WHAT YOU'RE DOING!**
+   | Flashing the wrong firmware will cause physical damage to your device!
 
-   You can also update the firmware using web platform.
 
 Instruction
 -----------
