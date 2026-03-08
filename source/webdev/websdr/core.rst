@@ -206,6 +206,8 @@ From the repository root:
 .. code:: bash
 
    npm install
+   npm run build
+   npm test --workspace=packages/core
 
 From this package folder:
 

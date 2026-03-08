@@ -297,6 +297,48 @@ WebUSB: transmit TX packets via ``WebUsbManager``
    console.log('tx status:', tx.usbOutTransferResult?.status);
    await mgr.close(fd);
 
+Using WebSDR with Vite (WASM Configuration)
+-------------------------------------------
+
+``@websdr/frontend-core`` includes an Emscripten-based WebAssembly module (``control.wasm``) that is loaded at runtime next to its corresponding JavaScript file.
+
+When using **Vite**, additional configuration is required in development mode.
+
+--------------
+
+Why this is necessary
+~~~~~~~~~~~~~~~~~~~~~
+
+In dev mode, Vite performs dependency pre-bundling (``optimizeDeps``) and moves JavaScript dependencies into:
+
+However, the WebAssembly file (``control.wasm``) is loaded dynamically by the Emscripten runtime and is **not automatically copied** into ``.vite/deps/``.
+
+As a result, the browser may attempt to load:
+
+This file does not exist, leading to:
+Error requesting USB device: RuntimeError: Aborted(CompileError: WebAssembly.instantiate(): expected magic word 00 61 73 6d, found 3c 21 44 4f @+0)
+
+--------------
+
+Recommended Vite configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To prevent Vite from pre-bundling ``@websdr/frontend-core``, add the following to your ``vite.config.ts``:
+
+.. code:: ts
+
+   import { defineConfig } from 'vite'
+
+   export default defineConfig({
+     ...
+     optimizeDeps: {
+       exclude: [
+         '@websdr/frontend-core',
+       ],
+     },
+     ...
+   })
+
 Public API (summary)
 --------------------
 

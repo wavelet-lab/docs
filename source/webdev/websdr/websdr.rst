@@ -34,6 +34,7 @@ Documentation
 
 -  Docs index: `docs/README.md <https://github.com/wavelet-lab/websdr/tree/main/docs/README.md>`__
 -  WebUSB / SDR interaction subsystem: `docs/webusb/README.md <https://github.com/wavelet-lab/websdr/tree/main/docs/webusb/README.md>`__
+-  Manual / hardware tests: `test-apps/README.md <test-apps/README.md>`__
 
 Repository layout
 -----------------
@@ -136,6 +137,8 @@ Example test apps live in ``test-apps``. To run them:
    npm run test:usb   # runs the USB test script (requires appropriate permissions/flags)
 
 Note: WebUSB requires HTTPS or localhost and browser support. Running tests that access USB devices may require additional browser flags or permissions.
+
+Manual test notes and troubleshooting: `test-apps/README.md <test-apps/README.md>`__
 
 .. _environment--configuration:
 
