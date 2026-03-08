@@ -40,6 +40,7 @@ If you have any questions or need further assistance, please don’t hesitate to
    /webdev/osmoweb/nestjs-microservice
    /webdev/osmoweb/vue3-components
    /webdev/osmoweb/test-apps
+   /webdev/osmoweb/docker
 
 .. toctree::
    :maxdepth: 2

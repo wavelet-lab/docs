@@ -1,5 +1,5 @@
-Manual tests (test-apps)
-========================
+Test apps
+=========
 
 This folder contains **manual / hardware-in-the-loop test scripts** for the WebSDR monorepo.
 
