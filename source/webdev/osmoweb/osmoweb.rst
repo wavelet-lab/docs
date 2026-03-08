@@ -51,7 +51,7 @@ Project structure
 
 -  `packages/core <packages/core>`__ — Core shared library with domain types, utilities, and constants used across all packages. Docs: :doc:`/webdev/osmoweb/core`
 -  `packages/backend-core <packages/backend-core>`__ — Backend building blocks: router and controllers to talk to Osmocom daemons; also exposes common types/config like Osmo services and defaults (see `packages/backend-core/src/osmo/index.ts <packages/backend-core/src/osmo/index.ts>`__). Docs: :doc:`/webdev/osmoweb/backend-core`
--  `packages/nestjs-microservice <packages/nestjs-microservice>`__ — NestJS integration that wraps backend-core into DI-ready providers and WebSocket gateways; main entry is ```OsmoModule`` <packages/nestjs-microservice/src/osmo.module.ts>`__ configurable via OSMO\_\* env vars. Docs: :doc:`/webdev/osmoweb/nestjs-microservice`
+-  `packages/nestjs-microservice <packages/nestjs-microservice>`__ — NestJS integration that wraps backend-core into DI-ready providers and WebSocket gateways; main entry is `OsmoModule <packages/nestjs-microservice/src/osmo.module.ts>`__ configurable via OSMO\_\* env vars. Docs: :doc:`/webdev/osmoweb/nestjs-microservice`
 -  `packages/frontend-core <packages/frontend-core>`__ — Front-end core utilities and adapters for client apps. Docs: :doc:`/webdev/osmoweb/frontend-core`
 -  `packages/vue3-components <packages/vue3-components>`__ — Vue 3 UI components and styles used by OsmoWeb apps (BTS config/input components). Docs: :doc:`/webdev/osmoweb/vue3-components`
 -  `test-apps <test-apps>`__ — Sample scripts for manual testing (e.g., `bsc-test.ts <test-apps/bsc-test.ts>`__, `msc-test.ts <test-apps/msc-test.ts>`__, `hlr-test.ts <test-apps/hlr-test.ts>`__, `mgw-test.ts <test-apps/mgw-test.ts>`__).
