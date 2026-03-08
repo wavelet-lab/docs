@@ -134,7 +134,7 @@ Example test apps live in ``test-apps``. To run them:
 
    cd test-apps
    npm install
-   npm run test:usb   # runs the USB test script (requires appropriate permissions/flags)
+   npm run test:usb
 
 Note: WebUSB requires HTTPS or localhost and browser support. Running tests that access USB devices may require additional browser flags or permissions.
 
