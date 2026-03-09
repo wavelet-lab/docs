@@ -31,6 +31,16 @@ If you have any questions or need further assistance, please don’t hesitate to
    /webdev/websdr/frontend-core
    /webdev/websdr/nestjs-microservice
    /webdev/websdr/vue3-components
+   /webdev/websdr/test-apps
+
+   /webdev/osmoweb/osmoweb
+   /webdev/osmoweb/core
+   /webdev/osmoweb/backend-core
+   /webdev/osmoweb/frontend-core
+   /webdev/osmoweb/nestjs-microservice
+   /webdev/osmoweb/vue3-components
+   /webdev/osmoweb/test-apps
+   /webdev/osmoweb/docker
 
 .. toctree::
    :maxdepth: 2
