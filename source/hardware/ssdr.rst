@@ -15,15 +15,6 @@ covering **5G (7.125 GHz)**, the latest **WiFi**, radio links, and many more app
 
 Paired with **wsdr.io** and various host devices, it enables the rapid development of custom RF solutions.
 
-
-.. caution::
-   | For the sSDR module to work correctly, a newer version of software is required.
-   |
-   | - :doc:`Build the software from source </software/compile>` using ``feature_pe_sync`` branch.
-   | - Install the SoapySDR plugin.
-   | - Once everything is installed, open any SoapySDR-compatible app like CubicSDR select the SDR device, keep parameters as it is, only make sure that the sample rate is not less than 8MHz, and you can begin tuning frequencies and viewing the RF spectrum. Or you can test with :doc:`/software/usdr_dm_create`.
-
-
 General Specifications
 ======================
 
@@ -97,12 +88,7 @@ Target Applications
   - Build communication channels between points worldwide through a **web-enabled platform**
 
 
-Software Support
-================
 
-- **GNU Radio**, **srsRAN**, and many more through **SoapySDR**.
-
-===================
 Getting Started
 ===================
 
@@ -143,7 +129,7 @@ The sSDR operates using the following software stack::
     sSDR hardware
 
 
-Clone the Repository
+1. Clone the Repository
 ====================
 
 Build the required software from the ``feature_pe_sync`` branch.
@@ -155,7 +141,7 @@ Build the required software from the ``feature_pe_sync`` branch.
     git checkout feature_pe_sync
 
 
-Install Dependencies
+2. Install Dependencies
 ====================
 
 Ubuntu 20.04 / 22.04 / 24.04, Debian 12, Raspberry Pi OS:
@@ -166,7 +152,7 @@ Ubuntu 20.04 / 22.04 / 24.04, Debian 12, Raspberry Pi OS:
     sudo apt install -y libsoapysdr-dev libusb-1.0-0-dev check dkms
 
 
-Build the Software
+3. Build the Software
 ==================
 
 Standard build:
@@ -191,7 +177,7 @@ Debug build (optional):
     sudo make install
 
 
-Enroll the MOK Key
+4. Enroll the MOK Key
 ==================
 
 This step is required only on **Secure Boot systems** so the kernel module can
@@ -215,7 +201,7 @@ After that:
 This step only needs to be performed once.
 
 
-Build and Install the Kernel Module
+5. Build and Install the Kernel Module
 ===================================
 
 Install kernel headers:
@@ -253,7 +239,7 @@ Install udev rules:
     sudo cp ./helpers/50-usdr-pcie-driver.rules /etc/udev/rules.d/
 
 
-Install the SoapySDR Plugin
+6. Install the SoapySDR Plugin
 ===========================
 
 Install the SoapySDR USDR plugin.
@@ -271,7 +257,7 @@ Verify that the device is detected:
 If installation is correct, the **USDR / sSDR device** will appear in the list.
 
 
-First RF Capture
+7. First RF Capture
 ================
 
 The ``usdr_dm_create`` tool can be used to verify that the device is working
@@ -291,7 +277,7 @@ This command:
 * saves the result to ``test.iq``
 
 
-View the RF Spectrum
+8. View the RF Spectrum
 ====================
 
 Launch **CubicSDR**:
@@ -309,7 +295,7 @@ Then:
 You can now tune frequencies and observe the RF spectrum.
 
 
-Troubleshooting
+9. Troubleshooting
 ===============
 
 Device not detected
@@ -350,7 +336,7 @@ Verify:
 * sample rate is at least **8 MHz**
 
 
-Quick Start Summary
+10. Quick Start Summary
 ===================
 
 For experienced users:
