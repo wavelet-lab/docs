@@ -88,9 +88,24 @@ Target Applications
   - Build communication channels between points worldwide through a **web-enabled platform**
 
 
+Measurements
+============
+
+This section contains RF measurements for SSDR board.
+
+.. figure:: ../_static/ssdr/graphs/ssdr_rx_if_2010_sw_3000.png
+   :alt: ssdr RX, IF=2010MHz, SWITCHOVER=3000MHz
+
+   Parameters of RX measured at 2010 MHz IF, with the switchover frequency set to 3000 MHz.
+
+.. figure:: ../_static/ssdr/graphs/ssdr_tx_if_2010_sw_3000.png
+   :alt: ssdr TX, IF=2010MHz, SWITCHOVER=3000MHz
+
+   Parameters of TX measured at 2010 MHz IF, with the switchover frequency set to 3000 MHz.
+
 
 Getting Started
-===================
+===============
 
 The **sSDR** requires a newer version of the software than the standard package release.
 To ensure proper operation, build **usdr-lib** from source using the
