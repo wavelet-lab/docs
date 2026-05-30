@@ -4,7 +4,7 @@ sSDR module
 
 A compact M.2 software-defined radio (SDR) with 2 RX/TX channels, single-sided components, and an extended frequency range.
 
-.. image:: ../_static/ssdr_rev1.png
+.. image:: ../_static/ssdr-rev3-angle-03_edit.png
    :alt: sSDR module
 
 Introduction
@@ -66,7 +66,7 @@ Pinout
 ======
 
 
-.. image:: ../_static/ssdr/ssdr_schema.png
+.. image:: ../_static/ssdr/ssdr_schema_edit.png
    :alt: dSDR pinout schema
 
 
