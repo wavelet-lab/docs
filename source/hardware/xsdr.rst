@@ -74,7 +74,7 @@ RF Specifications
 Pinout
 ====================
 
-.. image:: ../_static/xSDR_pinout.png
+.. image:: ../_static/xSDR_pinout_ed.png
    :alt: xSDR module
 
 
