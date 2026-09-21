@@ -96,4 +96,11 @@ Driver and Host Libraries
 Software Support
 ================
 
+- Requires **usdr-lib** version 1.0.0 or later.
 - GNU Radio, srsRAN, and many more through SoapySDR.
+
+.. important::
+
+   dSDR requires the proprietary ``libcapi79xx`` runtime plugin and will not
+   work without it. See :doc:`/software/libcapi79xx` for installation
+   instructions.

@@ -107,10 +107,9 @@ This section contains RF measurements for SSDR board.
 Getting Started
 ===============
 
-The **sSDR** requires a newer version of the software than the standard package release.
-To ensure proper operation, build **usdr-lib** from source using the
-``feature_pe_sync`` branch, install the kernel driver, and verify operation
-using **SoapySDR** or the ``usdr_dm_create`` tool.
+The **sSDR** requires **usdr-lib** version 1.0.0 or later.
+To ensure proper operation, build **usdr-lib** from source, install the kernel
+driver, and verify operation using **SoapySDR** or the ``usdr_dm_create`` tool.
 
 This guide covers:
 
@@ -147,19 +146,18 @@ The sSDR operates using the following software stack::
 1. Clone the Repository
 ====================
 
-Build the required software from the ``feature_pe_sync`` branch.
+Build **usdr-lib** version 1.0.0 or later from the ``main`` branch.
 
 .. code-block:: bash
 
     git clone https://github.com/wavelet-lab/usdr-lib.git
     cd usdr-lib
-    git checkout feature_pe_sync
 
 
 2. Install Dependencies
 ====================
 
-Ubuntu 20.04 / 22.04 / 24.04, Debian 12, Raspberry Pi OS:
+Ubuntu 20.04 / 22.04 / 24.04 / 26.04, Debian 12, Raspberry Pi OS:
 
 .. code-block:: bash
 
@@ -360,7 +358,6 @@ For experienced users:
 
     git clone https://github.com/wavelet-lab/usdr-lib.git
     cd usdr-lib
-    git checkout feature_pe_sync
     mkdir build && cd build
     cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ../src
     make -j$(nproc)

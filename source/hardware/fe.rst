@@ -605,7 +605,7 @@ Software
 .. caution::
    | A newer version of software is required!
    |
-   | - :doc:`Build the software from source </software/compile>` using ``feature_pe_sync`` branch.
+   | - :doc:`Build usdr-lib version 1.0.0 or later from source </software/compile>`.
    | - Install the SoapySDR plugin.
    | - Once everything is installed, open any SoapySDR-compatible app like CubicSDR select the SDR device, keep parameters as it is, only make sure that the sample rate is not less than 8MHz, and you can begin tuning frequencies and viewing the RF spectrum. Or you can test with :doc:`/software/usdr_dm_create`.
 
