@@ -70,6 +70,7 @@ If you have any questions or need further assistance, please don’t hesitate to
    /software/compile
    /software/usdr_dm_create
    /software/usdr_registers
+   /software/troubleshooting.rst
    /guides/firmware
 
 .. toctree::
