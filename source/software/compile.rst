@@ -40,8 +40,8 @@ Ubuntu 18.04
     curl https://bootstrap.pypa.io/get-pip.py | python3.8
     python3.8 -m pip install pyyaml
 
-Ubuntu 20.04, 22.04, 24.04, Debian 12, Raspberry Pi OS, Raspberry Pi OS Lite
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Ubuntu 20.04, 22.04, 24.04, 26.04, Debian 12, Raspberry Pi OS, Raspberry Pi OS Lite
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: sh
 

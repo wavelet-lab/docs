@@ -5,8 +5,8 @@ Software installation
 .. note::
    | For Raspberry Pi 5, please refer to the :doc:`/intro/raspberrypi5` document for additional configuration.
 
-Ubuntu 20.04, 22.04, 24.04
---------------------------
+Ubuntu 20.04, 22.04, 24.04, 26.04
+---------------------------------
 
 Add the repository
 ^^^^^^^^^^^^^^^^^^
@@ -38,6 +38,9 @@ PCIe driver
 
     sudo apt install usdr-dkms
     sudo modprobe usdr_pcie_uram
+
+If the package fails to install or the kernel module does not load, see
+:doc:`/software/troubleshooting`.
 
 Install the development package
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
