@@ -21,7 +21,7 @@ General Specifications
 
 **Power Consumption**  
   - 6-15W Typical (depending on the number of active channels and bandwidth)  
-  - 20W Max  
+  - 36W Max
 
 **Interface**  
   - M.2 3080 M key PCIe 4.0 x4 (with debug USB2 interface)

@@ -55,17 +55,21 @@ Download ``libcapi79xx``
 ========================
 
 Download the package matching the Ubuntu release and system architecture from
-the `libcapi79xx 1.0.0 release
-<https://github.com/wavelet-lab/usdr-releases/releases/tag/v1.0.0>`_.
+the `libcapi79xx latest release
+<https://github.com/wavelet-lab/usdr-releases/releases/latest>`_.
 
 Access to the release repository may require signing in to an authorized
 GitHub account.
 
-For example, a system running Ubuntu 26.04 on AMD64 requires:
+For example, if the latest release is version ``1.0.0``, a system running
+Ubuntu 26.04 on AMD64 requires:
 
 .. code-block:: text
 
     libcapi79xx_1.0.0~resolute0_amd64.deb
+
+The version number may differ in newer releases. Use the exact file name shown
+on the release page in the commands below.
 
 Download the corresponding ``.deb.sha256`` file as well.
 
