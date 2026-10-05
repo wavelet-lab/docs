@@ -96,7 +96,7 @@ Driver and Host Libraries
 Software Support
 ================
 
-- Requires **usdr-lib** version 1.0.0 or later.
+- Requires **usdr-lib** version 1.0.1 or later.
 - GNU Radio, srsRAN, and many more through SoapySDR.
 
 .. important::
