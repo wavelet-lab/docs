@@ -107,13 +107,15 @@ This section contains RF measurements for SSDR board.
 Getting Started
 ===============
 
-The **sSDR** requires **usdr-lib** version 1.0.0 or later.
-To ensure proper operation, build **usdr-lib** from source, install the kernel
-driver, and verify operation using **SoapySDR** or the ``usdr_dm_create`` tool.
+The **sSDR** requires **usdr-lib** version 1.0.0 or later. The easiest way to
+set up the software is to install the prebuilt packages. Building **usdr-lib**
+from source is also supported when you need the latest changes or a custom
+build.
 
 This guide covers:
 
-* Building the software from source
+* Installing the prebuilt packages
+* Alternatively, building the software from source
 * Installing the kernel module
 * Installing the SoapySDR plugin
 * Verifying the device
@@ -141,6 +143,33 @@ The sSDR operates using the following software stack::
             │
             ▼
     sSDR hardware
+
+
+Install Prebuilt Packages (Recommended)
+=======================================
+
+On Ubuntu 20.04, 22.04, 24.04, or 26.04, add the Wavelet Lab PPA and install
+the tools, PCIe driver, and SoapySDR plugin:
+
+.. code-block:: bash
+
+    sudo add-apt-repository ppa:wavelet-lab/usdr-lib
+    sudo apt update
+    sudo apt install usdr-tools usdr-dkms soapysdr-module-usdr
+    sudo modprobe usdr_pcie_uram
+
+Then verify that the device is detected:
+
+.. code-block:: bash
+
+    SoapySDRUtil --find
+
+For other supported operating systems and development packages, see
+:doc:`/software/install`.
+
+The remaining installation sections describe the alternative source-build
+method. You can skip them if you installed the prebuilt packages and the
+device was detected successfully.
 
 
 1. Clone the Repository
@@ -352,7 +381,18 @@ Verify:
 10. Quick Start Summary
 ===================
 
-For experienced users:
+For experienced users, the recommended package installation is:
+
+.. code-block:: bash
+
+    sudo add-apt-repository ppa:wavelet-lab/usdr-lib
+    sudo apt update
+    sudo apt install usdr-tools usdr-dkms soapysdr-module-usdr
+    sudo modprobe usdr_pcie_uram
+    SoapySDRUtil --find
+    usdr_dm_create -r4e6 -e1200e6 -c100000 -f test.iq
+
+Alternatively, build from source:
 
 .. code-block:: bash
 
