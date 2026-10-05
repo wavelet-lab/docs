@@ -99,7 +99,7 @@ it using APT:
 
 .. code-block:: sh
 
-    sudo apt install ./libcapi79xx_1.0.0~resolute0_amd64.deb
+    sudo dpkg -i libcapi79xx_1.0.0~resolute0_amd64.deb
 
 Replace the file name with the package appropriate for the target system.
 Using APT instead of ``dpkg -i`` allows required dependencies to be installed
